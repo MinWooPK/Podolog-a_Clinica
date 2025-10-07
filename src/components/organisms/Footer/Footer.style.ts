@@ -1,147 +1,80 @@
 import styled from "styled-components";
 
-export const FooterTaxi = styled.footer`
-  background-color: ${({ theme }) => theme.colors.principal.black};
+export const FooterPodologia = styled.footer`
+  background: linear-gradient(to bottom, #18595b, #3cbbbb);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  min-height: 200px;
   gap: 2rem;
-  padding: 3rem;
+  padding: 2rem;
   text-align: center;
+
   @media (max-width: 420px) {
     padding: 0.5rem;
     font-size: 14px;
   }
 `;
 
-export const FooterTaxiContainer = styled.div`
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  display: flex;
-`;
+interface LogoImageProps {
+  width?: string;
+  height?: string;
+}
 
-export const FooterTaxiContainerLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+export const FooterTitleContaienr = styled.div``;
+export const LogoImage = styled.img<LogoImageProps>`
+  width: ${({ width }) => width || "40px"};
+  height: ${({ height }) => height || "40px"};
 `;
-export const FooterTaxiContainerLeftFrist = styled.div`
-  display: flex;
-  align-items: center;
-`;
-export const FooterTaxiContainerLeftFristSub = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-`;
-export const FooterTaxiContainerLogoH2 = styled.h1`
-  color: #ffc61a;
-  font-size: 48px;
-  letter-spacing: 3px;
-  height: 53px;
-`;
-export const FooterTaxiContainerLogoP = styled.p`
-  color: ${({ theme }) => theme.colors.principal.pure};
-  margin-left: 10px;
-`;
-
-export const FooterTaxiImg = styled.img`
-  max-width: 205px;
-`;
-export const FooterTaxiP = styled.p`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: white;
-`;
-export const FooterTaxiIconA = styled.img``;
-export const FooterTaxiIconB = styled.img``;
-
-export const FooterTaxiContainerLeftSecond = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
-export const FooterTaxiContainerLeftThird = styled.ul`
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-`;
-export const FooterTaxiContainerLeftLi = styled.li`
-  background-color: #ffc61a;
-  list-style: none;
-
-  border-radius: 23rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-`;
-
-export const FooterTaxiContainerRightLi = styled.a`
-  list-style: none;
-  display: flex;
-  text-decoration: none;
-  justify-content: start;
-  align-items: center;
-  color: white;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: start;
-  &:before {
-    content: "";
-    width: 11px;
-    height: 4px;
-    display: inline-block;
-    background-color: #ffc61a;
-    margin-right: 9px;
-  }
-
-  &:hover:before {
-    background: #ffbf00; /* Change background color on hover */
-  }
-`;
-
-export const FooterTaxiContainerRight = styled.div`
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  padding-top: 3rem;
-`;
-export const FooterTaxiContainerRightTitle = styled.div`
-  text-align: left;
-  color: #ffc61a;
-  font-size: 26px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+export const FooterTitle = styled.div`
+  font-size: 20px;
   font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  color: ${({ theme }) => theme.colors.principal.fifthy};
+
+  /* color: #ffc61a; */
+  @media (max-width: 1100px) {
+    font-size: 16px;
+  }
 `;
 
-export const LinkBar = styled.ul`
+export const FooterSubTitle = styled.div`
+  font-size: 14x;
+  margin-left: 7px;
+  color: ${({ theme }) => theme.colors.principal.fourthy};
+  font-weight: 500;
+
+  @media (max-width: 420px) {
+    margin-top: 0;
+    font-size: 12px;
+    /* margin-left: 4px; */
+  }
+`;
+export const FooterMiddle = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
 `;
 
-export const LinkLi = styled.li`
-  color: ${({ theme }) => theme.colors.principal.grey};
-  cursor: pointer;
-`;
-
-export const FooterCopyRightDetail = styled.div`
+export const FooterLast = styled.div`
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: ${({ theme }) => theme.colors.principal.secondary};
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0rem;
+  }
+`;
+export const FooterCopyRight = styled.div`
+  font-size: 12px;
   color: ${({ theme }) => theme.colors.principal.pure};
 `;
-export const FooterCopyRightDetailDescription = styled.p``;
+export const FooterSubInfo = styled.div`
+  font-size: 12px;
+  gap: 2rem;
+  display: flex;
+  color: ${({ theme }) => theme.colors.principal.pure};
+`;

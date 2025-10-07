@@ -378,6 +378,7 @@ export const LogoContainerSecondP = styled.div`
   margin-top: -18px;
   margin-left: 7px;
   color: ${({ theme }) => theme.colors.principal.fourthy};
+  font-weight: 500;
 
   @media (max-width: 420px) {
     margin-top: 0;

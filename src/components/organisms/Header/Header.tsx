@@ -181,7 +181,7 @@ const Header = () => {
           <NavBlack className="nav-black" visiblenav={navVisible}>
             <NavRed className="nav-red" visiblenav={navVisible}>
               <Logo href="/">
-                <LogoImage src={LogoImgSrc} width="60px" height="60px" />
+                <LogoImage src={LogoImgSrc} width="160px" height="160px" />
               </Logo>
               <LogoContainerText>
                 <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
@@ -198,7 +198,13 @@ const Header = () => {
               <IconCircle>📍</IconCircle>
               <IconDescription>Gipuzkoa - Euskadi</IconDescription>
             </> */}
-
+              <CitaContainer
+                href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <DoctoraliaImage src={Doctoralia} /> Pedir cita
+              </CitaContainer>
               <MobileUlDiv>
                 <StieMenuLi>
                   <StieMenuHref href="/">Inicio</StieMenuHref>
