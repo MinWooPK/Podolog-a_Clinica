@@ -3,15 +3,12 @@ import {
   ContainerNavbar,
   CopyRightDescription,
   HamburgerMenu,
-  IconCircle,
-  IconDescription,
   Logo,
   LogoContainer,
   MobileUlDiv,
   NavBlack,
   NavRed,
   Navbar,
-  SideBarTitle,
   SiteMenu,
   StieMenuHref,
   StieMenuLi,
@@ -30,7 +27,7 @@ import {
 import { GoChevronLeft } from "react-icons/go";
 
 import LogoImgSrc from "@assets/icons/SoloLogo.png";
-import Doctoralia from "@assets/icons/Doctoralia.png";
+import Doctoralia from "@assets/icons/doctoralia.png";
 import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
