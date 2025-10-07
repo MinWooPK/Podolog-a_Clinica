@@ -148,7 +148,7 @@ export const StieMenuLi = styled.li`
 
 export const StieMenuHref = styled.a`
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 0;
   padding: 10px 10px;
   cursor: pointer;
@@ -364,7 +364,7 @@ export const LogoContainerText = styled.div`
   align-items: start;
 `;
 export const LogoContainerFirstP = styled.div`
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.principal.fifthy};
 
@@ -374,7 +374,7 @@ export const LogoContainerFirstP = styled.div`
   }
 `;
 export const LogoContainerSecondP = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   margin-top: -18px;
   margin-left: 7px;
   color: ${({ theme }) => theme.colors.principal.fourthy};
