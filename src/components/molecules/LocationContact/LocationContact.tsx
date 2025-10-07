@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import {
   LocationContactContainer,
   MapsContainer,
@@ -14,29 +14,35 @@ import {
 function LocationContact() {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
+    const form = e.currentTarget;
     const data = new FormData(form);
 
-    const response = await fetch("https://formspree.io/f/mpwyjwey", {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" },
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/mpwyjwey", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        } as HeadersInit,
+      });
 
-    if (response.ok) {
-      setStatus("✅ Mensaje enviado correctamente.");
-      form.reset();
-    } else {
+      if (response.ok) {
+        setStatus("✅ Mensaje enviado correctamente.");
+        form.reset();
+      } else {
+        setStatus("❌ Ocurrió un error al enviar el mensaje.");
+      }
+    } catch (error) {
       setStatus("❌ Ocurrió un error al enviar el mensaje.");
+      console.error(error);
     }
   };
 
   return (
     <LocationContactContainer>
       <FormContainer>
-        {/* <h2>Contacto</h2> */}
         <ContactForm onSubmit={handleSubmit}>
           <Input type="text" name="name" placeholder="Nombre" required />
           <Input type="email" name="email" placeholder="Email" required />
@@ -46,7 +52,7 @@ function LocationContact() {
             placeholder="Teléfono"
             pattern="[0-9+ ]{6,}"
           />
-          <TextArea name="message" placeholder="Mensaje" rows="5" required />
+          <TextArea name="message" placeholder="Mensaje" rows={5} required />
           <SubmitButton type="submit">Enviar</SubmitButton>
         </ContactForm>
         {status && <p>{status}</p>}
