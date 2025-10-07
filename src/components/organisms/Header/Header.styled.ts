@@ -17,7 +17,7 @@ export const Navbar = styled.section`
     255,
     255,
     255,
-    0.15
+    0.3
   ); /* blanco muy suave y transparente */
   backdrop-filter: blur(6px); /* difumina el fondo para mejorar legibilidad */
 
@@ -84,13 +84,13 @@ export const SubMenu = styled.ul<SubMenuProps>`
   list-style: none;
   width: 100%;
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: 0;
   background-color: rgba(
     255,
     255,
     255,
-    0.15
+    0.3
   ); /* blanco muy suave y transparente */
   backdrop-filter: blur(6px);
   padding: 10px 0;
@@ -410,11 +410,15 @@ export const CitaContainer = styled.a`
   }
 `;
 
-export const SubMenuMobile = styled.div`
+export const SubMenuMobile = styled.div<{ open?: boolean }>`
   display: flex;
   flex-direction: column;
   padding-left: 20px;
   margin-bottom: 10px;
+  overflow: hidden;
+  max-height: ${({ open }) => (open ? "500px" : "0")};
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  transition: max-height 0.8s ease, opacity 0.7s ease;
   a {
     font-size: 14px;
     color: #ddd;
@@ -425,4 +429,16 @@ export const SubMenuMobile = styled.div`
   a:hover {
     color: #fff;
   }
+`;
+
+export const MobileButtonNav = styled.button`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 10px;
+  font-weight: 700;
 `;

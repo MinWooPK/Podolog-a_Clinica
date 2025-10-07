@@ -22,6 +22,7 @@ import {
   DoctoraliaImage,
   CitaContainer,
   SubMenuMobile,
+  MobileButtonNav,
 } from "./Header.styled";
 
 import { GoChevronLeft } from "react-icons/go";
@@ -176,16 +177,19 @@ const Header = () => {
             <DoctoraliaImage src={Doctoralia} /> Pedir cita
           </CitaContainer>
         )}
-        <NavBlack className="nav-black" visiblenav={navVisible}>
-          <NavRed className="nav-red" visiblenav={navVisible}>
-            <Logo href="/">
-              <LogoImage src={LogoImgSrc} width="60px" height="60px" />
-            </Logo>
-            <LogoContainerText>
-              <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
-              <LogoContainerSecondP>Rebeca Saludes Llamas</LogoContainerSecondP>
-            </LogoContainerText>
-            {/* <>
+        {!isDesktop && (
+          <NavBlack className="nav-black" visiblenav={navVisible}>
+            <NavRed className="nav-red" visiblenav={navVisible}>
+              <Logo href="/">
+                <LogoImage src={LogoImgSrc} width="60px" height="60px" />
+              </Logo>
+              <LogoContainerText>
+                <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
+                <LogoContainerSecondP>
+                  Rebeca Saludes Llamas
+                </LogoContainerSecondP>
+              </LogoContainerText>
+              {/* <>
               <SideBarTitle>Información Contacto</SideBarTitle>
               <IconCircle>📞</IconCircle>
               <IconDescription>+34 623 56 56 14</IconDescription>
@@ -195,44 +199,29 @@ const Header = () => {
               <IconDescription>Gipuzkoa - Euskadi</IconDescription>
             </> */}
 
-            <MobileUlDiv>
-              <StieMenuLi>
-                <StieMenuHref href="/">Inicio</StieMenuHref>
-              </StieMenuLi>
+              <MobileUlDiv>
+                <StieMenuLi>
+                  <StieMenuHref href="/">Inicio</StieMenuHref>
+                </StieMenuLi>
 
-              {/* Clínica de Podología */}
-              <StieMenuLi>
-                <button
-                  onClick={() => toggleSubMenu("podologia")}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    width: "100%",
-                    background: "none",
-                    border: "none",
-                    fontSize: "16px",
-                    padding: "10px 10px",
-                    color: "white",
-                    fontWeight: "700",
-                  }}
-                >
-                  Clínica de podología
-                  <Arrow open={openMenu === "podologia"}>
-                    <GoChevronLeft
-                      style={{
-                        transform:
-                          openMenu === "podologia"
-                            ? "rotate(-90deg)"
-                            : "rotate(0deg)",
-                        transition: "transform 0.3s ease",
-                      }}
-                    />
-                  </Arrow>
-                </button>
+                {/* Clínica de Podología */}
+                <StieMenuLi>
+                  <MobileButtonNav onClick={() => toggleSubMenu("podologia")}>
+                    Clínica de podología
+                    <Arrow open={openMenu === "podologia"}>
+                      <GoChevronLeft
+                        style={{
+                          transform:
+                            openMenu === "podologia"
+                              ? "rotate(0deg)"
+                              : "rotate(0deg)",
+                          transition: "transform 0.3s ease",
+                        }}
+                      />
+                    </Arrow>
+                  </MobileButtonNav>
 
-                {openMenu === "podologia" && (
-                  <SubMenuMobile>
+                  <SubMenuMobile open={openMenu === "podologia"}>
                     <StieMenuHref href="/podologia/General">
                       Podología General
                     </StieMenuHref>
@@ -252,42 +241,28 @@ const Header = () => {
                       Estudio biomecánica
                     </StieMenuHref>
                   </SubMenuMobile>
-                )}
-              </StieMenuLi>
+                </StieMenuLi>
 
-              {/* Antropología */}
-              <StieMenuLi>
-                <button
-                  onClick={() => toggleSubMenu("antropologia")}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    width: "100%",
-                    background: "none",
-                    border: "none",
-                    color: "white",
-                    fontSize: "16px",
-                    padding: "10px 10px",
-                    fontWeight: "700",
-                  }}
-                >
-                  Antropología
-                  <Arrow open={openMenu === "antropologia"}>
-                    <GoChevronLeft
-                      style={{
-                        transform:
-                          openMenu === "antropologia"
-                            ? "rotate(-90deg)"
-                            : "rotate(0deg)",
-                        transition: "transform 0.3s ease",
-                      }}
-                    />
-                  </Arrow>
-                </button>
+                {/* Antropología */}
+                <StieMenuLi>
+                  <MobileButtonNav
+                    onClick={() => toggleSubMenu("antropologia")}
+                  >
+                    Antropología
+                    <Arrow open={openMenu === "antropologia"}>
+                      <GoChevronLeft
+                        style={{
+                          transform:
+                            openMenu === "antropologia"
+                              ? "rotate(0deg)"
+                              : "rotate(0deg)",
+                          transition: "transform 0.3s ease",
+                        }}
+                      />
+                    </Arrow>
+                  </MobileButtonNav>
 
-                {openMenu === "antropologia" && (
-                  <SubMenuMobile>
+                  <SubMenuMobile open={openMenu === "antropologia"}>
                     <StieMenuHref href="/antropologia/Cultura">
                       Clínica y cultura
                     </StieMenuHref>
@@ -298,23 +273,23 @@ const Header = () => {
                       Talleres
                     </StieMenuHref>
                   </SubMenuMobile>
-                )}
-              </StieMenuLi>
+                </StieMenuLi>
 
-              <StieMenuLi>
-                <StieMenuHref href="/Tariffs">Sobre mí</StieMenuHref>
-              </StieMenuLi>
+                <StieMenuLi>
+                  <StieMenuHref href="/Tariffs">Sobre mí</StieMenuHref>
+                </StieMenuLi>
 
-              <StieMenuLi>
-                <StieMenuHref href="/Contact">Contacto</StieMenuHref>
-              </StieMenuLi>
-            </MobileUlDiv>
+                <StieMenuLi>
+                  <StieMenuHref href="/Contact">Contacto</StieMenuHref>
+                </StieMenuLi>
+              </MobileUlDiv>
 
-            <CopyRightDescription>
-              © 2025 MinWoo Park Kim <br /> - All Rights Reserved.
-            </CopyRightDescription>
-          </NavRed>
-        </NavBlack>
+              <CopyRightDescription>
+                © 2025 MinWoo Park Kim <br /> - All Rights Reserved.
+              </CopyRightDescription>
+            </NavRed>
+          </NavBlack>
+        )}
       </ContainerNavbar>
     </Navbar>
   );
