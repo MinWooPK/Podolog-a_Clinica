@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "baseUrl": "src",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@atoms/*": ["components/atoms/*"],
+      "@molecules/*": ["components/molecules/*"],
+      "@organisms/*": ["components/organisms/*"],
+      "@templates/*": ["components/templates/*"],
+      "@pages/*": ["components/pages/*"],
+      "@layouts/*": ["layouts/*"],
+      "@context/*": ["context/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@config/*": ["config/*"]
+    }
+  },
+  "include": ["src"]
+}
