@@ -3,7 +3,8 @@ import Button from "@atoms/Button";
 import { ContainerVideo, Title, Description } from "./Home.styles";
 import BackgroundVideo from "@assets/video/HomeMain.mp4";
 import { Container } from "@pages/AboutMe/AboutMe.styles";
-import LocationContact from "@molecules/LocationContact";
+import ReviewHome from "@organisms/ReviewHome";
+import LocationContact from "@organisms/LocationContact";
 
 const Home: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
       <div>Clínica Antropologica</div>
       <div>Antropología</div>
       <div>Sobre mi</div>
-      <div>Reseña</div>
+      <ReviewHome />
       <LocationContact />
     </>
   );
