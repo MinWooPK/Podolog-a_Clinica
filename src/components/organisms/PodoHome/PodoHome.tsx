@@ -1,5 +1,3 @@
-import { FaStar } from "react-icons/fa";
-import DoctorialiaIcon from "@assets/icons/doctoralia.png";
 import RebeDoct from "@assets/img/rebe.jpg";
 
 import {
@@ -14,12 +12,12 @@ import {
 } from "./PodoHome.style";
 
 // === MAIN COMPONENT ===
-interface CardReviewProps {
+interface PodoHomeProps {
   name: string;
   description: string;
 }
 
-export default function PodoHome({ name, description }: CardReviewProps) {
+export default function PodoHome({ name, description }: PodoHomeProps) {
   return (
     <Container>
       <LeftContent>
