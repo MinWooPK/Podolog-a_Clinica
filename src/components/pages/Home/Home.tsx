@@ -5,22 +5,12 @@ import BackgroundVideo from "@assets/video/HomeMain.mp4";
 import { Container } from "@pages/AboutMe/AboutMe.styles";
 import ReviewHome from "@organisms/ReviewHome";
 import LocationContact from "@organisms/LocationContact";
+import PodoHome from "@organisms/PodoHome";
 
 const Home: React.FC = () => {
   return (
     <>
-      <Container>
-        <ContainerVideo>
-          {/* <Title>Bienvenido 👋</Title> */}
-          <Description autoPlay loop muted>
-            <source src={BackgroundVideo} type="video/mp4" />
-            Tu navegador no soporta videos.
-          </Description>
-        </ContainerVideo>
-      </Container>
-      <div>Clínica Antropologica</div>
-      <div>Antropología</div>
-      <div>Sobre mi</div>
+      <PodoHome name={""} description={""} />
       <ReviewHome />
       <LocationContact />
     </>
@@ -28,3 +18,12 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+//      <Container>
+//   <ContainerVideo>
+//     {/* <Title>Bienvenido 👋</Title> */}
+//     <Description autoPlay loop muted>
+//       <source src={BackgroundVideo} type="video/mp4" />
+//       Tu navegador no soporta videos.
+//     </Description>
+//   </ContainerVideo>
+// </Container>
