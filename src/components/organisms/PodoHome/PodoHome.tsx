@@ -1,5 +1,4 @@
-import RebeDoct from "@assets/img/rebe.jpg";
-
+import RebeDoct from "@assets/icons/rebe.jpg";
 import {
   Btn,
   ButtonGroup,
