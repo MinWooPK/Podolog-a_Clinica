@@ -5,20 +5,12 @@ import RebeDoct from "@assets/img/rebe.jpg";
 import {
   Btn,
   ButtonGroup,
-  Card,
   Container,
-  DefinitionCard,
   Description,
-  DoctoraliaImage,
-  FlexHeader,
-  HeaderCard,
   ImageWrapper,
   LeftContent,
   SideImage,
-  Subtitle,
-  SubTitleCard,
   Title,
-  TitleCard,
 } from "./PodoHome.style";
 
 // === MAIN COMPONENT ===
