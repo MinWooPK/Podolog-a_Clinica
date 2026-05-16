@@ -41,7 +41,7 @@ const MENU = [
       { label: "Podología General", href: "/podologia/general" },
       { label: "Podología Deportiva", href: "/podologia/deportiva" },
       { label: "Podología Infantil", href: "/podologia/infantil" },
-      { label: "Quiropodia", href: "/podologia/quiropodia" },
+      { label: "Quiropodología", href: "/podologia/quiropodologia" },
       { label: "Cirugía Ungueal", href: "/podologia/nails" },
       { label: "Ortonixia", href: "/podologia/ortonixia" },
       { label: "Estudio Biomecánico", href: "/podologia/estudio_biomecanico" },

@@ -48,9 +48,9 @@ const AboutMe: React.FC = () => {
 
             <Paragraph>
               En <strong>2015</strong>, amplié mi formación en{" "}
-              <u>Biología y la Antropología</u>, iniciando mi carrera
-              investigadora en <strong>Antropología de la Salud</strong> en la
-              Universidad Autónoma de Madrid, en convergencia con la orientación{" "}
+              <u>Biología y Antropología</u>, iniciando mi carrera investigadora
+              en <strong>Antropología de la Salud</strong> en la Universidad
+              Autónoma de Madrid, en convergencia con la orientación del{" "}
               <u>Psicoanálisis Lacaniano</u>.
             </Paragraph>
           </Section>
