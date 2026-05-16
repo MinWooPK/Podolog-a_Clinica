@@ -26,149 +26,167 @@ import {
 } from "./Header.styled";
 
 import { GoChevronLeft } from "react-icons/go";
-
 import LogoImgSrc from "@assets/icons/SoloLogo.png";
 import Doctoralia from "@assets/icons/doctoralia.png";
+
 import { useEffect, useRef, useState } from "react";
 
+/* ---------------- MENU CONFIG ---------------- */
+
+const MENU = [
+  {
+    key: "podologia",
+    label: "Clínica de podología",
+    items: [
+      { label: "Podología General", href: "/podologia/general" },
+      { label: "Podología Deportiva", href: "/podologia/deportiva" },
+      { label: "Podología Infantil", href: "/podologia/infantil" },
+      { label: "Quiropodia", href: "/podologia/quiropodia" },
+      { label: "Cirugía Ungueal", href: "/podologia/nails" },
+      { label: "Ortonixia", href: "/podologia/ortonixia" },
+      { label: "Estudio Biomecánico", href: "/podologia/estudio_biomecanico" },
+      {
+        label: "Plantillas Personalizadas",
+        href: "/podologia/plantillas_3D",
+      },
+    ],
+  },
+  {
+    key: "antropologia",
+    label: "Antropología",
+    items: [
+      { label: "Clínica y cultura", href: "/antropologia/Cultura" },
+      {
+        label: "Formación interdisciplinar",
+        href: "/antropologia/Interdisciplinar",
+      },
+      { label: "Talleres", href: "/antropologia/Talleres" },
+    ],
+  },
+];
+
 const Header = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const [navVisible, setNavVisible] = useState<boolean>(true);
-  const [isDesktop, setIsDestkop] = useState(window.innerWidth > 1020);
+  /* ---------------- STATE ---------------- */
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  // 🔥 FIX: null inicial para evitar flash
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
+
+  const [scrolled, setScrolled] = useState(false);
 
   const menuRef = useRef<HTMLUListElement | null>(null);
 
+  /* ---------------- EFFECTS ---------------- */
   useEffect(() => {
-    const handleResize = () => {
-      setIsDestkop(window.innerWidth > 1020);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1020);
+    };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpenMenu(null);
+      }
+    };
+
+    //  IMPORTANTE: inicialización inmediata
+    handleResize();
+
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
-  // // 👇 Maneja clics fuera del menú para cerrar submenús
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-  //       setOpenMenu(null);
-  //     }
-  //   };
+  /* ---------------- HANDLERS ---------------- */
 
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
+  const toggleMobileMenu = () => setIsMenuOpen((v) => !v);
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-    setNavVisible(!navVisible);
+  const toggleSubMenu = (key: string) => {
+    setOpenMenu((prev) => (prev === key ? null : key));
   };
 
-  const toggleSubMenu = (menuName: string) => {
-    setOpenMenu(openMenu === menuName ? null : menuName);
-  };
+  /* ---------------- RENDER HELPERS ---------------- */
+
+  const renderDesktopSubMenu = (menu: any) => (
+    <SubMenu open={openMenu === menu.key}>
+      <SubMenuItem>
+        {menu.items.map((item: any) => (
+          <StieMenuHref key={item.href} href={item.href}>
+            {item.label}
+          </StieMenuHref>
+        ))}
+      </SubMenuItem>
+    </SubMenu>
+  );
+
+  const renderMobileSubMenu = (menu: any) => (
+    <SubMenuMobile open={openMenu === menu.key}>
+      {menu.items.map((item: any) => (
+        <StieMenuHref key={item.href} href={item.href}>
+          {item.label}
+        </StieMenuHref>
+      ))}
+    </SubMenuMobile>
+  );
+
+  /* ---------------- FIX FINAL ANTI-FLASH ---------------- */
+
+  if (isDesktop === null) return null;
+
+  /* ---------------- UI ---------------- */
 
   return (
     <Navbar>
-      <ContainerNavbar>
+      <ContainerNavbar $scrolled={scrolled}>
+        {/* LOGO */}
         <LogoContainer>
           <Logo href="/">
             <LogoImage src={LogoImgSrc} alt="Logo" />
             <LogoContainerText>
               <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
-              <LogoContainerSecondP>Rebeca Saludes Llamas</LogoContainerSecondP>
+              <LogoContainerSecondP>
+                Dra. Rebeca Saludes Llamas
+              </LogoContainerSecondP>
             </LogoContainerText>
           </Logo>
         </LogoContainer>
-        {/* 🔽 referencia al SiteMenu */}
+
+        {/* DESKTOP MENU */}
         <SiteMenu ref={menuRef}>
-          {/* Clínica */}
-          <StieMenuLi onMouseEnter={() => setOpenMenu("podologia")}>
-            <StieMenuHref>
-              Clínica de podología
-              <Arrow open={openMenu === "podologia"}>
-                <GoChevronLeft />
-              </Arrow>
-            </StieMenuHref>
-            <SubMenu
-              open={openMenu === "podologia"}
-              onMouseEnter={() => setOpenMenu("podologia")}
-              onMouseLeave={() => setOpenMenu(null)}
-            >
-              <SubMenuItem>
-                <StieMenuHref href="/podologia/General">
-                  Podología General
-                </StieMenuHref>
-                <StieMenuHref href="/podologia/Deportiva">
-                  Podología Deportiva
-                </StieMenuHref>
-                <StieMenuHref href="/podologia/Infantil">
-                  Podología Infantil
-                </StieMenuHref>
-                <StieMenuHref href="/podologia/Quiropodia">
-                  Quiropodia
-                </StieMenuHref>
-                <StieMenuHref href="/podologia/nails">
-                  Cirugía de uña
-                </StieMenuHref>
-                <StieMenuHref href="/podologia/biomecanica">
-                  Estudio biomecánica
-                </StieMenuHref>
-              </SubMenuItem>
-            </SubMenu>
-          </StieMenuLi>
+          {MENU.map((menu) => (
+            <StieMenuLi key={menu.key}>
+              <StieMenuHref onClick={() => toggleSubMenu(menu.key)}>
+                {menu.label}
+                <Arrow open={openMenu === menu.key}>
+                  <GoChevronLeft />
+                </Arrow>
+              </StieMenuHref>
 
-          {/* Antropología */}
+              {renderDesktopSubMenu(menu)}
+            </StieMenuLi>
+          ))}
+
           <StieMenuLi>
-            <StieMenuHref onMouseEnter={() => setOpenMenu("antropologia")}>
-              Antropología
-              <Arrow open={openMenu === "antropologia"}>
-                <GoChevronLeft />
-              </Arrow>
-            </StieMenuHref>
-            <SubMenu
-              open={openMenu === "antropologia"}
-              onMouseEnter={() => setOpenMenu("antropologia")}
-              onMouseLeave={() => setOpenMenu(null)}
-            >
-              <SubMenuItem>
-                <StieMenuHref
-                  href="/antropologia/Cultura"
-                  style={{ margin: "0px 10px" }}
-                >
-                  Clinica y cultura
-                </StieMenuHref>{" "}
-                <StieMenuHref
-                  href="/antropologia/Interdisciplinar"
-                  style={{ margin: "0px 10px" }}
-                >
-                  Formación interdistiplinar
-                </StieMenuHref>{" "}
-                <StieMenuHref href="/antropologia/Talleres">
-                  Talleres
-                </StieMenuHref>{" "}
-              </SubMenuItem>
-            </SubMenu>
+            <StieMenuHref href="/DraRebeca">Sobre mí</StieMenuHref>
           </StieMenuLi>
 
-          <StieMenuLi onMouseEnter={() => setOpenMenu(null)}>
-            <StieMenuHref href="/Tariffs">Sobre mí</StieMenuHref>
-          </StieMenuLi>
-          <StieMenuLi onMouseEnter={() => setOpenMenu(null)}>
+          <StieMenuLi>
             <StieMenuHref href="/Contact">Contacto</StieMenuHref>
           </StieMenuLi>
         </SiteMenu>
-        {!isDesktop ? (
-          <HamburgerMenu
-            className={isMenuOpen ? "open" : ""}
-            onClick={toggleMenu}
-          >
-            <Bar />
-            <Bar />
-            <Bar />
-          </HamburgerMenu>
-        ) : (
+
+        {/* CTA / HAMBURGER */}
+        {isDesktop ? (
           <CitaContainer
             href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
             target="_blank"
@@ -176,28 +194,32 @@ const Header = () => {
           >
             <DoctoraliaImage src={Doctoralia} /> Pedir cita
           </CitaContainer>
+        ) : (
+          <HamburgerMenu
+            className={isMenuOpen ? "open" : ""}
+            onClick={toggleMobileMenu}
+          >
+            <Bar />
+            <Bar />
+            <Bar />
+          </HamburgerMenu>
         )}
+
+        {/* MOBILE MENU */}
         {!isDesktop && (
-          <NavBlack className="nav-black" visiblenav={navVisible}>
-            <NavRed className="nav-red" visiblenav={navVisible}>
+          <NavBlack visiblenav={isMenuOpen}>
+            <NavRed visiblenav={isMenuOpen}>
               <Logo href="/">
                 <LogoImage src={LogoImgSrc} width="160px" height="160px" />
               </Logo>
+
               <LogoContainerText>
                 <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
                 <LogoContainerSecondP>
                   Rebeca Saludes Llamas
                 </LogoContainerSecondP>
               </LogoContainerText>
-              {/* <>
-              <SideBarTitle>Información Contacto</SideBarTitle>
-              <IconCircle>📞</IconCircle>
-              <IconDescription>+34 623 56 56 14</IconDescription>
-              <IconCircle>📧</IconCircle>
-              <IconDescription>juancarlos.blazquezv@gmail.com</IconDescription>
-              <IconCircle>📍</IconCircle>
-              <IconDescription>Gipuzkoa - Euskadi</IconDescription>
-            </> */}
+
               <CitaContainer
                 href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
                 target="_blank"
@@ -205,84 +227,27 @@ const Header = () => {
               >
                 <DoctoraliaImage src={Doctoralia} /> Pedir cita
               </CitaContainer>
+
               <MobileUlDiv>
                 <StieMenuLi>
                   <StieMenuHref href="/">Inicio</StieMenuHref>
                 </StieMenuLi>
 
-                {/* Clínica de Podología */}
-                <StieMenuLi>
-                  <MobileButtonNav onClick={() => toggleSubMenu("podologia")}>
-                    Clínica de podología
-                    <Arrow open={openMenu === "podologia"}>
-                      <GoChevronLeft
-                        style={{
-                          transform:
-                            openMenu === "podologia"
-                              ? "rotate(0deg)"
-                              : "rotate(0deg)",
-                          transition: "transform 0.3s ease",
-                        }}
-                      />
-                    </Arrow>
-                  </MobileButtonNav>
+                {MENU.map((menu) => (
+                  <StieMenuLi key={menu.key}>
+                    <MobileButtonNav onClick={() => toggleSubMenu(menu.key)}>
+                      {menu.label}
+                      <Arrow open={openMenu === menu.key}>
+                        <GoChevronLeft />
+                      </Arrow>
+                    </MobileButtonNav>
 
-                  <SubMenuMobile open={openMenu === "podologia"}>
-                    <StieMenuHref href="/podologia/General">
-                      Podología General
-                    </StieMenuHref>
-                    <StieMenuHref href="/podologia/Deportiva">
-                      Podología Deportiva
-                    </StieMenuHref>
-                    <StieMenuHref href="/podologia/Infantil">
-                      Podología Infantil
-                    </StieMenuHref>
-                    <StieMenuHref href="/podologia/Quiropodia">
-                      Quiropodia
-                    </StieMenuHref>
-                    <StieMenuHref href="/podologia/nails">
-                      Cirugía de uña
-                    </StieMenuHref>
-                    <StieMenuHref href="/podologia/biomecanica">
-                      Estudio biomecánica
-                    </StieMenuHref>
-                  </SubMenuMobile>
-                </StieMenuLi>
-
-                {/* Antropología */}
-                <StieMenuLi>
-                  <MobileButtonNav
-                    onClick={() => toggleSubMenu("antropologia")}
-                  >
-                    Antropología
-                    <Arrow open={openMenu === "antropologia"}>
-                      <GoChevronLeft
-                        style={{
-                          transform:
-                            openMenu === "antropologia"
-                              ? "rotate(0deg)"
-                              : "rotate(0deg)",
-                          transition: "transform 0.3s ease",
-                        }}
-                      />
-                    </Arrow>
-                  </MobileButtonNav>
-
-                  <SubMenuMobile open={openMenu === "antropologia"}>
-                    <StieMenuHref href="/antropologia/Cultura">
-                      Clínica y cultura
-                    </StieMenuHref>
-                    <StieMenuHref href="/antropologia/Interdisciplinar">
-                      Formación interdisciplinar
-                    </StieMenuHref>
-                    <StieMenuHref href="/antropologia/Talleres">
-                      Talleres
-                    </StieMenuHref>
-                  </SubMenuMobile>
-                </StieMenuLi>
+                    {renderMobileSubMenu(menu)}
+                  </StieMenuLi>
+                ))}
 
                 <StieMenuLi>
-                  <StieMenuHref href="/Tariffs">Sobre mí</StieMenuHref>
+                  <StieMenuHref href="/DraRebeca">Sobre mí</StieMenuHref>
                 </StieMenuLi>
 
                 <StieMenuLi>
@@ -291,7 +256,7 @@ const Header = () => {
               </MobileUlDiv>
 
               <CopyRightDescription>
-                © 2025 MinWoo Park Kim <br /> - All Rights Reserved.
+                © 2025 Tramontana Salud - All Rights Reserved.
               </CopyRightDescription>
             </NavRed>
           </NavBlack>

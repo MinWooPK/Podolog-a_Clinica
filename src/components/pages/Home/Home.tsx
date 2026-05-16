@@ -18,12 +18,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-//      <Container>
-//   <ContainerVideo>
-//     {/* <Title>Bienvenido 👋</Title> */}
-//     <Description autoPlay loop muted>
-//       <source src={BackgroundVideo} type="video/mp4" />
-//       Tu navegador no soporta videos.
-//     </Description>
-//   </ContainerVideo>
-// </Container>

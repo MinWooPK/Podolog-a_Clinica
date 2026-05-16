@@ -40,12 +40,22 @@ export const LogoImage = styled.img<LogoImageProps>`
   height: ${({ height }) => height || "40px"};
 `;
 
-export const ContainerNavbar = styled.div`
+export const ContainerNavbar = styled.div<{ $scrolled: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 10px 20px;
+
+  background: ${({ $scrolled }) =>
+    $scrolled ? "rgba(255, 255, 255, 0.85)" : "transparent"};
+
+  backdrop-filter: ${({ $scrolled }) => ($scrolled ? "blur(10px)" : "none")};
+
+  box-shadow: ${({ $scrolled }) =>
+    $scrolled ? "0 4px 20px rgba(0,0,0,0.08)" : "none"};
+
+  transition: all 0.3s ease;
   @media (min-width: 768px) {
     flex-wrap: nowrap;
   }
@@ -86,19 +96,27 @@ export const SubMenu = styled.ul<SubMenuProps>`
   position: absolute;
   top: 80px;
   left: 0;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.3
-  ); /* blanco muy suave y transparente */
+
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
+
   padding: 10px 0;
   margin: 0;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  display: ${({ open }) => (open ? "block" : "none")};
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+
   z-index: 100;
+
+  display: block;
+
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  transform: ${({ open }) => (open ? "translateY(0px)" : "translateY(-10px)")};
+
+  pointer-events: ${({ open }) => (open ? "auto" : "none")};
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 `;
 
 interface ArrowProps {
@@ -117,7 +135,7 @@ export const SubMenuItem = styled.li`
 
   & > a {
     text-decoration: none;
-    color: white;
+    color: ${({ theme }) => theme.colors.principal.secondary};
   }
 
   /* &:hover {
@@ -157,6 +175,7 @@ export const StieMenuHref = styled.a`
   overflow: hidden;
   display: inline-block;
   white-space: normal;
+  color: ${({ theme }) => theme.colors.principal.secondary};
   &:hover {
     color: #ffc61a;
   }
@@ -419,7 +438,9 @@ export const SubMenuMobile = styled.div<{ open?: boolean }>`
   overflow: hidden;
   max-height: ${({ open }) => (open ? "500px" : "0")};
   opacity: ${({ open }) => (open ? "1" : "0")};
-  transition: max-height 0.8s ease, opacity 0.7s ease;
+  transition:
+    max-height 0.8s ease,
+    opacity 0.7s ease;
   a {
     font-size: 14px;
     color: #ddd;

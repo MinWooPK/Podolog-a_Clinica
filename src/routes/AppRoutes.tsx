@@ -7,7 +7,7 @@ import MainLayout from "@layouts/MainLayout";
 import { ThemeProvider } from "styled-components";
 // import { defaultTheme } from "../config/defaultTheme";
 import defaultTheme from "@config/defaultTheme";
-
+import NotFound from "@pages/NotFound";
 // Más páginas importadas aquí
 // import About from "@pages/About";
 // import Contact from "@pages/Contact";
@@ -17,14 +17,17 @@ const AppRoutes: React.FC = () => {
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <Routes>
-          {" "}
+          {/* Layout principal */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="/contact" element={<ContactMe />} />{" "}
+            <Route path="/DraRebeca" element={<AboutMe />} />
+            <Route path="/contact" element={<ContactMe />} />
+
+            {/*  NOT FOUND (fallback) */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-      </BrowserRouter>{" "}
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

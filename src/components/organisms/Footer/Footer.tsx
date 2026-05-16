@@ -19,7 +19,7 @@ function Footer() {
       <FooterTitleContaienr>
         <LogoImage src={LogoImgSrc} width="40px" height="40px" />
         <FooterTitle>Tramontana Salud</FooterTitle>
-        <FooterSubTitle>Rebeca Saludes Llamas</FooterSubTitle>
+        <FooterSubTitle>Dra. Rebeca Saludes Llamas</FooterSubTitle>
       </FooterTitleContaienr>
       {/* <FooterMiddle>
         <div>Visitanos</div>

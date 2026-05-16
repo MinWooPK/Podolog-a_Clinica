@@ -20,11 +20,13 @@ export default function PodoHome({ name, description }: PodoHomeProps) {
   return (
     <Container>
       <LeftContent>
-        <Title>Especialistas en Sonrisas</Title>
-        <Description>Clínica de Ortodoncia en Pozuelo</Description>
+        <Title>Tus pies en buenas manos.</Title>
+        <Description>Clínica de podlogía en Palma de Mallorca</Description>
         <Description>
-          Ayudamos a nuestros pacientes para que luzcan su mejor sonrisa,
-          combinando atención personalizada y tecnología vanguardia.
+          Unidad de Podología Clínica y Biomecánica Avanzada. Especialista en el
+          diagnóstico y tratamiento integral de las patologías de pie. Ayudamos
+          a nuestros pacientes a una recuperación funcional aplicando protocolos
+          y tratamientos médicos especializados.
         </Description>
 
         <ButtonGroup>
