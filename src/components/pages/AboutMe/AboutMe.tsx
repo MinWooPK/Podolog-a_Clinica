@@ -47,11 +47,10 @@ const AboutMe: React.FC = () => {
             </Paragraph>
 
             <Paragraph>
-              En <strong>2015</strong>, amplié mi formación hacia la{" "}
+              En <strong>2015</strong>, amplié mi formación en{" "}
               <u>Biología y la Antropología</u>, iniciando mi carrera
-              investigadora en
-              <strong>Antropología de la Salud</strong> en la Universidad
-              Autónoma de Madrid, en convergencia con el{" "}
+              investigadora en <strong>Antropología de la Salud</strong> en la
+              Universidad Autónoma de Madrid, en convergencia con la orientación{" "}
               <u>Psicoanálisis Lacaniano</u>.
             </Paragraph>
           </Section>
@@ -78,7 +77,8 @@ const AboutMe: React.FC = () => {
               <strong>Sociedad Española de Medicina del Deporte (SEMED)</strong>
               <br />•{" "}
               <strong>Premio a la Mejor Exposición Científica (2024/25)</strong>
-              <br />• Investigadora activa en <strong>ResearchGate</strong>
+              <br />• Perfil investigador y publicaciones académicas en{" "}
+              <strong>ResearchGate</strong>
             </Paragraph>
           </Section>
 
