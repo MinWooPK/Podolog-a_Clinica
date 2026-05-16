@@ -1,7 +1,6 @@
 import React from "react";
 
-import RebeAboutMe from "@assets/img/RebeAboutMe.JPG";
-
+import RebeAboutMe from "@assets/img/RebeAboutMe.jpg";
 import {
   Container,
   Card,
