@@ -297,3 +297,31 @@ export const CitaContainer = styled.a`
   border-radius: 15px;
   text-decoration: none;
 `;
+
+export const CopyRightDescription = styled.p`
+  color: #ffc61a;
+  font-size: 10px;
+  font-weight: 600;
+  margin: auto;
+  text-align: center;
+`;
+
+export const DoctoraliaImage = styled.img`
+  width: 25px;
+  height: 25px;
+`;
+
+export const SubMenuMobile = styled.div<{ open?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  overflow: hidden;
+  max-height: ${({ open }) => (open ? "500px" : "0")};
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  transition: all 0.3s ease;
+
+  a {
+    color: #ddd;
+    text-decoration: none;
+  }
+`;
