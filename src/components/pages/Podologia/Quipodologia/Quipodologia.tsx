@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  Title,
-  Description,
-  Eyebrow,
-  ContaienrFirst,
-} from "./Quipodologia.styles";
-import ImgPodoLogiaDeportiva from "@assets/img/PodologiaDeportiva.jpg";
 import PodologiaQuiopodologia from "@assets/img/PodologiaQuiopodologia.jpeg";
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
