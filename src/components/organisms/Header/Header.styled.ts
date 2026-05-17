@@ -47,8 +47,7 @@ export const ContainerNavbar = styled.div<{ $scrolled: boolean }>`
   width: 100%;
   padding: 10px 20px;
 
-  background: ${({ $scrolled }) =>
-    $scrolled ? "rgba(255, 255, 255, 0.85)" : "transparent"};
+  background: ${({ $scrolled }) => ($scrolled ? "#18595b" : "transparent")};
 
   backdrop-filter: ${({ $scrolled }) => ($scrolled ? "blur(10px)" : "none")};
 
@@ -60,10 +59,13 @@ export const ContainerNavbar = styled.div<{ $scrolled: boolean }>`
     flex-wrap: nowrap;
   }
 `;
-export const LogoContainer = styled.div`
+export const LogoContainer = styled.div<{ $scrolled: boolean }>`
   display: flex;
   gap: 2rem;
+  transform: ${({ $scrolled }) => ($scrolled ? "scale(1.05)" : "scale(1)")};
+  transition: transform 0.2s ease;
 `;
+
 export const LogoImg = styled.img`
   width: 205.5px;
   height: 75px;
@@ -164,8 +166,7 @@ export const StieMenuLi = styled.li`
   transition: all 0.35s ease-in-out;
 `;
 
-export const StieMenuHref = styled.a`
-  color: #fff;
+export const StieMenuHref = styled.a<{ $scrolled: boolean }>`
   font-size: 14px;
   letter-spacing: 0;
   padding: 10px 10px;
@@ -175,7 +176,8 @@ export const StieMenuHref = styled.a`
   overflow: hidden;
   display: inline-block;
   white-space: normal;
-  color: ${({ theme }) => theme.colors.principal.secondary};
+  color: ${({ $scrolled, theme }) =>
+    $scrolled ? "#fff  " : theme.colors.principal.secondary};
   &:hover {
     color: #ffc61a;
   }

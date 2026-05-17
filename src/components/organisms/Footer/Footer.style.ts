@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterPodologia = styled.footer`
-  background: linear-gradient(to bottom, #18595b, #3cbbbb);
+  background: #18595b;
   display: flex;
   flex-direction: column;
   justify-content: center;

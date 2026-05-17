@@ -38,7 +38,7 @@ const MENU = [
     key: "podologia",
     label: "Clínica de podología",
     items: [
-      { label: "Podología General", href: "/podologia/general" },
+      { label: "Podología General", href: "/podologia" },
       { label: "Podología Deportiva", href: "/podologia/deportiva" },
       { label: "Podología Infantil", href: "/podologia/infantil" },
       { label: "Quiropodología", href: "/podologia/quiropodologia" },
@@ -149,7 +149,7 @@ const Header = () => {
     <Navbar>
       <ContainerNavbar $scrolled={scrolled}>
         {/* LOGO */}
-        <LogoContainer>
+        <LogoContainer $scrolled={scrolled}>
           <Logo href="/">
             <LogoImage src={LogoImgSrc} alt="Logo" />
             <LogoContainerText>
@@ -165,7 +165,10 @@ const Header = () => {
         <SiteMenu ref={menuRef}>
           {MENU.map((menu) => (
             <StieMenuLi key={menu.key}>
-              <StieMenuHref onClick={() => toggleSubMenu(menu.key)}>
+              <StieMenuHref
+                $scrolled={scrolled}
+                onClick={() => toggleSubMenu(menu.key)}
+              >
                 {menu.label}
                 <Arrow open={openMenu === menu.key}>
                   <GoChevronLeft />
@@ -177,11 +180,15 @@ const Header = () => {
           ))}
 
           <StieMenuLi>
-            <StieMenuHref href="/DraRebeca">Sobre mí</StieMenuHref>
+            <StieMenuHref $scrolled={scrolled} href="/DraRebeca">
+              Sobre mí
+            </StieMenuHref>
           </StieMenuLi>
 
           <StieMenuLi>
-            <StieMenuHref href="/Contact">Contacto</StieMenuHref>
+            <StieMenuHref $scrolled={scrolled} href="/Contact">
+              Contacto
+            </StieMenuHref>
           </StieMenuLi>
         </SiteMenu>
 
