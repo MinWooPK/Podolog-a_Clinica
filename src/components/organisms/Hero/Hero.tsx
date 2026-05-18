@@ -23,7 +23,7 @@ type HeroProps = {
 
   secondaryButton: {
     label: string;
-    href: string;
+    onClick?: () => void;
   };
 };
 
@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({
             {primaryButton.label}
           </PrimaryButton>
 
-          <SecondaryButton href={secondaryButton.href}>
+          <SecondaryButton onClick={secondaryButton.onClick}>
             {secondaryButton.label}
           </SecondaryButton>
         </ButtonGroup>

@@ -9,9 +9,11 @@ import {
   CardTitle,
   CardText,
   Badge,
+  Subtitle,
 } from "./WhatWeTreat.styles";
 
 type Treatment = {
+  id: string;
   title: string;
   description: string;
   category?: string;
@@ -22,20 +24,31 @@ type Treatment = {
 
 interface Props {
   title?: string;
+  subtitle?: string;
   items: Treatment[];
+  id?: string;
+  onCardClick?: (id: string) => void;
 }
 
 const WhatWeTreat: React.FC<Props> = ({
   title = "¿Qué tratamos en consulta?",
+  subtitle = "",
   items,
+  id,
+  onCardClick,
 }) => {
   return (
-    <Container>
+    <Container id={id}>
       <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
 
       <Grid>
-        {items.map((item, index) => (
-          <Card key={index}>
+        {items.map((item) => (
+          <Card
+            key={item.id}
+            onClick={() => onCardClick?.(item.id)}
+            style={{ cursor: "pointer" }}
+          >
             <IconWrapper
               style={{ background: item.bgColor, color: item.color }}
             >

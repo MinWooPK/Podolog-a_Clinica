@@ -29,7 +29,7 @@ export const Grid = styled.div`
   gap: 24px;
 
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1åfr);
   }
 
   @media (max-width: 640px) {
@@ -37,6 +37,19 @@ export const Grid = styled.div`
   }
 `;
 
+export const Subtitle = styled.p`
+  text-align: center;
+  font-size: 16px;
+  color: #64748b;
+  max-width: 700px;
+  margin: -40px auto 60px auto;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+`;
 export const Card = styled.div`
   background: #ffffff;
   border: 1px solid #e5e7eb;

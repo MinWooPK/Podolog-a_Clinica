@@ -40,7 +40,7 @@ export const LogoImage = styled.img<LogoImageProps>`
   height: ${({ height }) => height || "40px"};
 `;
 
-export const ContainerNavbar = styled.div<{ $scrolled: boolean }>`
+export const ContainerNavbar = styled.div<{ $scrolled?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,7 +59,7 @@ export const ContainerNavbar = styled.div<{ $scrolled: boolean }>`
     flex-wrap: nowrap;
   }
 `;
-export const LogoContainer = styled.div<{ $scrolled: boolean }>`
+export const LogoContainer = styled.div<{ $scrolled?: boolean }>`
   display: flex;
   gap: 2rem;
   transform: ${({ $scrolled }) => ($scrolled ? "scale(1.05)" : "scale(1)")};
@@ -166,7 +166,7 @@ export const StieMenuLi = styled.li`
   transition: all 0.35s ease-in-out;
 `;
 
-export const StieMenuHref = styled.a<{ $scrolled: boolean }>`
+export const StieMenuHref = styled.a<{ $scrolled?: boolean }>`
   font-size: 14px;
   letter-spacing: 0;
   padding: 10px 10px;

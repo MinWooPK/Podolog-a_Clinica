@@ -1,12 +1,19 @@
 import React from "react";
 
 import ImgPodoLogiaGeneral from "@assets/img/PodologiaGeneral.jpg";
+import ImgPodoLogiaGeneral2 from "@assets/img/PodologiaGeneral2.jpg";
+import ImgPodoLogiaGeneral3 from "@assets/img/PodologiaGeneral3.jpg";
+import ImgPodoLogiaGeneral4 from "@assets/img/PodologiaGeneral4.jpg";
+import ImgPodoLogiaGeneral5 from "@assets/img/PodologiaGeneral5.jpg";
+import ImgPodoLogiaGeneral6 from "@assets/img/PodologiaGeneral6.jpg";
+import ImgPodoLogiaGeneral7 from "@assets/img/PodologiaGeneral7.jpeg";
 import ImgFAQPodoLogiaGeneral from "@assets/img/FAQGeneral.jpg";
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { Activity, HeartPulse, Scissors, Shield } from "lucide-react";
 import FAQ from "@organisms/Faq/FAQ";
+import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
 
 const faqItems = [
   {
@@ -43,6 +50,7 @@ const faqItems = [
 
 const treatments = [
   {
+    id: "exploracion",
     title: "Exploración y diagnóstico",
     category: "Diagnóstico",
     description:
@@ -50,6 +58,7 @@ const treatments = [
     icon: <Activity />,
   },
   {
+    id: "infecciones",
     title: "Infecciones cutáneas",
     category: "Tratamiento",
     description:
@@ -57,6 +66,7 @@ const treatments = [
     icon: <Shield />,
   },
   {
+    id: "quiropodologia",
     title: "Quiropodología",
     category: "Cuidado básico",
     description:
@@ -64,24 +74,113 @@ const treatments = [
     icon: <Scissors />,
   },
   {
+    id: "ungueal",
     title: "Patología ungueal",
     category: "Tratamiento",
     description: "Uñas encarnadas, engrosadas o con hongos (onicomicosis).",
     icon: <HeartPulse />,
   },
   {
+    id: "piel",
     title: "Hidratación y salud de la piel",
     category: "Prevención",
     description: "Tratamiento de piel seca, grietas o sudoración excesiva.",
     icon: <Activity />,
   },
   {
+    id: "educacion",
     title: "Educación sanitaria",
     category: "Prevención",
     description: "Recomendaciones sobre cuidado del pie y calzado adecuado.",
     icon: <Shield />,
   },
 ];
+
+const treatmentsSub = [
+  {
+    id: "exploracion",
+    title: "Exploración y Diagnóstico",
+    description: [
+      "Evaluación clínica detallada para prevenir y detectar patologías de forma temprana.",
+      "Anamnesis y antecedentes médicos.",
+      "Evaluación de la morfología y movilidad articular.",
+      "Detección precoz de signos de alerta.",
+      "Diseño de un plan de salud personalizado.",
+    ],
+    image: ImgPodoLogiaGeneral2,
+  },
+  {
+    id: "infecciones",
+    title: "Infecciones Cutáneas",
+    description: [
+      "Tratamiento especializado de afecciones dérmicas e infecciones en el pie.",
+      "Eliminación de papilomas (verrugas plantares).",
+      "Tratamiento de micosis cutánea (hongos).",
+      "Control de dermatitis y eccemas.",
+      "Prevención de contagios y recidivas.",
+    ],
+    image: ImgPodoLogiaGeneral3,
+  },
+  {
+    id: "quiropodologia",
+    title: "Quiropodología",
+    description: [
+      "Cuidado clínico esencial para eliminar el dolor y mejorar el confort al caminar.",
+      "Eliminación de helomas y durezas.",
+      "Fresado terapéutico de talones.",
+      "Corte y fresado técnico de las uñas.",
+      "Tratamiento de hiperqueratosis por presión.",
+    ],
+    image: ImgPodoLogiaGeneral4,
+  },
+  {
+    id: "ungueal",
+    title: "Patología Ungueal",
+    description: [
+      "Soluciones integrales para las afecciones que afectan a la salud de las uñas.",
+      "Tratamiento de uña encarnada (onicocriptosis).",
+      "Abordaje de onicomicosis (hongos en uñas).",
+      "Reeducación de uñas engrosadas o deformadas.",
+      "Restauración de la estética y funcionalidad ungueal.",
+    ],
+    image: ImgPodoLogiaGeneral5,
+  },
+  {
+    id: "piel",
+    title: "Hidratación y Salud de la Piel",
+    description: [
+      "Protocolos de regeneración para mantener la integridad de la barrera cutánea.",
+      "Tratamiento profundo de la sequedad extrema.",
+      "Control de la hiperhidrosis (exceso de sudor).",
+      "Cuidado preventivo del Pie Diabético.",
+      "Prevención de grietas y lesiones dérmicas.",
+    ],
+    image: ImgPodoLogiaGeneral6,
+  },
+  {
+    id: "educacion",
+    title: "Educación Sanitaria",
+    description: [
+      "Asesoramiento profesional para el cuidado preventivo en el día a día.",
+      "Recomendaciones de calzado adecuado.",
+      "Pautas de higiene y secado correcto.",
+      "Instrucciones de autoexploración en casa.",
+      "Consejos para la prevención de patologías recurrentes.",
+    ],
+    image: ImgPodoLogiaGeneral7,
+  },
+];
+
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const General: React.FC = () => {
   return (
@@ -90,24 +189,30 @@ const General: React.FC = () => {
         backgroundImage={ImgPodoLogiaGeneral}
         title="Podología General"
         subtitle="Cuidado integral del pie"
-        description="En la consulta de podología general nos ocupamos de la salud de tus pies. A menudo, pequeñas molestias que ignoramos son señales de que algo necesita atención especializada para evitar complicaciones mayores.
-
-"
+        description="En la consulta de podología general nos ocupamos de la salud de tus pies. A menudo, pequeñas molestias que ignoramos son señales de que algo necesita atención especializada para evitar complicaciones mayores."
         primaryButton={{
           label: "Reservar cita",
           href: "/contacto",
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
-      ></Hero>{" "}
-      <WhatWeTreat items={treatments} />
+      />
+      <WhatWeTreat
+        id="what-we-treat"
+        subtitle="Cuidamos la salud integral de tus pies mediante diagnósticos precisos, tratamientos avanzados y una atención personalizada orientada a tu bienestar y movilidad."
+        items={treatments}
+        onCardClick={(id) => scrollToSection(id)}
+      />
+      <TreatmentSections items={treatmentsSub} />
+
       <FAQ
         items={faqItems}
         image={ImgFAQPodoLogiaGeneral}
         imageAlt="Consulta de podología"
       />
+
       <ReviewHome />
     </>
   );
