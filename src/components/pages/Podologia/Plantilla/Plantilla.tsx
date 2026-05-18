@@ -58,6 +58,16 @@ const specializedServices = [
     icon: <Footprints />,
   },
 ];
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const Plantilla: React.FC = () => {
   return (
@@ -82,11 +92,12 @@ const Plantilla: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
+        id="what-we-treat"
         items={specializedServices}
         title="Tecnología y Materiales de Vanguardia:
 

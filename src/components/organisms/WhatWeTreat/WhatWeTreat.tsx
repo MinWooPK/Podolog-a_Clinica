@@ -13,7 +13,6 @@ import {
 } from "./WhatWeTreat.styles";
 
 type Treatment = {
-  id: string;
   title: string;
   description: string;
   category?: string;

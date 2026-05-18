@@ -32,6 +32,17 @@ const specializedServices = [
   },
 ];
 
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const Nails: React.FC = () => {
   return (
     <>
@@ -54,11 +65,12 @@ const Nails: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
+        id="what-we-treat"
         items={specializedServices}
         title="¿¿Qué incluye nuestra unidad quirúrgica?
 ?"

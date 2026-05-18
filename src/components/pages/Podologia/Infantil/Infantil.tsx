@@ -58,6 +58,17 @@ const specializedServices = [
   },
 ];
 
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const Infantil: React.FC = () => {
   return (
     <>
@@ -84,11 +95,11 @@ const Infantil: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
-      <WhatWeTreat items={specializedServices} />
+      <WhatWeTreat id="what-we-treat" items={specializedServices} />
 
       <ReviewHome />
     </>

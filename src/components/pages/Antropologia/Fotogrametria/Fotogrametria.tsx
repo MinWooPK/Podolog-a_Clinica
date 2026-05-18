@@ -20,31 +20,41 @@ const photoMetryProcess = [
     title: "Identificación de desequilibrios",
     category: "Postura",
     description:
-      "Analizamos la alineación de puntos clave como el trago de la oreja, el acromion, la cresta ilíaca y el maléolo. Esto permite visualizar cómo se distribuye la masa corporal respecto a la línea de gravedad.",
+      "Analizamos la alineación de puntos clave como trago de la oreja, acromion, cresta ilíaca y maléolo. Visualizamos la distribución de la masa corporal respecto a la línea de gravedad.",
     icon: <ScanLine />,
   },
   {
     title: "Análisis de angulaciones y rotaciones",
     category: "Biomecánica",
     description:
-      "Medimos con precisión los grados de inclinación en hombros, pelvis y rodillas. Pequeñas variaciones angulares pueden generar sobrecargas mecánicas en la cadena muscular y articular.",
+      "Medimos con precisión los grados de inclinación en hombros, pelvis y rodillas. Pequeñas variaciones angulares pueden generar sobrecargas en la cadena muscular y articular.",
     icon: <RotateCw />,
   },
   {
     title: "Evaluación de curvas sagitales",
     category: "Columna",
     description:
-      "Evaluamos las curvas de la columna (lordosis y cifosis) y su relación con el centro de gravedad. Detectamos desplazamientos anteriores o posteriores del tronco que afectan al equilibrio global.",
+      "Evaluamos las curvas de la columna (lordosis y cifosis). Analizamos su relación con el centro de gravedad. Detectamos desplazamientos que afectan al equilibrio global.",
     icon: <Activity />,
   },
   {
     title: "Evidencia clínica y seguimiento",
     category: "Control",
     description:
-      "Generamos una representación visual del estado inicial del paciente y permitimos comparar la evolución tras tratamientos, plantillas o terapia física.",
+      "Generamos una representación visual del estado inicial del paciente. Permitimos comparar la evolución tras tratamientos o terapia física.",
     icon: <Eye />,
   },
 ];
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const Fotogrametria: React.FC = () => {
   return (
@@ -69,15 +79,15 @@ const Fotogrametria: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
-        title="¿Qué nos aporta la fotogrametría en consulta?
-
-"
+        id="what-we-treat"
+        title="¿Qué nos aporta la fotogrametría en consulta?"
         items={photoMetryProcess}
+        // onCardClick={(id) => scrollToSection(id)}
       />
 
       <ContaienrFirst backgroundImage={ImgAntropometria2}>

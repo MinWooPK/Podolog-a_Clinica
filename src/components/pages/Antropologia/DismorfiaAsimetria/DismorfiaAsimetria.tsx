@@ -17,31 +17,42 @@ const psychoCorporalIntegration = [
     title: "Análisis de la Expresión Corporal",
     category: "Psicocorporal",
     description:
-      "Identificamos cómo las asimetrías y tensiones crónicas se vinculan a patrones de miedo, evitación y mecanismos de defensa. El cuerpo se interpreta como una expresión funcional de la historia biomecánica y emocional.",
+      "Identificamos cómo las asimetrías y tensiones crónicas se vinculan a patrones de miedo, evitación y mecanismos de defensa. Interpretamos el cuerpo como expresión funcional de la historia biomecánica y emocional.",
     icon: <Brain />,
   },
   {
     title: "Sinergia Clínica y Psicoterapéutica",
     category: "Interdisciplinar",
     description:
-      "Colaboramos con psicólogos y psicoanalistas para integrar el abordaje psíquico con la lectura objetiva de las manifestaciones físicas de la dismorfia o asimetría corporal.",
+      "Colaboramos con psicólogos y psicoanalistas. Integramos el abordaje psíquico con la lectura de manifestaciones físicas. Analizamos dismorfias y asimetrías corporales desde una visión global.",
     icon: <Users />,
   },
   {
     title: "Reeducación y Autoconciencia",
     category: "Reeducación",
     description:
-      "La corrección biomecánica crea nuevas oportunidades de conciencia corporal, facilitando procesos terapéuticos con menor resistencia física y mayor integración funcional.",
+      "La corrección biomecánica genera nuevas oportunidades de conciencia corporal. Facilita procesos terapéuticos con menor resistencia física. Mejora la integración funcional del cuerpo.",
     icon: <RefreshCcw />,
   },
   {
     title: "El Cuerpo como Soporte del Cambio",
     category: "Integración",
     description:
-      "Aceptar la estructura corporal como base del cambio permite habitar el cuerpo de forma más equilibrada, favoreciendo la estabilidad física y emocional en el proceso evolutivo.",
+      "Aceptar la estructura corporal como base del cambio. Permite habitar el cuerpo de forma más equilibrada. Favorece la estabilidad física y emocional en el proceso evolutivo.",
     icon: <Heart />,
   },
 ];
+
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const DismorfiaAsimetria: React.FC = () => {
   return (
@@ -67,14 +78,13 @@ const DismorfiaAsimetria: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
-        title="Un puente entre la estructura y la psique
-
-"
+        id="what-we-treat"
+        title="Un puente entre la estructura y la psique"
         items={psychoCorporalIntegration}
       />
 

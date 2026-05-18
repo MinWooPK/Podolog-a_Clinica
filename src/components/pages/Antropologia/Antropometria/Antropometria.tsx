@@ -12,39 +12,47 @@ import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { Bone, Droplets, Ruler, User } from "lucide-react";
 
-import FeatureListSection from "@organisms/FeatureListSection/FeatureListSection";
-import AntropHero from "@organisms/AntropHero/AntropHero";
-
 const anthropometryProcess = [
   {
     title: "Diámetros Óseos",
     category: "Estructura",
     description:
-      "Medimos la anchura de estructuras óseas como muñeca, fémur o tobillo para determinar la robustez esquelética y la capacidad de carga del sistema corporal.",
+      "Medimos la anchura de estructuras óseas como muñeca, fémur o tobillo. Determinamos la robustez esquelética. Evaluamos la capacidad de carga del sistema corporal.",
     icon: <Bone />,
   },
   {
     title: "Pliegues Cutáneos",
     category: "Composición",
     description:
-      "Evaluamos el tejido adiposo en puntos estratégicos para comprender la distribución de la masa grasa y su impacto metabólico y mecánico.",
+      "Evaluamos el tejido adiposo en puntos estratégicos. Comprendemos la distribución de la masa grasa. Analizamos su impacto metabólico y mecánico.",
     icon: <Droplets />,
   },
   {
     title: "Perímetros Corporales",
     category: "Volumen",
     description:
-      "Analizamos los contornos musculares en extremidades y tronco para detectar desequilibrios funcionales en la marcha.",
+      "Analizamos los contornos musculares en extremidades y tronco. Detectamos desequilibrios funcionales en la marcha.",
     icon: <Ruler />,
   },
   {
     title: "Somatotipo",
     category: "Biotipo",
     description:
-      "Integramos todos los datos para definir tu biotipo corporal y personalizar el tratamiento biomecánico.",
+      "Integramos todos los datos antropométricos. Definimos tu biotipo corporal. Personalizamos el tratamiento biomecánico.",
     icon: <User />,
   },
 ];
+
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const Antropometria: React.FC = () => {
   return (
@@ -69,11 +77,11 @@ const Antropometria: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
-      <WhatWeTreat items={anthropometryProcess} />
+      <WhatWeTreat id="what-we-treat" items={anthropometryProcess} />
 
       <ContaienrFirst backgroundImage={ImgAntropometria2}>
         <Eyebrow>¿Por qué es necesario este nivel de detalle?</Eyebrow>

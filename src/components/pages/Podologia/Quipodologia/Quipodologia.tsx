@@ -63,6 +63,17 @@ const specializedServices = [
   },
 ];
 
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const Quipodologia: React.FC = () => {
   return (
     <>
@@ -85,11 +96,12 @@ const Quipodologia: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
+        id="what-we-treat"
         items={specializedServices}
         title="¿Qué incluye nuestro servicio de quiropodología?"
       />

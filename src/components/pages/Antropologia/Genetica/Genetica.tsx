@@ -11,31 +11,42 @@ const geneticPodiatryProcess = [
     title: "Prevención de Patologías Estructurales",
     category: "Prevención Genética",
     description:
-      "Identificamos marcadores genéticos asociados al tejido conectivo, densidad ósea y respuesta inflamatoria para anticipar lesiones crónicas y optimizar la resistencia estructural del pie y la cadena biomecánica.",
+      "Identificamos marcadores genéticos asociados al tejido conectivo, densidad ósea y respuesta inflamatoria. Anticipamos lesiones crónicas. Optimizamos la resistencia estructural del pie y la cadena biomecánica.",
     icon: <ShieldCheck />,
   },
   {
     title: "Farmacogenética y Nutrición Evolutiva",
     category: "Metabolismo",
     description:
-      "Analizamos la interacción entre genética, nutrición y metabolismo para optimizar la regeneración tisular, la respuesta inflamatoria y el rendimiento biomecánico global.",
+      "Analizamos la interacción entre genética, nutrición y metabolismo. Optimizamos la regeneración tisular. Mejoramos la respuesta inflamatoria y el rendimiento biomecánico global.",
     icon: <Dna />,
   },
   {
     title: "Sinergia de Datos Clínicos",
     category: "Diagnóstico Avanzado",
     description:
-      "Integramos información genética con fotogrametría y análisis biomecánico para generar un diagnóstico global de alta precisión entre herencia biológica y estado funcional actual.",
+      "Integramos información genética con fotogrametría y análisis biomecánico. Generamos un diagnóstico global de alta precisión. Relacionamos herencia biológica con estado funcional actual.",
     icon: <Activity />,
   },
   {
     title: "Rendimiento y Longevidad Funcional",
     category: "Optimización",
     description:
-      "Adaptamos cargas de trabajo y recuperación según tu perfil genético para mejorar la movilidad, prevenir sobrecargas y prolongar la salud funcional del sistema musculoesquelético.",
+      "Adaptamos cargas de trabajo y recuperación según el perfil genético. Mejoramos la movilidad y prevenimos sobrecargas. Prolongamos la salud funcional del sistema musculoesquelético.",
     icon: <TrendingUp />,
   },
 ];
+
+//  SCROLL SUAVE
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const Genetica: React.FC = () => {
   return (
@@ -58,11 +69,12 @@ const Genetica: React.FC = () => {
         }}
         secondaryButton={{
           label: "Ver servicios",
-          href: "/servicios",
+          onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
+        id="what-we-treat"
         title="Ciencia de precisión para una salud integral"
         items={geneticPodiatryProcess}
       />
