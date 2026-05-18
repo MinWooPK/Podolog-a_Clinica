@@ -13,6 +13,7 @@ import {
 } from "./WhatWeTreat.styles";
 
 type Treatment = {
+  id?: string;
   title: string;
   description: string;
   category?: string;
@@ -45,7 +46,7 @@ const WhatWeTreat: React.FC<Props> = ({
         {items.map((item) => (
           <Card
             key={item.id}
-            onClick={() => onCardClick?.(item.id)}
+            onClick={() => item.id && onCardClick?.(item.id)}
             style={{ cursor: "pointer" }}
           >
             <IconWrapper
