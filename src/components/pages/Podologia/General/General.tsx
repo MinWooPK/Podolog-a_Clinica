@@ -2,10 +2,10 @@ import React from "react";
 
 import ImgPodoLogiaGeneral from "@assets/img/PodologiaGeneral.jpg";
 import ImgPodoLogiaGeneral2 from "@assets/img/PodoLogiaGeneral2.jpg";
-import ImgPodoLogiaGeneral3 from "@assets/img/PodologiaGeneral3.jpg";
-import ImgPodoLogiaGeneral4 from "@assets/img/PodologiaGeneral4.jpg";
-import ImgPodoLogiaGeneral5 from "@assets/img/PodologiaGeneral5.jpg";
-import ImgPodoLogiaGeneral6 from "@assets/img/PodologiaGeneral6.jpg";
+import ImgPodoLogiaGeneral3 from "@assets/img/PodoLogiaGeneral3.jpg";
+import ImgPodoLogiaGeneral4 from "@assets/img/PodoLogiaGeneral4.jpg";
+import ImgPodoLogiaGeneral5 from "@assets/img/PodoLogiaGeneral5.jpg";
+import ImgPodoLogiaGeneral6 from "@assets/img/PodoLogiaGeneral6.jpg";
 import ImgPodoLogiaGeneral7 from "@assets/img/PodologiaGeneral7.jpeg";
 import ImgFAQPodoLogiaGeneral from "@assets/img/FAQGeneral.jpg";
 import ReviewHome from "@organisms/ReviewHome";
