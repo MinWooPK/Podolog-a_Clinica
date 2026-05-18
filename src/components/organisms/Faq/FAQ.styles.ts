@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin: 0 auto;
   padding: 50px 20px;
 `;
@@ -44,26 +44,27 @@ export const Question = styled.div`
   }
 `;
 
-export const Answer = styled.div<{ isOpen: boolean }>`
+/* 🔥 AQUÍ ESTÁ LA CORRECCIÓN */
+export const Answer = styled.div<{ $isOpen: boolean }>`
   font-size: 14px;
   line-height: 1.6;
   color: #475569;
 
   overflow: hidden;
 
-  max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+  max-height: ${({ $isOpen }) => ($isOpen ? "300px" : "0")};
 
-  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
 
-  transform: ${({ isOpen }) =>
-    isOpen ? "translateY(0px)" : "translateY(-8px)"};
+  transform: ${({ $isOpen }) =>
+    $isOpen ? "translateY(0px)" : "translateY(-8px)"};
 
   transition:
     max-height 0.4s ease,
     opacity 0.25s ease,
     transform 0.35s ease;
 
-  padding: ${({ isOpen }) => (isOpen ? "16px 18px" : "0 18px")};
+  padding: ${({ $isOpen }) => ($isOpen ? "16px 18px" : "0 18px")};
 `;
 
 export const ImageWrapper = styled.div`

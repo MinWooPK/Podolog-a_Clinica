@@ -11,13 +11,7 @@ import PodologiaBiometria2 from "@assets/img/PodologiaBiometria2.png";
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
-import {
-  Activity,
-  Footprints,
-  ScanSearch,
-  ShieldCheck,
-  Dna,
-} from "lucide-react";
+import { Activity, Footprints, ShieldCheck, Dna } from "lucide-react";
 
 const specializedServices = [
   {
@@ -85,7 +79,7 @@ const Biometria: React.FC = () => {
 ?
 ?"
       />
-      <ContaienrFirst backgroundImage={PodologiaBiometria2}>
+      <ContaienrFirst $backgroundImage={PodologiaBiometria2}>
         <Eyebrow>Análisis estructural integral</Eyebrow>
         <Title>¿Por qué es necesario este nivel de detalle?</Title>
 

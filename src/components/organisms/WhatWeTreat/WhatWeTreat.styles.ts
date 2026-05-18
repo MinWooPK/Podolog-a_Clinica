@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  width: 100%;
+  /* width: 100%; */
   padding: 50px 20px;
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 `;

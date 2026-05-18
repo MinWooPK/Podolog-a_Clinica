@@ -2,18 +2,11 @@ import React from "react";
 import { Title, Description, Eyebrow, ContaienrFirst } from "./Nails.styles";
 import PodologiaNailsMain from "@assets/img/PodologiaNailsMain.jpeg";
 import PodologiaNails from "@assets/img/PodologiaNails.jpeg";
-import PodologiaNails2 from "@assets/img/PodologiaNalis2.jpeg";
 
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
-import {
-  Activity,
-  Footprints,
-  ScanSearch,
-  ShieldCheck,
-  Dna,
-} from "lucide-react";
+import { ScanSearch, ShieldCheck, Dna } from "lucide-react";
 
 const specializedServices = [
   {
@@ -70,7 +63,7 @@ const Nails: React.FC = () => {
         title="¿¿Qué incluye nuestra unidad quirúrgica?
 ?"
       />
-      <ContaienrFirst backgroundImage={PodologiaNails}>
+      <ContaienrFirst $backgroundImage={PodologiaNails}>
         <Eyebrow>Cirugía ungueal ambulatoria</Eyebrow>
 
         <Title>Eficacia y recuperación:</Title>

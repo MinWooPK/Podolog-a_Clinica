@@ -16,6 +16,11 @@ import Ortonxia from "@pages/Podologia/Ortonxia";
 import Nails from "@pages/Podologia/Nails";
 import Biometria from "@pages/Podologia/Biometria";
 import Infantil from "@pages/Podologia/Infantil";
+import Antropometria from "@pages/Antropologia/Antropometria";
+import Fotogrametria from "@pages/Antropologia/Fotogrametria";
+import DismorfiaAsimetria from "@pages/Antropologia/DismorfiaAsimetria";
+import Genetica from "@pages/Antropologia/Genetica";
+import Investigacion from "@pages/Antropologia/Investigacion";
 // Más páginas importadas aquí
 // import About from "@pages/About";
 // import Contact from "@pages/Contact";
@@ -30,6 +35,7 @@ const AppRoutes: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/DraRebeca" element={<AboutMe />} />
             <Route path="/contact" element={<ContactMe />} />
+            {/* // PODOLOGIA */}
             <Route path="/podologia" element={<General />} />
             <Route path="/podologia/deportiva" element={<Deportiva />} />
             <Route
@@ -44,8 +50,25 @@ const AppRoutes: React.FC = () => {
               element={<Biometria />}
             />
             <Route path="/podologia/infantil" element={<Infantil />} />
-
-            {/*  NOT FOUND (fallback) */}
+            {/* // ANTROPOLOGIA */}
+            <Route
+              path="/antropologia/estudios_antropometria"
+              element={<Antropometria />}
+            />
+            <Route
+              path="/antropologia/fotogrametria_postura"
+              element={<Fotogrametria />}
+            />
+            <Route
+              path="/antropologia/dismorfia_asimetría"
+              element={<DismorfiaAsimetria />}
+            />
+            <Route path="/antropologia/genetica" element={<Genetica />} />
+            <Route
+              path="/antropologia/investigación"
+              element={<Investigacion />}
+            />
+            ∫{/*  NOT FOUND (fallback) */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

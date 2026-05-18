@@ -111,7 +111,7 @@ const Deportiva: React.FC = () => {
       />
 
       <WhatWeTreat items={specializedServices} />
-      <ContaienrFirst backgroundImage={ImgPodoLogiaDeportiva}>
+      <ContaienrFirst $backgroundImage={ImgPodoLogiaDeportiva}>
         <Eyebrow>Biomecánica y rendimiento</Eyebrow>
 
         <Title>Nuestro enfoque en el deportista</Title>

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Title,
-  Description,
-  Eyebrow,
-  ContaienrFirst,
-} from "./Plantilla.styles";
+import { Description, Eyebrow, ContaienrFirst } from "./Plantilla.styles";
 import PodologiaPlantilla from "@assets/img/PodologiaPlantilla.jpeg";
 import PodologiaPlantilla2 from "@assets/img/PodologiaPlantilla2.jpeg";
 
@@ -100,7 +95,7 @@ const Plantilla: React.FC = () => {
 ?
 ?"
       />
-      <ContaienrFirst backgroundImage={PodologiaPlantilla2}>
+      <ContaienrFirst $backgroundImage={PodologiaPlantilla2}>
         <Eyebrow>Biomecánica aplicada</Eyebrow>{" "}
         {/* <Title>¿Por qué es necesario este nivel de detalle?</Title> */}
         <Description>

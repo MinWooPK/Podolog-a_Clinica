@@ -6,13 +6,7 @@ import PdologiaOrtonixia2 from "@assets/img/PdologiaOrtonixia2.jpeg";
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
-import {
-  Activity,
-  Footprints,
-  ScanSearch,
-  ShieldCheck,
-  Dna,
-} from "lucide-react";
+import { Activity, Footprints, ScanSearch, ShieldCheck } from "lucide-react";
 
 const specializedServices = [
   {
@@ -76,7 +70,7 @@ const Nails: React.FC = () => {
 ?
 ?"
       />
-      <ContaienrFirst backgroundImage={PdologiaOrtonixia2}>
+      <ContaienrFirst $backgroundImage={PdologiaOrtonixia2}>
         <Eyebrow>Ortónica y corrección ungueal</Eyebrow>
 
         <Title>Corrección sin cirugía</Title>

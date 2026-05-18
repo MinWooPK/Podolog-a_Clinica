@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface Props {
-  backgroundImage?: string;
+  $backgroundImage?: string;
 }
 
 export const ContaienrFirst = styled.section<Props>`
@@ -18,8 +18,8 @@ export const ContaienrFirst = styled.section<Props>`
   overflow: hidden;
 
   /*  imagen desde props */
-  background-image: ${({ backgroundImage }) =>
-    backgroundImage ? `url(${backgroundImage})` : "none"};
+  background-image: ${({ $backgroundImage }) =>
+    $backgroundImage ? `url(${$backgroundImage})` : "none"};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

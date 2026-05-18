@@ -55,12 +55,26 @@ const MENU = [
     key: "antropologia",
     label: "Antropología",
     items: [
-      { label: "Clínica y cultura", href: "/antropologia/Cultura" },
       {
-        label: "Formación interdisciplinar",
-        href: "/antropologia/Interdisciplinar",
+        label: "Estudios de antropometría",
+        href: "/antropologia/estudios_antropometria",
       },
-      { label: "Talleres", href: "/antropologia/Talleres" },
+      {
+        label: "Fotogrametría postura",
+        href: "/antropologia/fotogrametria_postura",
+      },
+      {
+        label: "Dismorfías y asimetrías",
+        href: "/antropologia/dismorfia_asimetría",
+      },
+      {
+        label: "Genética aplicada a la salud",
+        href: "/antropologia/genetica",
+      },
+      {
+        label: "Investigación",
+        href: "/antropologia/investigación",
+      },
     ],
   },
 ];

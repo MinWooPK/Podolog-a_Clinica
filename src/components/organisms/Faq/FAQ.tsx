@@ -43,7 +43,7 @@ const FAQ: React.FC<Props> = ({
             <AccordionItem key={index}>
               <Question onClick={() => toggle(index)}>{item.question}</Question>
 
-              <Answer isOpen={openIndex === index}>{item.answer}</Answer>
+              <Answer $isOpen={openIndex === index}>{item.answer}</Answer>
             </AccordionItem>
           ))}
         </div>
