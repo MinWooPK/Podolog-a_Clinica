@@ -115,8 +115,7 @@ export const SubMenu = styled.ul<SubMenuProps>`
   opacity: ${({ open }) => (open ? 1 : 0)};
   transform: ${({ open }) => (open ? "translateY(0px)" : "translateY(-10px)")};
 
-  pointer-events: ${({ open }) => (open ? "auto" : "none")};
-
+  pointer-events: auto;
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;

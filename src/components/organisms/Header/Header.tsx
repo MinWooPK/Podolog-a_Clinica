@@ -102,23 +102,23 @@ const Header = () => {
       setIsDesktop(window.innerWidth > 1020);
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setOpenMenu(null);
-      }
-    };
+    // const handleClickOutside = (event: MouseEvent) => {
+    //   if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+    //     setOpenMenu(null);
+    //   }
+    // };
 
     //  IMPORTANTE: inicialización inmediata
     handleResize();
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    document.addEventListener("mousedown", handleClickOutside);
+    // document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
-      document.removeEventListener("mousedown", handleClickOutside);
+      // document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -144,21 +144,27 @@ const Header = () => {
     </SubMenu>
   );
 
-  const renderMobileSubMenu = (menu: any) => (
-    <SubMenuMobile open={openMenu === menu.key}>
-      {menu.items.map((item: any) => (
-        <StieMenuHref key={item.href} href={item.href}>
-          {item.label}
-        </StieMenuHref>
-      ))}
-    </SubMenuMobile>
-  );
-
-  /* ---------------- FIX FINAL ANTI-FLASH ---------------- */
+  const renderMobileSubMenu = (menu: any) => {
+    return (
+      <SubMenuMobile open={openMenu === menu.key}>
+        {menu.items.map((item: any) => (
+          <StieMenuHref
+            key={item.href}
+            $mobile
+            href={item.href}
+            onClick={() => {
+              setIsMenuOpen(false);
+              setOpenMenu(null);
+            }}
+          >
+            {item.label}
+          </StieMenuHref>
+        ))}
+      </SubMenuMobile>
+    );
+  };
 
   if (isDesktop === null) return null;
-
-  /* ---------------- UI ---------------- */
 
   return (
     <Navbar>
