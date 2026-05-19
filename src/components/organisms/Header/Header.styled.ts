@@ -26,7 +26,7 @@ export const Navbar = styled.section`
     flex-flow: row nowrap;
   }
   @media (max-width: 430px) {
-    padding: 10px 0px;
+    /* padding: 10px 0px; */
   }
 `;
 
@@ -47,7 +47,7 @@ export const ContainerNavbar = styled.div<{ $scrolled?: boolean }>`
   width: 100%;
   padding: 10px 20px;
 
-  background: ${({ $scrolled }) => ($scrolled ? "#18595b" : "transparent")};
+  background: #18595b;
 
   backdrop-filter: ${({ $scrolled }) => ($scrolled ? "blur(10px)" : "none")};
 
@@ -57,6 +57,7 @@ export const ContainerNavbar = styled.div<{ $scrolled?: boolean }>`
   transition: all 0.3s ease;
   @media (min-width: 768px) {
     flex-wrap: nowrap;
+    background: ${({ $scrolled }) => ($scrolled ? "#18595b" : "transparent")};
   }
 `;
 export const LogoContainer = styled.div<{ $scrolled?: boolean }>`
@@ -166,39 +167,41 @@ export const StieMenuLi = styled.li`
   transition: all 0.35s ease-in-out;
 `;
 
-export const StieMenuHref = styled.a<{ $scrolled?: boolean }>`
+export const StieMenuHref = styled.a<{
+  $scrolled?: boolean;
+  $mobile?: boolean;
+}>`
   font-size: 14px;
   letter-spacing: 0;
-  padding: 10px 10px;
+  padding: 5px 10px;
   cursor: pointer;
   position: relative;
-  text-decoration: none; /* Para quitar el subrayado predeterminado */
+  text-decoration: none;
   overflow: hidden;
   display: inline-block;
   white-space: normal;
-  color: ${({ $scrolled, theme }) =>
-    $scrolled ? "#fff  " : theme.colors.principal.secondary};
+
+  color: ${({ $mobile, $scrolled, theme }) =>
+    $mobile ? "#fff" : $scrolled ? "#fff" : theme.colors.principal.secondary};
+
+  transition: color 0.3s ease;
+
   &:hover {
     color: #ffc61a;
   }
 
-  &:before,
-  &:after {
-    content: attr(data-hover);
-    position: absolute;
-    color: #ffffff;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
   &:before {
+    content: "";
+    position: absolute;
     height: 3px;
     width: 100%;
     background-color: #ffc61a;
     bottom: -1px;
     left: 0;
+
     transform-origin: right;
     transform: scaleX(0);
+
     transition: transform 0.35s ease;
   }
 
@@ -206,18 +209,12 @@ export const StieMenuHref = styled.a<{ $scrolled?: boolean }>`
     transform-origin: left;
     transform: scaleX(1);
   }
-
-  &:after {
-    top: 0;
-    left: 0;
-    padding: 0.5em 0;
-    max-width: 0%;
-    transition: max-width 0.35s ease;
-  }
-
-  &:hover:after {
-    max-width: 100%;
-  }
+`;
+export const HamburgerDivMobie = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 50px;
 `;
 
 export const HamburgerMenu = styled.div`
@@ -299,9 +296,10 @@ export const NavBlack = styled("div").withConfig({
   shouldForwardProp: (prop) => prop !== "visiblenav",
 })<NavProps>`
   background-color: #ffc61a;
-  width: 60%;
-  max-width: 480px;
-  min-width: 260px;
+  width: 100%;
+  height: 100%;
+  /* max-width: 480px;
+  min-width: 260px; */
   position: fixed;
   top: 0;
   left: 0;
@@ -325,7 +323,7 @@ export const NavRed = styled("div").withConfig({
   background-color: ${({ theme }) => theme.colors.principal.secondary};
 
   width: 95%;
-  gap: 2rem;
+  gap: 0.5rem;
   transition-delay: 0.2s;
   position: fixed;
   top: 0;
@@ -375,6 +373,7 @@ export const MobileUlDiv = styled.div`
   align-items: flex-start;
   width: 100%;
   margin: auto;
+  overflow: auto;
 `;
 
 export const LogoContainerText = styled.div`
@@ -431,30 +430,37 @@ export const CitaContainer = styled.a`
     color: ${({ theme }) => theme.colors.principal.first};
   }
 `;
-
 export const SubMenuMobile = styled.div<{ open?: boolean }>`
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
+  gap: 15px;
+
   overflow: hidden;
-  max-height: ${({ open }) => (open ? "500px" : "0")};
+
+  max-height: ${({ open }) => (open ? "300px" : "0px")};
   opacity: ${({ open }) => (open ? "1" : "0")};
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-5px)")};
+
   transition:
-    max-height 0.8s ease,
-    opacity 0.7s ease;
+    max-height 0.4s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  pointer-events: ${({ open }) => (open ? "auto" : "none")};
   a {
     font-size: 14px;
     color: #ddd;
     padding: 6px 0;
     text-decoration: none;
-    transition: color 0.2s;
   }
+
   a:hover {
     color: #fff;
   }
 `;
-
 export const MobileButtonNav = styled.button`
   display: flex;
   align-items: center;
@@ -462,7 +468,7 @@ export const MobileButtonNav = styled.button`
   background: none;
   border: none;
   color: white;
-  font-size: 16px;
-  padding: 10px 10px;
+  font-size: 14px;
+  padding: 5px 10px;
   font-weight: 700;
 `;

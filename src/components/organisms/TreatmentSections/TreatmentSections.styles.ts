@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   /* gap: 120px; */
-  padding: 100px 0px;
+  padding: 50px 0px;
   background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 `;
 
@@ -63,8 +63,8 @@ export const Image = styled.img`
 
 export const Content = styled.div`
   flex: 1;
-  padding: 50px 40px;
-
+  padding: 0px 40px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,5 +116,42 @@ export const Bullet = styled.p`
     position: absolute;
     left: 0;
     top: 10px;
+  }
+`;
+
+export const BackDiv = styled.div`
+  margin: 0 0 20px 20px;
+`;
+
+export const BackButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: transparent;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #18595b;
+
+  cursor: pointer;
+
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(24, 89, 91, 0.08);
+    transform: translateX(-2px);
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 `;

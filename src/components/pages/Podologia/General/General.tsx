@@ -1,5 +1,4 @@
-import React from "react";
-
+import { useState } from "react";
 import ImgPodoLogiaGeneral from "@assets/img/PodologiaGeneral.jpg";
 import ImgPodoLogiaGeneral2 from "@assets/img/PodoLogiaGeneral2.jpg";
 import ImgPodoLogiaGeneral3 from "@assets/img/PodoLogiaGeneral3.jpg";
@@ -14,6 +13,7 @@ import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { Activity, HeartPulse, Scissors, Shield } from "lucide-react";
 import FAQ from "@organisms/Faq/FAQ";
 import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
+import { AnimatePresence, motion } from "framer-motion";
 
 const faqItems = [
   {
@@ -183,6 +183,14 @@ const scrollToSection = (id: string) => {
 };
 
 const General: React.FC = () => {
+  const [selectedTreatment, setSelectedTreatment] = useState<string | null>(
+    null,
+  );
+
+  const selectedTreatmentData = treatmentsSub.find(
+    (item) => item.id === selectedTreatment,
+  );
+
   return (
     <>
       <Hero
@@ -199,14 +207,38 @@ const General: React.FC = () => {
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
-      <WhatWeTreat
-        id="what-we-treat"
-        subtitle="Cuidamos la salud integral de tus pies mediante diagnósticos precisos, tratamientos avanzados y una atención personalizada orientada a tu bienestar y movilidad."
-        items={treatments}
-        onCardClick={(id) => scrollToSection(id)}
-      />
-      <TreatmentSections items={treatmentsSub} />
-
+      <AnimatePresence mode="wait">
+        {!selectedTreatment ? (
+          <motion.div
+            key="list"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.35 }}
+          >
+            <WhatWeTreat
+              id="what-we-treat"
+              items={treatments}
+              onCardClick={(id) => setSelectedTreatment(id)}
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="detail"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.35 }}
+          >
+            <TreatmentSections
+              id="what-we-treat"
+              items={[selectedTreatmentData!]}
+              showBackButton={true}
+              onBack={() => setSelectedTreatment(null)}
+            />{" "}
+          </motion.div>
+        )}
+      </AnimatePresence>
       <FAQ
         items={faqItems}
         image={ImgFAQPodoLogiaGeneral}

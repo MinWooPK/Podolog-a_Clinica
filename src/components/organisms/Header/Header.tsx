@@ -23,6 +23,7 @@ import {
   CitaContainer,
   SubMenuMobile,
   MobileButtonNav,
+  HamburgerDivMobie,
 } from "./Header.styled";
 
 import { GoChevronLeft } from "react-icons/go";
@@ -84,7 +85,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
-  // 🔥 FIX: null inicial para evitar flash
+  //  FIX: null inicial para evitar flash
   const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
 
   const [scrolled, setScrolled] = useState(false);
@@ -188,8 +189,7 @@ const Header = () => {
                   <GoChevronLeft />
                 </Arrow>
               </StieMenuHref>
-
-              {renderDesktopSubMenu(menu)}
+              {openMenu === menu.key && renderDesktopSubMenu(menu)}{" "}
             </StieMenuLi>
           ))}
 
@@ -228,19 +228,28 @@ const Header = () => {
 
         {/* MOBILE MENU */}
         {!isDesktop && (
-          <NavBlack visiblenav={isMenuOpen}>
-            <NavRed visiblenav={isMenuOpen}>
+          <NavBlack visiblenav={!isMenuOpen}>
+            <NavRed visiblenav={!isMenuOpen}>
+              <HamburgerDivMobie>
+                <HamburgerMenu
+                  className={isMenuOpen ? "open" : ""}
+                  onClick={toggleMobileMenu}
+                >
+                  <Bar />
+                  <Bar />
+                  <Bar />
+                </HamburgerMenu>
+              </HamburgerDivMobie>
+
               <Logo href="/">
                 <LogoImage src={LogoImgSrc} width="160px" height="160px" />
               </Logo>
-
               <LogoContainerText>
                 <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
                 <LogoContainerSecondP>
                   Rebeca Saludes Llamas
                 </LogoContainerSecondP>
               </LogoContainerText>
-
               <CitaContainer
                 href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
                 target="_blank"
@@ -248,10 +257,11 @@ const Header = () => {
               >
                 <DoctoraliaImage src={Doctoralia} /> Pedir cita
               </CitaContainer>
-
               <MobileUlDiv>
                 <StieMenuLi>
-                  <StieMenuHref href="/">Inicio</StieMenuHref>
+                  <StieMenuHref $mobile href="/">
+                    Inicio
+                  </StieMenuHref>
                 </StieMenuLi>
 
                 {MENU.map((menu) => (
@@ -262,20 +272,22 @@ const Header = () => {
                         <GoChevronLeft />
                       </Arrow>
                     </MobileButtonNav>
-
-                    {renderMobileSubMenu(menu)}
+                    {openMenu === menu.key && renderMobileSubMenu(menu)}{" "}
                   </StieMenuLi>
                 ))}
 
                 <StieMenuLi>
-                  <StieMenuHref href="/DraRebeca">Sobre mí</StieMenuHref>
+                  <StieMenuHref $mobile href="/DraRebeca">
+                    Sobre mí
+                  </StieMenuHref>
                 </StieMenuLi>
 
                 <StieMenuLi>
-                  <StieMenuHref href="/Contact">Contacto</StieMenuHref>
+                  <StieMenuHref $mobile href="/Contact">
+                    Contacto
+                  </StieMenuHref>
                 </StieMenuLi>
               </MobileUlDiv>
-
               <CopyRightDescription>
                 © 2025 Tramontana Salud - All Rights Reserved.
               </CopyRightDescription>

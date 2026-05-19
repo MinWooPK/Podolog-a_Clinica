@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+
 import {
   Title,
   Description,
@@ -6,6 +8,8 @@ import {
   ContaienrFirst,
 } from "./Deportiva.styles";
 import ImgPodoLogiaDeportiva from "@assets/img/PodologiaDeportiva.jpg";
+import ImgPodoLogiaDeportiv2 from "@assets/img/PodologiaDeportiva2.jpg";
+
 import ImgFAQPodoLogiaGeneral from "@assets/img/FAQGeneral.jpg";
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
@@ -18,6 +22,8 @@ import {
   Dna,
 } from "lucide-react";
 import FAQ from "@organisms/Faq/FAQ";
+import { AnimatePresence, motion } from "framer-motion";
+import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
 
 const faqItems = [
   {
@@ -54,6 +60,7 @@ const faqItems = [
 
 const specializedServices = [
   {
+    id: "estudio-biomecanico",
     title: "Estudio Biomecánico de la Marcha y la Carrera",
     category: "Biomecánica",
     description:
@@ -61,6 +68,7 @@ const specializedServices = [
     icon: <Footprints />,
   },
   {
+    id: "prevencion-lesiones",
     title: "Prevención de Lesiones",
     category: "Prevención",
     description:
@@ -68,6 +76,7 @@ const specializedServices = [
     icon: <ShieldCheck />,
   },
   {
+    id: "plantillas-3d",
     title: "Plantillas Personalizadas 3D",
     category: "Tratamiento",
     description:
@@ -75,6 +84,7 @@ const specializedServices = [
     icon: <ScanSearch />,
   },
   {
+    id: "calzado-deportivo",
     title: "Asesoramiento en Calzado Deportivo",
     category: "Rendimiento",
     description:
@@ -82,11 +92,84 @@ const specializedServices = [
     icon: <Activity />,
   },
   {
+    id: "perfil-genetico",
     title: "Perfil Genético Músculo-Esquelético",
     category: "Tecnología",
     description:
       "Identificación de marcadores genéticos relacionados con la resistencia tendinosa y predisposición a lesiones.",
     icon: <Dna />,
+  },
+];
+
+const treatmentsSub = [
+  {
+    id: "estudio-biomecanico",
+    title: "Estudio Biomecánico de la Marcha y la Carrera",
+    description: [
+      "Análisis avanzado del movimiento para optimizar el rendimiento y detectar anomalías en la pisada.",
+      "Análisis informatizado mediante plataformas de presión.",
+      "Grabación en vídeo para el estudio del ciclo de marcha.",
+      "Identificación de dismetrías y desequilibrios posturales.",
+      "Valoración del gesto deportivo según la disciplina.",
+    ],
+    image: "https://images.pexels.com/photos/4167544/pexels-photo-4167544.jpeg",
+    // 👉 pies corriendo / biomecánica (sin cara)
+  },
+
+  {
+    id: "prevencion-lesiones",
+    title: "Prevención de Lesiones",
+    description: [
+      "Identificación precoz de factores de riesgo para práctica deportiva segura.",
+      "Diagnóstico temprano de fascitis plantar y tendinopatías.",
+      "Evaluación de sobrecargas musculares y periostitis.",
+      "Control de puntos de presión durante el ejercicio.",
+      "Seguimiento preventivo para deportistas.",
+    ],
+    image: "https://images.pexels.com/photos/4397840/pexels-photo-4397840.jpeg",
+    // 👉 fisioterapia piernas / prevención (sin rostro)
+  },
+
+  {
+    id: "plantillas-3d",
+    title: "Plantillas Personalizadas 3D",
+    description: [
+      "Diseño y fabricación de soportes plantares de alta precisión.",
+      "Escaneado digital del pie en 3D.",
+      "Uso de materiales técnicos de última generación.",
+      "Adaptación al calzado deportivo y terreno.",
+      "Mejora de amortiguación y estabilidad.",
+    ],
+    image: "https://images.pexels.com/photos/6695843/pexels-photo-6695843.jpeg",
+    // 👉 escaneo pie / tecnología médica (sin cara)
+  },
+
+  {
+    id: "calzado-deportivo",
+    title: "Asesoramiento en Calzado Deportivo",
+    description: [
+      "Elección de zapatilla según morfología y actividad.",
+      "Evaluación de la interacción entre calzado y biomecánica.",
+      "Análisis del drop y estructura de la zapatilla.",
+      "Recomendación según estabilidad y control de fuerzas.",
+      "Prevención de patologías por mal calzado.",
+    ],
+    image: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
+    // 👉 zapatillas running / producto (sin personas)
+  },
+
+  {
+    id: "perfil-genetico",
+    title: "Perfil Genético Músculo-Esquelético",
+    description: [
+      "Identificación de predisposición genética deportiva.",
+      "Marcadores de resistencia tendinosa.",
+      "Predisposición a lesiones específicas.",
+      "Optimización de cargas de entrenamiento.",
+      "Medicina personalizada deportiva.",
+    ],
+    image: "https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg",
+    // 👉 ADN / laboratorio ciencia (sin cara)
   },
 ];
 //  SCROLL SUAVE
@@ -100,6 +183,13 @@ const scrollToSection = (id: string) => {
   });
 };
 const Deportiva: React.FC = () => {
+  const [selectedTreatment, setSelectedTreatment] = useState<string | null>(
+    null,
+  );
+
+  const selectedTreatmentData = treatmentsSub.find(
+    (item) => item.id === selectedTreatment,
+  );
   return (
     <>
       <Hero
@@ -118,9 +208,40 @@ const Deportiva: React.FC = () => {
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
-
-      <WhatWeTreat id="what-we-treat" items={specializedServices} />
-      <ContaienrFirst $backgroundImage={ImgPodoLogiaDeportiva}>
+      <AnimatePresence mode="wait">
+        {!selectedTreatment ? (
+          <motion.div
+            key="list"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.35 }}
+          >
+            <WhatWeTreat
+              id="what-we-treat"
+              title="¿Qué incluye nuestro servicio especializado?"
+              items={specializedServices}
+              onCardClick={(id) => setSelectedTreatment(id)}
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="detail"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.35 }}
+          >
+            <TreatmentSections
+              id="what-we-treat"
+              items={[selectedTreatmentData!]}
+              showBackButton={true}
+              onBack={() => setSelectedTreatment(null)}
+            />{" "}
+          </motion.div>
+        )}
+      </AnimatePresence>{" "}
+      <ContaienrFirst $backgroundImage={ImgPodoLogiaDeportiv2}>
         <Eyebrow>Biomecánica y rendimiento</Eyebrow>
 
         <Title>Nuestro enfoque en el deportista</Title>
@@ -136,7 +257,6 @@ const Deportiva: React.FC = () => {
         image={ImgFAQPodoLogiaGeneral}
         imageAlt="Consulta de podología"
       />
-
       <ReviewHome />
     </>
   );

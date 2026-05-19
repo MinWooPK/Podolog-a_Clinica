@@ -1,8 +1,9 @@
 [
   {
-    "name": "MB",
-    "description": "La atención ha sido excepcional. Se nota que es una profesional con muchísma experiencia."
+    "name": "Lydia Esther Padilla",
+    "description": "Hemos ido mi madre y yo y hemos salido encantadas. Mi madre por uñas encarnadas y yo para renovar mis plantillas. Tengo q decir que mi madre es un poco quisquillosa pero Rebeca es muy delicada trabajando y se la ha ganado. Volveremos sin duda…"
   },
+
   {
     "name": "Adriana",
     "description": "Muy atenta y cuidadosa. Me cuesta mucho ir a clínicas de podología por experiencias pasadas, pero con Rebeca estuve tranquila. No me hizo daño, salvo el inevitable por el tipo de intervención que necesitaba, y trató de ir despacio para hacer todo más llevadero. También me dio conversación, lo que me ayudó a estar menos tensa."
@@ -16,12 +17,24 @@
     "description": "Todo correcto buena atención explicación detallada tratamiento precio adecuado"
   },
   {
+    "name": "Y.M",
+    "description": "Súper atenta y eficiente, además de el mantenimiento habitual me recomendó un tratamiento para las uñas que me vino genial, mejorando brillo y salud.Desde hace dos años forma parte de mis rutinas de salud habituales, suelo hacer una visita cada mes y medio, mis pies ya no pueden vivir sin sus cuidados."
+  },
+  {
+    "name": "F.Z",
+    "description": "Profesional de 10, después de años con fascitis plantar en ambos pies y de visitar a innumerables podólogos, médicos y fisioterapeutas la doctora Saludes dió en el clavo, me hizo unas plantillas a medida después de un estudio de la pisada entre otras cosas y POR FIN(!) se me quitó la fascitis. De 10."
+  },
+  {
     "name": "Llorenç",
     "description": "Buen trato. Buenas instalaciones. Precio muy ajustado. Genial!"
   },
   {
     "name": "Mateo",
     "description": "Me senti muy agusto con Rebeca, explicacion detallada, sin prisas y 0 dolor. Altamente recomendable!"
+  },
+  {
+    "name": "MB",
+    "description": "La atención ha sido excepcional. Se nota que es una profesional con muchísma experiencia."
   },
   {
     "name": "M.G",
@@ -183,14 +196,7 @@
     "name": "Lydia Esther Padilla",
     "description": "Hemos ido mi madre y yo y hemos salido encantadas. Mi madre por uñas encarnadas y yo para renovar mis plantillas. Tengo q decir que mi madre es un poco quisquillosa pero Rebeca es muy delicada trabajando y se la ha ganado. Volveremos sin duda…"
   },
-  {
-    "name": "Y.M",
-    "description": "Súper atenta y eficiente, además de el mantenimiento habitual me recomendó un tratamiento para las uñas que me vino genial, mejorando brillo y salud.Desde hace dos años forma parte de mis rutinas de salud habituales, suelo hacer una visita cada mes y medio, mis pies ya no pueden vivir sin sus cuidados."
-  },
-  {
-    "name": "F.Z",
-    "description": "Profesional de 10, después de años con fascitis plantar en ambos pies y de visitar a innumerables podólogos, médicos y fisioterapeutas la doctora Saludes dió en el clavo, me hizo unas plantillas a medida después de un estudio de la pisada entre otras cosas y POR FIN(!) se me quitó la fascitis. De 10."
-  },
+
   {
     "name": "Manuel Ginebroza",
     "description": "Magnífica atención. Comprensión inmediata del problema. Problema solucionado"

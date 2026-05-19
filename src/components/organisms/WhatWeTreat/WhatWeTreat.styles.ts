@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   /* width: 100%; */
-  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 20px;
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
 `;
 
@@ -11,7 +14,7 @@ export const Title = styled.h2`
   font-size: 36px;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 
   letter-spacing: -0.5px;
 
@@ -22,7 +25,7 @@ export const Title = styled.h2`
 
 export const Grid = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -50,26 +53,33 @@ export const Subtitle = styled.p`
     margin-bottom: 40px;
   }
 `;
-export const Card = styled.div`
+export const Card = styled.div<{ $expanded?: boolean }>`
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 18px;
   padding: 24px;
-
+  cursor: pointer;
   display: flex;
   gap: 16px;
+  /* flex-direction: column; */
+
+  max-height: ${({ $expanded }) => ($expanded ? "600px" : "180px")};
+  overflow: hidden;
+
+  transition:
+    max-height 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: max-height;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    border-color: #dbe3ec;
   }
 `;
-
 export const IconWrapper = styled.div`
   width: 44px;
   height: 44px;
@@ -120,10 +130,28 @@ export const CardTitle = styled.h3`
   font-size: 17px;
   font-weight: 700;
   color: #0f172a;
+  margin-top: 10px;
 `;
 
 export const CardText = styled.p`
   font-size: 14px;
   line-height: 1.6;
   color: #556070;
+  margin-top: 15px;
+`;
+
+export const ReadMore = styled.button`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #4a78d0;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

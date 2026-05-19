@@ -6,7 +6,10 @@ import {
   Description,
   ImageWrapper,
   LeftContent,
+  PrimaryButton,
+  SecondaryButton,
   SideImage,
+  Subtitle,
   Title,
 } from "./PodoHome.style";
 
@@ -21,7 +24,7 @@ export default function PodoHome({ name, description }: PodoHomeProps) {
     <Container>
       <LeftContent>
         <Title>Tus pies en buenas manos.</Title>
-        <Description>Clínica de podlogía en Palma de Mallorca</Description>
+        <Subtitle>Clínica de podlogía en Palma de Mallorca</Subtitle>
         <Description>
           Unidad de Podología Clínica y Biomecánica Avanzada. Especialista en el
           diagnóstico y tratamiento integral de las patologías de pie. Ayudamos
@@ -30,8 +33,14 @@ export default function PodoHome({ name, description }: PodoHomeProps) {
         </Description>
 
         <ButtonGroup>
-          <Btn>Saber más </Btn>
-          <Btn>Pedir cita</Btn>
+          <PrimaryButton>Saber más </PrimaryButton>
+          <SecondaryButton
+            href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pedir cita
+          </SecondaryButton>
         </ButtonGroup>
       </LeftContent>
 

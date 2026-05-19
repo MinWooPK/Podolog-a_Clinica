@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Container,
   Section,
@@ -8,7 +9,11 @@ import {
   Title,
   BulletList,
   Bullet,
+  BackButton,
+  BackDiv,
 } from "./TreatmentSections.styles";
+
+import Button from "@atoms/Button";
 
 type Treatment = {
   title: string;
@@ -19,11 +24,19 @@ type Treatment = {
 
 interface Props {
   items: Treatment[];
+  showBackButton?: boolean;
+  onBack?: () => void;
+  id?: string;
 }
 
-const TreatmentSections: React.FC<Props> = ({ items }) => {
+const TreatmentSections: React.FC<Props> = ({
+  items,
+  showBackButton = false,
+  onBack,
+  id,
+}) => {
   return (
-    <Container>
+    <Container id={id}>
       {items.map((item, index) => (
         <Section id={item.id} key={item.id} $reverse={index % 2 !== 0}>
           <ImageWrapper>
@@ -31,6 +44,11 @@ const TreatmentSections: React.FC<Props> = ({ items }) => {
           </ImageWrapper>
 
           <Content>
+            {showBackButton && (
+              <BackDiv className="margin 20px">
+                <BackButton onClick={onBack}>← Volver</BackButton>
+              </BackDiv>
+            )}
             <Title>{item.title}</Title>
 
             <BulletList>
