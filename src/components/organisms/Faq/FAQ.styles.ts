@@ -3,15 +3,14 @@ import styled from "styled-components";
 export const Container = styled.section`
   /* max-width: 1100px; */
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 2rem 4rem;
 `;
 
 export const Title = styled.h2`
-  text-align: center;
   font-size: 32px;
-  font-weight: 700;
+  color: #18595b;
   margin-bottom: 40px;
-  color: #0f172a;
+  text-align: center;
 `;
 
 export const Layout = styled.div`
@@ -44,7 +43,7 @@ export const Question = styled.div`
   }
 `;
 
-/* 🔥 AQUÍ ESTÁ LA CORRECCIÓN */
+/*  AQUÍ ESTÁ LA CORRECCIÓN */
 export const Answer = styled.div<{ $isOpen: boolean }>`
   font-size: 14px;
   line-height: 1.6;
@@ -70,8 +69,8 @@ export const Answer = styled.div<{ $isOpen: boolean }>`
 export const ImageWrapper = styled.div`
   width: 100%;
   border-radius: 16px;
-  overflow: hidden;
-  position: sticky;
+  /* overflow: hidden; */
+  /* position: sticky; */
   top: 100px;
 
   img {
@@ -79,5 +78,6 @@ export const ImageWrapper = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
+    max-height: 600px;
   }
 `;

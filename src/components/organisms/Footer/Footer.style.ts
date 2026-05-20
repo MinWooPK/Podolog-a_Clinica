@@ -5,7 +5,8 @@ export const FooterPodologia = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
+  /* align-items: center; */
   font-size: 18px;
   gap: 2rem;
   padding: 2rem;
@@ -57,12 +58,14 @@ export const FooterMiddle = styled.div`
 export const FooterLast = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+
   width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   background-color: ${({ theme }) => theme.colors.principal.secondary};
   @media (max-width: 1100px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0rem;
@@ -77,4 +80,28 @@ export const FooterSubInfo = styled.div`
   gap: 2rem;
   display: flex;
   color: ${({ theme }) => theme.colors.principal.pure};
+`;
+
+export const DoctoraliaImage = styled.img`
+  width: 25px;
+  height: 25px;
+`;
+
+export const CitaContainer = styled.a`
+  background-color: rgba(73, 221, 217, 0.2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid ${({ theme }) => theme.colors.principal.terciary};
+  border-radius: 15px;
+  color: ${({ theme }) => theme.colors.principal.terciary};
+  cursor: pointer;
+  transition: all 0.3s ease; // transición suave
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.principal.secondary};
+    color: ${({ theme }) => theme.colors.principal.first};
+  }
 `;

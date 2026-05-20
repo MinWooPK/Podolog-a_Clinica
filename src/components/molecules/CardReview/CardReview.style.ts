@@ -36,6 +36,7 @@ export const HeaderCard = styled.div`
 export const FlexHeader = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 10px;
 `;
 
@@ -105,4 +106,20 @@ export const TopAccent = styled.div`
   width: 40px;
   background: #18595b;
   border-radius: 10px;
+`;
+
+export const DoctoraliaImage = styled.img`
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background: white;
+  /* border: 1px solid #18595b; */
+  padding: 3px;
+`;
+
+export const CardHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* align-items:; */
+  width: 100%;
 `;

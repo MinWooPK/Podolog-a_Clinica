@@ -6,8 +6,8 @@ export const Container = styled.section`
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  padding: 4rem 8rem;
-  background: linear-gradient(135deg, #e6f1f2 0%, #f6fbfb 50%, #e9f3f4 100%);
+  padding: 4rem 8rem 0;
+  /* background: linear-gradient(135deg, #e6f1f2 0%, #f6fbfb 50%, #e9f3f4 100%); */
   overflow: hidden;
 
   min-height: 500px;
@@ -67,11 +67,13 @@ export const Description = styled.p`
 `;
 
 export const ButtonGroup = styled.div`
+  margin-top: 20px;
   display: flex;
   gap: 1rem;
 
   @media (max-width: 768px) {
     justify-content: center;
+    gap: 1rem;
   }
 `;
 
@@ -112,7 +114,7 @@ export const SideImage = styled.img`
 export const PrimaryButton = styled.a`
   background: #18595b;
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
   transition: 0.2s ease;
@@ -129,7 +131,7 @@ export const SecondaryButton = styled.a`
   background: transparent;
   /* color: white; */
   border: 1px solid #0f3f40;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
   transition: 0.2s ease;

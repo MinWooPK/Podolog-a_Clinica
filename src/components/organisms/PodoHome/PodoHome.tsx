@@ -17,9 +17,14 @@ import {
 interface PodoHomeProps {
   name: string;
   description: string;
+  onPrimaryClick?: () => void;
 }
 
-export default function PodoHome({ name, description }: PodoHomeProps) {
+export default function PodoHome({
+  name,
+  description,
+  onPrimaryClick,
+}: PodoHomeProps) {
   return (
     <Container>
       <LeftContent>
@@ -33,7 +38,7 @@ export default function PodoHome({ name, description }: PodoHomeProps) {
         </Description>
 
         <ButtonGroup>
-          <PrimaryButton>Saber más </PrimaryButton>
+          <PrimaryButton onClick={onPrimaryClick}>Saber más </PrimaryButton>
           <SecondaryButton
             href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
             target="_blank"

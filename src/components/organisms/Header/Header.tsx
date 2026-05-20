@@ -99,7 +99,7 @@ const Header = () => {
     };
 
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 1020);
+      setIsDesktop(window.innerWidth > 1150);
     };
 
     // const handleClickOutside = (event: MouseEvent) => {
@@ -191,9 +191,9 @@ const Header = () => {
                 onClick={() => toggleSubMenu(menu.key)}
               >
                 {menu.label}
-                <Arrow open={openMenu === menu.key}>
+                {/* <Arrow open={openMenu === menu.key}>
                   <GoChevronLeft />
-                </Arrow>
+                </Arrow> */}
               </StieMenuHref>
               {openMenu === menu.key && renderDesktopSubMenu(menu)}{" "}
             </StieMenuLi>

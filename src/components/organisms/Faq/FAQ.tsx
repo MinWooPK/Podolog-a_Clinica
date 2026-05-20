@@ -38,6 +38,11 @@ const FAQ: React.FC<Props> = ({
       <Title>{title}</Title>
 
       <Layout>
+        {image && (
+          <ImageWrapper>
+            <img src={image} alt={imageAlt} />
+          </ImageWrapper>
+        )}
         <div>
           {items.map((item, index) => (
             <AccordionItem key={index}>
@@ -47,12 +52,6 @@ const FAQ: React.FC<Props> = ({
             </AccordionItem>
           ))}
         </div>
-
-        {image && (
-          <ImageWrapper>
-            <img src={image} alt={imageAlt} />
-          </ImageWrapper>
-        )}
       </Layout>
     </Container>
   );

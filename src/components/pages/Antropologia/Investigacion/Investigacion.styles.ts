@@ -49,10 +49,22 @@ export const CTA = styled.a`
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
-  background: #000;
+  background: #18595b;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: #0f3f41;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  }
 `;
 
 export const Grid = styled.div`

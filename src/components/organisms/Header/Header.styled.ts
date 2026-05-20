@@ -17,7 +17,7 @@ export const Navbar = styled.section`
     255,
     255,
     255,
-    0.3
+    0
   ); /* blanco muy suave y transparente */
   backdrop-filter: blur(6px); /* difumina el fondo para mejorar legibilidad */
 
@@ -64,7 +64,10 @@ export const LogoContainer = styled.div<{ $scrolled?: boolean }>`
   display: flex;
   gap: 2rem;
   transform: ${({ $scrolled }) => ($scrolled ? "scale(1.05)" : "scale(1)")};
-  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
 `;
 
 export const LogoImg = styled.img`
@@ -84,7 +87,7 @@ export const Logo = styled.a`
 
 export const SiteMenu = styled.ul`
   text-align: center;
-  @media (max-width: 1020px) {
+  @media (max-width: 1150px) {
     display: none;
   }
 `;
@@ -95,10 +98,10 @@ interface SubMenuProps {
 
 export const SubMenu = styled.ul<SubMenuProps>`
   list-style: none;
-  width: 100%;
+  width: max-content;
   position: absolute;
   top: 80px;
-  left: 0;
+  left: 20px;
 
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
@@ -134,6 +137,9 @@ export const Arrow = styled.span<ArrowProps>`
 `;
 export const SubMenuItem = styled.li`
   /* padding: 8px 20px; */
+  display: flex;
+  flex-direction: column;
+  text-align: start;
 
   & > a {
     text-decoration: none;
@@ -160,7 +166,7 @@ export const StieMenuLi = styled.li`
   display: inline-block;
   position: relative;
   margin: 0;
-  padding: 0 12px;
+  padding: 0 20px;
   font-weight: 700;
   list-style: none;
   transition: all 0.35s ease-in-out;
@@ -170,10 +176,12 @@ export const StieMenuHref = styled.a<{
   $scrolled?: boolean;
   $mobile?: boolean;
 }>`
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0;
   padding: 5px 10px;
+  margin: 10px 0;
   cursor: pointer;
+  font-weight: 500;
   position: relative;
   text-decoration: none;
   overflow: hidden;
@@ -187,16 +195,18 @@ export const StieMenuHref = styled.a<{
 
   &:hover {
     color: #ffc61a;
+    width: max-content;
   }
 
   &:before {
     content: "";
     position: absolute;
     height: 3px;
+    left: 10px;
     width: 100%;
     background-color: #ffc61a;
     bottom: -1px;
-    left: 0;
+    /* left: 0; */
 
     transform-origin: right;
     transform: scaleX(0);
@@ -383,8 +393,8 @@ export const LogoContainerText = styled.div`
   align-items: start;
 `;
 export const LogoContainerFirstP = styled.div`
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.principal.fifthy};
 
   /* color: #ffc61a; */
@@ -401,7 +411,7 @@ export const LogoContainerSecondP = styled.div`
 
   @media (max-width: 420px) {
     margin-top: 0;
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 4px;
   }
 `;
@@ -450,7 +460,7 @@ export const SubMenuMobile = styled.div<{ open?: boolean }>`
 
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
   a {
-    font-size: 14px;
+    font-size: 16px;
     color: #ddd;
     padding: 6px 0;
     text-decoration: none;
@@ -467,7 +477,7 @@ export const MobileButtonNav = styled.button`
   background: none;
   border: none;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   padding: 5px 10px;
   font-weight: 700;
 `;

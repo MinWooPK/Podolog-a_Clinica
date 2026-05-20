@@ -239,11 +239,6 @@ const General: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <FAQ
-        items={faqItems}
-        image={ImgFAQPodoLogiaGeneral}
-        imageAlt="Consulta de podología"
-      />
 
       <ReviewHome />
     </>

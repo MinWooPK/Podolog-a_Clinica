@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import DoctorialiaIcon from "@assets/icons/doctoralia.png";
 
 import {
   Card,
@@ -12,6 +13,8 @@ import {
   NameWrapper,
   SubTitleCard,
   TopAccent,
+  DoctoraliaImage,
+  CardHeader,
 } from "./CardReview.style";
 
 interface CardReviewProps {
@@ -45,8 +48,9 @@ function CardReview({ name, description, isOpen, onToggle }: CardReviewProps) {
           <Avatar>{getInitials(name)}</Avatar>
 
           <NameWrapper>
-            <TitleCard>{name}</TitleCard>
-
+            <CardHeader>
+              <TitleCard>{name}</TitleCard>
+            </CardHeader>
             <SubTitleCard>
               {Array.from({ length: 5 }).map((_, i) => (
                 <FaStar key={i} color="#18595B" size={13} />
@@ -54,6 +58,7 @@ function CardReview({ name, description, isOpen, onToggle }: CardReviewProps) {
             </SubTitleCard>
           </NameWrapper>
         </FlexHeader>
+        <DoctoraliaImage src={DoctorialiaIcon} alt="Doctoralia" />
       </HeaderCard>
 
       <DefinitionCard $expanded={isOpen}>{textToShow}</DefinitionCard>

@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding: 60px 20px;
+  padding: 4rem 8rem;
   display: flex;
   justify-content: center;
+  background: #f9fbfb;
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 export const Layout = styled.div`
@@ -23,7 +27,15 @@ export const Content = styled.div`
     font-size: 28px;
     margin-bottom: 20px;
     line-height: 1.2;
+    color: #18595b;
+    font-weight: 600;
   }
+`;
+export const Subtitle = styled.p`
+  margin: 0.5rem 0 1.5rem;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
 `;
 
 export const List = styled.ul`
@@ -58,10 +70,11 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
   height: auto;
   border-radius: 12px;
   object-fit: cover;
+  max-height: 600px;
 `;
 
 export const Spacer = styled.div`

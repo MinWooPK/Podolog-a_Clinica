@@ -25,39 +25,6 @@ import FAQ from "@organisms/Faq/FAQ";
 import { AnimatePresence, motion } from "framer-motion";
 import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
 
-const faqItems = [
-  {
-    question: "¿Duele el tratamiento podológico?",
-    answer:
-      "No, los tratamientos se realizan de forma indolora o con molestias mínimas. Siempre adaptamos la técnica a la sensibilidad del paciente.",
-  },
-  {
-    question: "¿Necesito cita previa?",
-    answer:
-      "Sí, es recomendable pedir cita previa para garantizar una atención personalizada y sin esperas.",
-  },
-  {
-    question: "¿Cuánto dura una sesión?",
-    answer:
-      "La duración habitual es de 30 a 45 minutos, dependiendo del tipo de tratamiento.",
-  },
-  {
-    question: "¿Cada cuánto debo acudir al podólogo?",
-    answer:
-      "Depende del caso, pero en general se recomienda cada 4 a 8 semanas para tratamientos de mantenimiento.",
-  },
-  {
-    question: "¿Tratáis uñas encarnadas o infecciones?",
-    answer:
-      "Sí, tratamos patologías ungueales como uñas encarnadas, hongos y engrosamientos de forma profesional y segura.",
-  },
-  {
-    question: "¿Es necesario llevar algo a la consulta?",
-    answer:
-      "No es necesario. Solo recomendamos traer calzado habitual si queremos valorar su adecuación.",
-  },
-];
-
 const specializedServices = [
   {
     id: "estudio-biomecanico",
@@ -252,11 +219,6 @@ const Deportiva: React.FC = () => {
           mejorar tu eficiencia y proteger tus articulaciones.
         </Description>
       </ContaienrFirst>
-      <FAQ
-        items={faqItems}
-        image={ImgFAQPodoLogiaGeneral}
-        imageAlt="Consulta de podología"
-      />
       <ReviewHome />
     </>
   );
