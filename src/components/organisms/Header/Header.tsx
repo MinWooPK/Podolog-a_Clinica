@@ -29,7 +29,7 @@ import {
 import { GoChevronLeft } from "react-icons/go";
 import LogoImgSrc from "@assets/icons/SoloLogo.png";
 import Doctoralia from "@assets/icons/doctoralia.png";
-
+import { useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 /* ---------------- MENU CONFIG ---------------- */
@@ -91,6 +91,9 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const menuRef = useRef<HTMLUListElement | null>(null);
+  const location = useLocation();
+
+  const pathname = location.pathname;
 
   /* ---------------- EFFECTS ---------------- */
   useEffect(() => {
@@ -121,6 +124,30 @@ const Header = () => {
       // document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpenMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isDesktop]);
+
+  const isActiveChild = (href: string) => {
+    return pathname === href;
+  };
+
+  const isActiveParent = (menu: any) => {
+    return menu.items.some((item: any) => pathname.startsWith(item.href));
+  };
+  const isActive = (href: string) => pathname === href;
 
   /* ---------------- HANDLERS ---------------- */
 
@@ -134,13 +161,17 @@ const Header = () => {
 
   const renderDesktopSubMenu = (menu: any) => (
     <SubMenu open={openMenu === menu.key}>
-      <SubMenuItem>
-        {menu.items.map((item: any) => (
-          <StieMenuHref key={item.href} href={item.href}>
-            {item.label}
-          </StieMenuHref>
-        ))}
-      </SubMenuItem>
+      {/* <SubMenuItem> */}
+      {menu.items.map((item: any) => (
+        <StieMenuHref
+          key={item.href}
+          href={item.href}
+          $active={isActiveChild(item.href)}
+        >
+          {item.label}
+        </StieMenuHref>
+      ))}
+      {/* </SubMenuItem> */}
     </SubMenu>
   );
 
@@ -151,6 +182,8 @@ const Header = () => {
           <SubMenuItem
             key={item.href}
             href={item.href}
+            $active={isActiveChild(item.href)}
+
             // onClick={() => {
             //   setIsMenuOpen(false);
             //   setOpenMenu(null);
@@ -187,6 +220,7 @@ const Header = () => {
             <StieMenuLi key={menu.key}>
               <StieMenuHref
                 $scrolled={scrolled}
+                $active={isActiveParent(menu)}
                 onClick={() => toggleSubMenu(menu.key)}
               >
                 {menu.label}
@@ -199,13 +233,21 @@ const Header = () => {
           ))}
 
           <StieMenuLi>
-            <StieMenuHref $scrolled={scrolled} href="/DraRebeca">
+            <StieMenuHref
+              $scrolled={scrolled}
+              $active={isActive("/DraRebeca")}
+              href="/DraRebeca"
+            >
               Sobre mí
             </StieMenuHref>
           </StieMenuLi>
 
           <StieMenuLi>
-            <StieMenuHref $scrolled={scrolled} href="/Contact">
+            <StieMenuHref
+              $scrolled={scrolled}
+              $active={isActive("/Contact")}
+              href="/Contact"
+            >
               Contacto
             </StieMenuHref>
           </StieMenuLi>
@@ -264,14 +306,17 @@ const Header = () => {
               </CitaContainer>
               <MobileUlDiv>
                 <StieMenuLi>
-                  <StieMenuHref $mobile href="/">
+                  <StieMenuHref $mobile href="/" $active={isActive("/")}>
                     Inicio
                   </StieMenuHref>
                 </StieMenuLi>
 
                 {MENU.map((menu) => (
                   <StieMenuLi key={menu.key}>
-                    <MobileButtonNav onClick={() => toggleSubMenu(menu.key)}>
+                    <MobileButtonNav
+                      $active={isActiveParent(menu)}
+                      onClick={() => toggleSubMenu(menu.key)}
+                    >
                       {menu.label}
                       <Arrow open={openMenu === menu.key}>
                         <GoChevronLeft />
@@ -282,13 +327,21 @@ const Header = () => {
                 ))}
 
                 <StieMenuLi>
-                  <StieMenuHref $mobile href="/DraRebeca">
+                  <StieMenuHref
+                    $mobile
+                    href="/DraRebeca"
+                    $active={isActive("/DraRebeca")}
+                  >
                     Sobre mí
                   </StieMenuHref>
                 </StieMenuLi>
 
                 <StieMenuLi>
-                  <StieMenuHref $mobile href="/Contact">
+                  <StieMenuHref
+                    $mobile
+                    href="/Contact"
+                    $active={isActive("/Contact")}
+                  >
                     Contacto
                   </StieMenuHref>
                 </StieMenuLi>
@@ -305,3 +358,9 @@ const Header = () => {
 };
 
 export default Header;
+function isActiveParent(menu: any): boolean | undefined {
+  throw new Error("Function not implemented.");
+}
+function isActiveChild(href: any): boolean | undefined {
+  throw new Error("Function not implemented.");
+}

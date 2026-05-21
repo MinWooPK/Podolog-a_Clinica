@@ -14,10 +14,10 @@ export const Navbar = styled.section`
   /* position: fixed; */
   /* background-color: white; */
   background-color: rgba(
-    255,
-    255,
-    255,
-    0
+    249,
+    251,
+    251,
+    0.7
   ); /* blanco muy suave y transparente */
   backdrop-filter: blur(6px); /* difumina el fondo para mejorar legibilidad */
 
@@ -86,6 +86,7 @@ export const Logo = styled.a`
 `;
 
 export const SiteMenu = styled.ul`
+  display: flex;
   text-align: center;
   @media (max-width: 1150px) {
     display: none;
@@ -102,18 +103,21 @@ export const SubMenu = styled.ul<SubMenuProps>`
   position: absolute;
   top: 80px;
   left: 20px;
+  text-align: start;
 
-  background-color: rgba(255, 255, 255, 0.95);
+  background: #f9fbfb;
   backdrop-filter: blur(6px);
 
-  padding: 10px 0;
+  padding: 10px 10px;
   margin: 0;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 
   z-index: 100;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   opacity: ${({ open }) => (open ? 1 : 0)};
   transform: ${({ open }) => (open ? "translateY(0px)" : "translateY(-10px)")};
@@ -135,7 +139,10 @@ export const Arrow = styled.span<ArrowProps>`
   transition: transform 0.3s ease-in-out;
   transform: rotate(${({ open }) => (open ? "-90deg" : "0deg")});
 `;
-export const SubMenuItem = styled.a`
+
+export const SubMenuItem = styled.a<{
+  $active?: boolean;
+}>`
   display: flex;
   align-items: center;
 
@@ -148,15 +155,20 @@ export const SubMenuItem = styled.a`
   text-decoration: none;
 
   font-size: 15px;
-  font-weight: 500;
+  font-weight: ${({ $active }) => ($active ? "700" : "500")};
+  color: ${({ $active }) => ($active ? "#ffc61a" : "rgba(255,255,255,0.82)")};
+  width: fit-content;
+  background: ${({ $active }) =>
+    $active ? "rgba(255, 255, 255, 0.04)" : "none"};
 
-  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid
+    ${({ $active }) => ($active ? "rgba(255, 198, 26, 0.25)" : "none")};
 
   /* background: rgba(255, 255, 255, 0.04);
 
-  border: 1px solid rgba(255, 255, 255, 0.06); */
+  border: 1px solid rgba(255, 255, 255, 0.06);
 
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px); */
 
   transition: all 0.25s ease;
 
@@ -202,9 +214,30 @@ export const StieMenuUl = styled.ul`
   }
 `;
 
+export const StieMenuLiDesktop = styled.li`
+  cursor: pointer;
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 40px;
+  position: relative;
+  margin: 0;
+  padding: 0 20px;
+  font-weight: 700;
+  list-style: none;
+  transition: all 0.35s ease-in-out;
+`;
+
 export const StieMenuLi = styled.li`
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 40px;
   position: relative;
   margin: 0;
   padding: 0 20px;
@@ -216,11 +249,12 @@ export const StieMenuLi = styled.li`
 export const StieMenuHref = styled.a<{
   $scrolled?: boolean;
   $mobile?: boolean;
+  $active?: boolean;
 }>`
   font-size: 16px;
   letter-spacing: 0;
-  padding: 5px 10px;
-  margin: 10px 0;
+  padding: 8px 10px;
+  /* margin: 10px 0; */
   cursor: pointer;
   font-weight: 500;
   position: relative;
@@ -233,6 +267,15 @@ export const StieMenuHref = styled.a<{
     $mobile ? "#fff" : $scrolled ? "#fff" : theme.colors.principal.secondary};
 
   transition: color 0.3s ease;
+
+  /* color: ${({ $active, theme }) =>
+    $active ? "#ffc61a" : theme.colors.principal.secondary}; */
+  /* font-weight: ${({ $active }) => ($active ? "500" : "500")}; */
+  background: ${({ $active }) =>
+    $active ? "rgba(255, 198, 26, 0.2)" : "transparent"};
+  border: 1px solid
+    ${({ $active }) => ($active ? "rgba(255, 198, 26, 0.4)" : "none")};
+  border-radius: 14px;
 
   &:hover {
     color: #ffc61a;
@@ -247,16 +290,13 @@ export const StieMenuHref = styled.a<{
     width: 100%;
     background-color: #ffc61a;
     bottom: -1px;
-    /* left: 0; */
 
-    transform-origin: right;
-    transform: scaleX(0);
-
-    transition: transform 0.35s ease;
+    transform: ${({ $active }) => ($active ? "scaleX(1)" : "scaleX(0)")};
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
   &:hover:before {
-    transform-origin: left;
     transform: scaleX(1);
   }
 `;
@@ -487,11 +527,12 @@ export const SubMenuMobile = styled.div<{ open?: boolean }>`
   flex-direction: column;
 
   /* width: 100%; */
-  margin-top: 8px;
+  /* margin-top: 8px; */
   margin-bottom: 12px;
   padding: 0 12px 0 18px;
+  gap: 1rem;
 
-  overflow: hidden;
+  overflow: auto;
 
   max-height: ${({ open }) => (open ? "400px" : "0px")};
   opacity: ${({ open }) => (open ? "1" : "0")};
@@ -505,15 +546,26 @@ export const SubMenuMobile = styled.div<{ open?: boolean }>`
 
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
 `;
-export const MobileButtonNav = styled.button`
+export const MobileButtonNav = styled.button<{
+  $active?: boolean;
+}>`
   display: flex;
   align-items: center;
   width: 100%;
   background: none;
   border: none;
-  color: white;
+  /* color: white; */
   font-size: 16px;
-  padding: 5px 10px;
+  padding: 6px 10px;
   font-weight: 500;
-  margin: 10px 0;
+  /* margin: 10px 0; */
+  font-weight: ${({ $active }) => ($active ? "700" : "500")};
+  color: ${({ $active }) => ($active ? "#ffc61a" : "rgba(255,255,255,0.82)")};
+  width: fit-content;
+  background: ${({ $active }) =>
+    $active ? "rgba(255, 255, 255, 0.04)" : "none"};
+  border-radius: 14px;
+
+  border: 1px solid
+    ${({ $active }) => ($active ? "rgba(255, 198, 26, 0.25)" : "none")};
 `;
