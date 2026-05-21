@@ -151,10 +151,10 @@ const Header = () => {
           <SubMenuItem
             key={item.href}
             href={item.href}
-            onClick={() => {
-              setIsMenuOpen(false);
-              setOpenMenu(null);
-            }}
+            // onClick={() => {
+            //   setIsMenuOpen(false);
+            //   setOpenMenu(null);
+            // }}
           >
             {item.label}
           </SubMenuItem>
