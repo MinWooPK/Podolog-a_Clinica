@@ -29,7 +29,7 @@ export default function PodoHome({
     <Container>
       <LeftContent>
         <Title>Tus pies en buenas manos.</Title>
-        <Subtitle>Clínica de podlogía en Palma de Mallorca</Subtitle>
+        <Subtitle>Clínica de podología en Palma de Mallorca</Subtitle>
         <Description>
           Unidad de Podología Clínica y Biomecánica Avanzada. Especialista en el
           diagnóstico y tratamiento integral de las patologías de pie. Ayudamos

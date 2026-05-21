@@ -227,6 +227,7 @@ export const ContactInfoList = styled.ul`
 `;
 
 export const ContactInfoItem = styled.li`
+  color: #18595b;
   a {
     display: flex;
     align-items: center;

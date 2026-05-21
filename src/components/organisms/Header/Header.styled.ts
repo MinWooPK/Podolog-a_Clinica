@@ -135,22 +135,63 @@ export const Arrow = styled.span<ArrowProps>`
   transition: transform 0.3s ease-in-out;
   transform: rotate(${({ open }) => (open ? "-90deg" : "0deg")});
 `;
-export const SubMenuItem = styled.li`
-  /* padding: 8px 20px; */
+export const SubMenuItem = styled.a`
   display: flex;
-  flex-direction: column;
-  text-align: start;
+  align-items: center;
 
-  & > a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.principal.secondary};
+  /* width: 100%; */
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  /* background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06); */
+
+  /* backdrop-filter: blur(10px); */
+
+  transition: all 0.25s ease;
+
+  position: relative;
+
+  overflow: hidden;
+
+  &:hover {
+    background: rgba(255, 198, 26, 0.12);
+    border-color: rgba(255, 198, 26, 0.3);
+
+    color: #ffc61a;
+
+    transform: translateX(4px);
   }
 
-  /* &:hover {
-    background: #f5f5f5;
-  } */
-`;
+  &:active {
+    transform: scale(0.98);
+  }
 
+  &::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ffc61a;
+
+    margin-right: 12px;
+
+    flex-shrink: 0;
+  }
+`;
 export const StieMenuUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -332,7 +373,7 @@ export const NavRed = styled("div").withConfig({
   background-color: ${({ theme }) => theme.colors.principal.secondary};
 
   width: 95%;
-  gap: 0.5rem;
+  gap: 1rem;
   transition-delay: 0.2s;
   position: fixed;
   top: 0;
@@ -376,13 +417,15 @@ export const CopyRightDescription = styled.p`
 
 export const MobileUlDiv = styled.div`
   display: flex;
-  gap: 0.5rem;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+
   width: 100%;
-  margin: auto;
-  overflow: auto;
+
+  padding: 20px;
+
+  gap: 10px;
+
+  overflow-y: auto;
 `;
 
 export const LogoContainerText = styled.div`
@@ -442,33 +485,25 @@ export const CitaContainer = styled.a`
 export const SubMenuMobile = styled.div<{ open?: boolean }>`
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  gap: 15px;
+
+  /* width: 100%; */
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding: 0 12px 0 18px;
 
   overflow: hidden;
 
-  max-height: ${({ open }) => (open ? "300px" : "0px")};
+  max-height: ${({ open }) => (open ? "400px" : "0px")};
   opacity: ${({ open }) => (open ? "1" : "0")};
-  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-5px)")};
+
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-10px)")};
 
   transition:
-    max-height 0.4s ease,
-    opacity 0.25s ease,
-    transform 0.25s ease;
+    max-height 0.45s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
 
   pointer-events: ${({ open }) => (open ? "auto" : "none")};
-  a {
-    font-size: 16px;
-    color: #ddd;
-    padding: 6px 0;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #fff;
-  }
 `;
 export const MobileButtonNav = styled.button`
   display: flex;
@@ -479,5 +514,6 @@ export const MobileButtonNav = styled.button`
   color: white;
   font-size: 16px;
   padding: 5px 10px;
-  font-weight: 700;
+  font-weight: 500;
+  margin: 10px 0;
 `;

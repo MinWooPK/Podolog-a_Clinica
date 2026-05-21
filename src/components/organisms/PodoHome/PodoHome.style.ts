@@ -17,7 +17,7 @@ export const Container = styled.section`
     text-align: center;
     gap: 2rem;
     min-height: auto;
-    padding: 2rem 0.5rem;
+    padding: 4rem 0.5rem;
   }
 `;
 

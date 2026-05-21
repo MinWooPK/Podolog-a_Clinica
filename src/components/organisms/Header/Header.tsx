@@ -148,9 +148,8 @@ const Header = () => {
     return (
       <SubMenuMobile open={openMenu === menu.key}>
         {menu.items.map((item: any) => (
-          <StieMenuHref
+          <SubMenuItem
             key={item.href}
-            $mobile
             href={item.href}
             onClick={() => {
               setIsMenuOpen(false);
@@ -158,7 +157,7 @@ const Header = () => {
             }}
           >
             {item.label}
-          </StieMenuHref>
+          </SubMenuItem>
         ))}
       </SubMenuMobile>
     );
@@ -248,7 +247,7 @@ const Header = () => {
               </HamburgerDivMobie>
 
               <Logo href="/">
-                <LogoImage src={LogoImgSrc} width="160px" height="160px" />
+                <LogoImage src={LogoImgSrc} width="100px" height="100px" />
               </Logo>
               <LogoContainerText>
                 <LogoContainerFirstP>Tramontana Salud</LogoContainerFirstP>
