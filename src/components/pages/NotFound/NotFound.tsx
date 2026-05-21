@@ -5,8 +5,8 @@ import { Container, Title, Description } from "./NotFound.styles";
 const NotFound: React.FC = () => {
   return (
     <Container>
-      <Title>Pagina en construción</Title>
-      <Description>Esta en construcción REBEEEE </Description>
+      <Title>Página no encontrada</Title>
+      {/* <Description>Esta en construcción REBEEEE </Description> */}
     </Container>
   );
 };

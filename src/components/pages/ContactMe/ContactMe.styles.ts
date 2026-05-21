@@ -52,8 +52,9 @@ export const FormContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 0;
+    /* padding: 2rem;
+    gap: 2rem; */
   }
 `;
 
@@ -61,82 +62,124 @@ export const FormContainer = styled.div`
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  text-align: start;
+  gap: 1rem;
   width: stretch;
   padding: 2rem;
-  background: linear-gradient(135deg, #8fd3d1, #6cbfbd);
+  background: linear-gradient(135deg, #cfeeee, #b7d9d7);
   border-radius: 20px;
 `;
 
 export const Input = styled.input`
   padding: 14px 16px;
-
   border-radius: 12px;
-
-  border: 1px solid #18595b;
+  border: 1px solid #1f3b3d;
 
   background: rgba(255, 255, 255, 0.08);
-
   color: #1f3b3d;
 
   font-size: 1rem;
-
   transition: all 0.25s ease;
+  outline: none;
 
-  backdrop-filter: blur(10px);
-
+  /* placeholder */
   &::placeholder {
-    color: #1f3b3d;
+    color: rgba(31, 59, 61, 0.6);
   }
 
+  /* =========================
+     FOCUS (estado activo)
+  ========================== */
   &:focus {
-    outline: none;
-
-    /* border-color: #7ce7e8; */
-
-    background: rgba(255, 255, 255, 0.12);
-
-    box-shadow: 0 0 0 4px rgba(124, 231, 232, 0.18);
+    border-color: #ffc61a;
   }
 
-  &:invalid:not(:placeholder-shown) {
+  /* =========================
+     VALIDACIÓN REAL
+     (solo cuando el usuario escribe)
+  ========================== */
+
+  &:required:invalid:not(:placeholder-shown) {
     border-color: #ff8c8c;
+  }
+
+  &:required:valid:not(:placeholder-shown) {
+    border-color: #1f3b3d;
+  }
+
+  /* alternativa moderna (si el navegador lo soporta mejor) */
+  &:user-invalid {
+    border-color: #ff8c8c;
+  }
+
+  &:user-valid {
+    border-color: #1f3b3d;
+  }
+
+  /* =========================
+     AUTOFILL FIX (Chrome)
+  ========================== */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #1f3b3d !important;
+    transition: background-color 9999s ease-in-out 0s;
   }
 `;
 
 export const TextArea = styled.textarea`
   padding: 14px 16px;
-
   border-radius: 12px;
-
-  border: 1px solid #18595b;
+  border: 1px solid #1f3b3d;
 
   background: rgba(255, 255, 255, 0.08);
-
-  font-size: 1rem;
-
-  resize: vertical;
-
-  min-height: 140px;
-
-  transition: all 0.25s ease;
-
-  backdrop-filter: blur(10px);
-
   color: #1f3b3d;
 
-  &::placeholder {
-    color: #1f3b3d;
-  }
+  resize: none;
+  transition: all 0.25s ease;
 
   &:focus {
     outline: none;
+    border-color: #ffc61a;
+  }
 
-    /* border-color: #7ce7e8; */
+  &:not(:placeholder-shown):invalid {
+    border-color: #ff8c8c;
+  }
 
-    background: rgba(255, 255, 255, 0.12);
+  &:not(:placeholder-shown):valid {
+    border-color: #1f3b3d;
+  }
+`;
+export const StatusMessage = styled.p<{ $type: "success" | "error" }>`
+  margin-top: 1rem;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
 
-    box-shadow: 0 0 0 4px rgba(124, 231, 232, 0.18);
+  color: ${({ $type }) => ($type === "success" ? "#1f3b3d" : "#ff4d4d")};
+
+  background: ${({ $type }) =>
+    $type === "success"
+      ? "rgba(255, 198, 26, 0.15)"
+      : "rgba(255, 77, 77, 0.1)"};
+
+  border: 1px solid
+    ${({ $type }) => ($type === "success" ? "#ffc61a" : "#ff4d4d")};
+
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
@@ -241,12 +284,19 @@ export const ListItem = styled.li`
   color: #18595b;
   font-weight: 500;
 
-  h3 {
-  }
   a {
     color: #ffc61a;
     font-weight: 400;
     text-decoration: none;
+
+    &:focus {
+      outline: 2px solid #ffc61a;
+      outline-offset: 4px;
+    }
+
+    &:hover {
+      color: #18595b;
+    }
   }
 `;
 
@@ -302,8 +352,8 @@ export const ContactSection = styled.section`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 2rem;
+    /* padding: 2rem;
+    gap: 2rem; */
   }
 `;
 

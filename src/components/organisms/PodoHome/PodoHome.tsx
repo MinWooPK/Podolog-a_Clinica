@@ -28,7 +28,7 @@ export default function PodoHome({
   return (
     <Container>
       <LeftContent>
-        <Title>Tus pies en buenas manos.</Title>
+        <Title>Bienestar en tus pies</Title>
         <Subtitle>Clínica de podología en Palma de Mallorca</Subtitle>
         <Description>
           Unidad de Podología Clínica y Biomecánica Avanzada. Especialista en el

@@ -24,37 +24,53 @@ import {
   FieldGroup,
   HelperText,
   Label,
+  StatusMessage,
 } from "./ContactMe.styles";
 import ReviewHome from "@organisms/ReviewHome";
 
 const ContactMe: React.FC = () => {
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const form = e.currentTarget;
     const data = new FormData(form);
 
     try {
+      setStatus(null); // limpia mensaje anterior
+
       const response = await fetch("https://formspree.io/f/mpwyjwey", {
         method: "POST",
         body: data,
         headers: {
           Accept: "application/json",
-        } as HeadersInit,
+        },
       });
 
-      if (response.ok) {
-        setStatus("✅ Mensaje enviado correctamente.");
-        form.reset();
-      } else {
-        setStatus("❌ Ocurrió un error al enviar el mensaje.");
+      if (!response.ok) {
+        throw new Error("Server error");
       }
-    } catch (error) {
-      setStatus("❌ Ocurrió un error al enviar el mensaje.");
-      console.error(error);
+
+      setStatus({
+        type: "success",
+        message: "✅ Mensaje enviado correctamente. Te responderemos pronto.",
+      });
+
+      form.reset();
+    } catch (error: unknown) {
+      console.error("Submit error:", error);
+
+      setStatus({
+        type: "error",
+        message: "❌ No se pudo enviar el mensaje. Inténtalo más tarde.",
+      });
     }
   };
+
   return (
     <Container>
       <FormContainer>
@@ -66,15 +82,32 @@ const ContactMe: React.FC = () => {
 
             <Text>
               ¿Quieres pedir una cita o resolver dudas? Estamos aquí para
-              ayudarte por teléfono, WhatsApp o formulario.
+              ayudarte por WhatsApp o formulario.
             </Text>
 
             <List>
-              <ListItem>
+              {/* <ListItem>
                 Teléfono: <a href="tel:627 66 42 49">627 66 42 49</a>
+              </ListItem> */}
+              <ListItem>
+                Email:{" "}
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=rebesaludes83@gmail.com&su=Consulta%20desde%20la%20web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  rebesaludes83@gmail.com
+                </a>
               </ListItem>
               <ListItem>
-                WhatsApp: <a href="https://wa.me/627 66 42 49">627 66 42 49</a>
+                WhatsApp:{" "}
+                <a
+                  href="https://wa.me/34627664249"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +34 627 66 42 49
+                </a>
               </ListItem>
             </List>
 
@@ -110,11 +143,17 @@ const ContactMe: React.FC = () => {
             </CTAButton>
           </SideBox>
         </ContactSection>
-
         {/* DERECHA */}
         <ContactForm onSubmit={handleSubmit}>
+          <Subtitle>Formulario de contacto</Subtitle>
+
+          <Text>
+            También puedes contactar con la clínica a través del siguiente
+            formulario.
+          </Text>
           <FieldGroup>
             <Label htmlFor="name">Nombre completo</Label>
+            <HelperText>Introduce al menos 3 caracteres</HelperText>
 
             <Input
               id="name"
@@ -124,12 +163,11 @@ const ContactMe: React.FC = () => {
               required
               minLength={3}
             />
-
-            <HelperText>Introduce al menos 3 caracteres</HelperText>
           </FieldGroup>
 
           <FieldGroup>
             <Label htmlFor="email">Correo electrónico</Label>
+            <HelperText>Te responderemos a este correo</HelperText>
 
             <Input
               id="email"
@@ -138,12 +176,11 @@ const ContactMe: React.FC = () => {
               placeholder="ejemplo@email.com"
               required
             />
-
-            <HelperText>Te responderemos a este correo</HelperText>
           </FieldGroup>
 
           <FieldGroup>
             <Label htmlFor="phone">Teléfono</Label>
+            <HelperText>Solo números y símbolo +</HelperText>
 
             <Input
               id="phone"
@@ -153,12 +190,11 @@ const ContactMe: React.FC = () => {
               pattern="[0-9+ ]{6,}"
               required
             />
-
-            <HelperText>Solo números y símbolo +</HelperText>
           </FieldGroup>
 
           <FieldGroup>
             <Label htmlFor="message">Mensaje</Label>
+            <HelperText>Describe brevemente tu consulta</HelperText>
 
             <TextArea
               id="message"
@@ -168,14 +204,13 @@ const ContactMe: React.FC = () => {
               required
               minLength={10}
             />
-
-            <HelperText>Describe brevemente tu consulta</HelperText>
           </FieldGroup>
 
           <SubmitButton type="submit">Enviar mensaje</SubmitButton>
         </ContactForm>
-
-        {status && <p>{status}</p>}
+        {status && (
+          <StatusMessage $type={status.type}>{status.message}</StatusMessage>
+        )}{" "}
       </FormContainer>
       {/* <LocationContactContainer>
  
