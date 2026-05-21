@@ -52,7 +52,10 @@ const TreatmentSections: React.FC<Props> = ({
             <Title>{item.title}</Title>
 
             <BulletList>
-              {item.description.map((text, i) => (
+              {(Array.isArray(item.description)
+                ? item.description
+                : [item.description]
+              ).map((text: string, i: number) => (
                 <Bullet key={i}>{text}</Bullet>
               ))}
             </BulletList>

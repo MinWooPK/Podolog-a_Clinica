@@ -26,39 +26,6 @@ import { Footprints, Cpu, MessageCircle, Zap } from "lucide-react";
 
 import { useTranslation } from "react-i18next";
 
-const faqItems = [
-  {
-    question: "¿Duele el tratamiento podológico?",
-    answer:
-      "No, los tratamientos se realizan de forma indolora o con molestias mínimas. Siempre adaptamos la técnica a la sensibilidad del paciente.",
-  },
-  {
-    question: "¿Necesito cita previa?",
-    answer:
-      "Sí, es recomendable pedir cita previa para garantizar una atención personalizada y sin esperas.",
-  },
-  {
-    question: "¿Cuánto dura una sesión?",
-    answer:
-      "La duración habitual es de 30 a 45 minutos, dependiendo del tipo de tratamiento.",
-  },
-  {
-    question: "¿Cada cuánto debo acudir al podólogo?",
-    answer:
-      "Depende del caso, pero en general se recomienda cada 4 a 8 semanas para tratamientos de mantenimiento.",
-  },
-  {
-    question: "¿Tratáis uñas encarnadas o infecciones?",
-    answer:
-      "Sí, tratamos patologías ungueales como uñas encarnadas, hongos y engrosamientos de forma profesional y segura.",
-  },
-  {
-    question: "¿Es necesario llevar algo a la consulta?",
-    answer:
-      "No es necesario. Solo recomendamos traer calzado habitual si queremos valorar su adecuación.",
-  },
-];
-
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -148,11 +115,7 @@ const Home: React.FC = () => {
   ];
   return (
     <>
-      <PodoHome
-        name={""}
-        description={""}
-        onPrimaryClick={() => scrollToSection("what-we-treat")}
-      />
+      <PodoHome onPrimaryClick={() => scrollToSection("what-we-treat")} />
       <TreatmentsSection id="what-we-treat">
         <Header>
           <h2>{t("home.treatmentsTitle")}</h2>
