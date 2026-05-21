@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import {
   Title,
   Description,
@@ -12,37 +14,6 @@ import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { Bone, Droplets, Ruler, User } from "lucide-react";
 
-const anthropometryProcess = [
-  {
-    title: "Diámetros Óseos",
-    category: "Estructura",
-    description:
-      "Medimos la anchura de estructuras óseas como muñeca, fémur o tobillo. Determinamos la robustez esquelética. Evaluamos la capacidad de carga del sistema corporal.",
-    icon: <Bone />,
-  },
-  {
-    title: "Pliegues Cutáneos",
-    category: "Composición",
-    description:
-      "Evaluamos el tejido adiposo en puntos estratégicos. Comprendemos la distribución de la masa grasa. Analizamos su impacto metabólico y mecánico.",
-    icon: <Droplets />,
-  },
-  {
-    title: "Perímetros Corporales",
-    category: "Volumen",
-    description:
-      "Analizamos los contornos musculares en extremidades y tronco. Detectamos desequilibrios funcionales en la marcha.",
-    icon: <Ruler />,
-  },
-  {
-    title: "Somatotipo",
-    category: "Biotipo",
-    description:
-      "Integramos todos los datos antropométricos. Definimos tu biotipo corporal. Personalizamos el tratamiento biomecánico.",
-    icon: <User />,
-  },
-];
-
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -55,43 +26,62 @@ const scrollToSection = (id: string) => {
 };
 
 const Antropometria: React.FC = () => {
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "oseo",
+      icon: <Bone />,
+    },
+    {
+      id: "pliegues",
+      icon: <Droplets />,
+    },
+    {
+      id: "perimetro",
+      icon: <Ruler />,
+    },
+    {
+      id: "somatotipo",
+      icon: <User />,
+    },
+  ];
+
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`antrometriaTreatments.${item.id}.title`),
+    category: t(`antrometriaTreatments.${item.id}.category`),
+    description: t(`antrometriaTreatments.${item.id}.description`),
+  }));
+
   return (
     <>
       <Hero
         backgroundImage={ImgAntropometria}
-        title="Antropometría Integral"
-        subtitle="Evaluación completa de la composición y equilibrio corporal"
-        description={
-          <>
-            En nuestra consulta, el estudio de las proporciones abarca la
-            totalidad de tu estructura. Realizamos un{" "}
-            <strong>perfil antropométrico completo </strong>para entender la
-            arquitectura integral de tu cuerpo. Como estructura biológica, el
-            pie funciona como el receptor final de todas las cargas, palancas y
-            desequilibrios que ocurren en los segmentos superiores.
-          </>
-        }
+        title={t("antrometriaTheme.title")}
+        subtitle={t("antrometriaTheme.subtitle")}
+        description={t("antrometriaTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
-      <WhatWeTreat id="what-we-treat" items={anthropometryProcess} />
+      <WhatWeTreat
+        id="what-we-treat"
+        items={treatmentsData}
+        title={t("oterhSubTitle.antropometria")}
+      />
 
       <ContaienrFirst backgroundImage={ImgAntropometria2}>
-        <Eyebrow>¿Por qué es necesario este nivel de detalle?</Eyebrow>
+        <Eyebrow>{t("antrometriaThemeSection.eyebrow")}</Eyebrow>
 
-        <Description>
-          Muchas patologías del pie tienen su origen en la rodilla, la cadera o
-          incluso la columna. Al realizar un perfil antropométrico completo, no
-          solo tratamos el síntoma en el pie, sino que identificamos la causa en
-          la estructura global de tu organismo.
-        </Description>
+        <Description>{t("antrometriaThemeSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

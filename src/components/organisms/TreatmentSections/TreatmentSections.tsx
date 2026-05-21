@@ -17,7 +17,7 @@ import Button from "@atoms/Button";
 
 type Treatment = {
   title: string;
-  description: string[];
+  description: string | string[];
   image: string;
   id: string;
 };

@@ -11,6 +11,7 @@ import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { Activity, Footprints, ScanSearch, ShieldCheck } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
+import { useTranslation } from "react-i18next";
 
 const specializedServices = [
   {
@@ -121,30 +122,92 @@ const Nails: React.FC = () => {
     null,
   );
 
-  const selectedTreatmentData = treatmentsSub.find(
-    (item) => item.id === selectedTreatment,
-  );
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "brackets-ortonixia",
+      icon: <Activity />,
+    },
+    {
+      id: "reconstruccion-ungueal",
+      icon: <ShieldCheck />,
+    },
+    {
+      id: "tamponado",
+      icon: <Footprints />,
+    },
+    {
+      id: "prevencion-recidivas",
+      icon: <ScanSearch />,
+    },
+  ];
+
+  const treatmentsSub = [
+    {
+      id: "brackets-ortonixia",
+      image:
+        "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg",
+    },
+
+    {
+      id: "reconstruccion-ungueal",
+      image:
+        "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg",
+    },
+
+    {
+      id: "tamponado",
+      image:
+        "https://images.pexels.com/photos/6621464/pexels-photo-6621464.jpeg",
+    },
+
+    {
+      id: "prevencion-recidivas",
+      image:
+        "https://images.pexels.com/photos/3845983/pexels-photo-3845983.jpeg",
+    },
+  ];
+
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`ortonixiaNails.${item.id}.title`),
+    category: t(`ortonixiaNails.${item.id}.category`),
+    description: t(`ortonixiaNails.${item.id}.description`),
+  }));
+  const selectedTreatmentTranslated = selectedTreatment
+    ? (() => {
+        const base = treatmentsSub.find(
+          (item) => item.id === selectedTreatment,
+        );
+
+        if (!base) return null;
+
+        return {
+          id: base.id,
+          image: base.image,
+          title: t(`ortonixiaSub.${base.id}.title`),
+          description: t(`ortonixiaSub.${base.id}.description`, {
+            returnObjects: true,
+          }) as string[],
+        };
+      })()
+    : null;
 
   return (
     <>
       <Hero
         backgroundImage={PdologiaOrtonixia}
-        title="Ortonixia"
-        subtitle="Reeducación y Reconstrucción Ungueal"
-        description={
-          <>
-            La ortonixia es un tratamiento no invasivo que funciona como una
-            "ortodoncia" para las uñas. Es la alternativa ideal para corregir
-            uñas con curvatura excesiva, evitar que se claven y recuperar la
-            anatomía tras una rotura o traumatismo.
-          </>
-        }
+        title={t("nailsTheme.title")}
+        subtitle={t("nailsTheme.subtitle")}
+        description={t("nailsTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
@@ -159,10 +222,9 @@ const Nails: React.FC = () => {
             transition={{ duration: 0.35 }}
           >
             <WhatWeTreat
-              title="¿En qué consiste nuestra técnica?
-"
               id="what-we-treat"
-              items={specializedServices}
+              title={t("oterhSubTitle.ortonixia")}
+              items={treatmentsData}
               onCardClick={(id) => setSelectedTreatment(id)}
             />
           </motion.div>
@@ -176,7 +238,9 @@ const Nails: React.FC = () => {
           >
             <TreatmentSections
               id="what-we-treat"
-              items={[selectedTreatmentData!]}
+              items={
+                selectedTreatmentTranslated ? [selectedTreatmentTranslated] : []
+              }
               showBackButton={true}
               onBack={() => setSelectedTreatment(null)}
             />{" "}
@@ -184,16 +248,11 @@ const Nails: React.FC = () => {
         )}
       </AnimatePresence>
       <ContaienrFirst $backgroundImage={PdologiaOrtonixia2}>
-        <Eyebrow>Ortónica y corrección ungueal</Eyebrow>
+        <Eyebrow>{t("nailsSection.eyebrow")}</Eyebrow>
 
-        <Title>Corrección sin cirugía</Title>
+        <Title>{t("nailsSection.title")}</Title>
 
-        <Description>
-          No siempre es necesario eliminar el tejido; a veces, solo necesitamos
-          guiar su crecimiento. La ortonixia respeta la integridad de la uña,
-          aplicando fuerzas físicas controladas para restaurar su anatomía
-          funcional y evitar que vuelva a clavarse.
-        </Description>
+        <Description>{t("nailsSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

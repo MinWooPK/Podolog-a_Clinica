@@ -20,9 +20,12 @@ import PodoHome from "@organisms/PodoHome";
 import ImgFAQPodoLogiaGeneral from "@assets/img/FAQGeneral.jpg";
 import FAQ from "@organisms/Faq/FAQ";
 import ImgClinica2 from "@assets/img/ClinicaImagen2.jpg";
-import FeatureListSection from "@organisms/FeatureListSection/FeatureListSection"; // 👈 IMPORTANTE
+import FeatureListSection from "@organisms/FeatureListSection/FeatureListSection"; //  IMPORTANTE
 import FeatureGrid from "@molecules/WhyUs/FeatureGrid";
 import { Footprints, Cpu, MessageCircle, Zap } from "lucide-react";
+
+import { useTranslation } from "react-i18next";
+
 const faqItems = [
   {
     question: "¿Duele el tratamiento podológico?",
@@ -56,50 +59,6 @@ const faqItems = [
   },
 ];
 
-const podoFeatures = {
-  title: "Cuidamos la salud de tus pies",
-
-  items: [
-    "Estudio biomecánico de la pisada",
-    "Tratamiento de uñas encarnadas",
-    "Eliminación de durezas y callosidades",
-    "Podología deportiva",
-    "Tratamiento de papilomas (verrugas)",
-    "Plantillas personalizadas",
-    "Prevención del pie diabético",
-    "Atención para todas las edades",
-  ],
-
-  backgroundImage:
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80",
-};
-const treatments = [
-  {
-    title: "Podología general",
-    description:
-      "Diagnóstico y tratamiento de patologías del pie como durezas, callosidades, hongos o alteraciones ungueales. Realizamos una valoración completa para detectar el origen del problema y aplicar el tratamiento más adecuado con tecnología avanzada y técnicas seguras.",
-    link: "/podologia",
-  },
-  {
-    title: "Uñas encarnadas",
-    description:
-      "Tratamiento seguro, rápido y prácticamente indoloro de uñas encarnadas. Eliminamos la causa del problema, reducimos la inflamación y realizamos seguimiento para evitar que vuelva a aparecer, mejorando la salud y el confort del paciente.",
-    link: "/podologia/nails",
-  },
-  {
-    title: "Podología deportiva",
-    description:
-      "Prevención, diagnóstico y tratamiento de lesiones relacionadas con la actividad física. Analizamos la pisada y la biomecánica para evitar sobrecargas, mejorar el rendimiento y reducir el riesgo de lesiones en deportistas.",
-    link: "/podologia/deportiva",
-  },
-  {
-    title: "Plantillas personalizadas",
-    description:
-      "Realizamos un estudio biomecánico completo de la pisada para diseñar plantillas totalmente personalizadas. Estas ayudan a corregir alteraciones posturales, aliviar dolores y mejorar la distribución de cargas en el pie.",
-    link: "/podologia/plantillas_3D",
-  },
-];
-
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -112,6 +71,81 @@ const scrollToSection = (id: string) => {
 };
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
+
+  const podoFeatures = {
+    items: [
+      "biomechanics",
+      "ingrown_nails",
+      "calluses",
+      "sports",
+      "warts",
+      "insoles",
+      "diabetic",
+      "all_ages",
+    ],
+  };
+  const faqItems = [
+    {
+      key: "pain",
+    },
+    {
+      key: "appointment",
+    },
+    {
+      key: "duration",
+    },
+    {
+      key: "frequency",
+    },
+    {
+      key: "nails",
+    },
+    {
+      key: "clinic",
+    },
+  ];
+
+  const treatments = [
+    {
+      title: t("home.treatments.general.title"),
+      description: t("home.treatments.general.desc"),
+      link: "/podologia",
+    },
+    {
+      title: t("home.treatments.nails.title"),
+      description: t("home.treatments.nails.desc"),
+      link: "/podologia/nails",
+    },
+    {
+      title: t("home.treatments.sports.title"),
+      description: t("home.treatments.sports.desc"),
+      link: "/podologia/deportiva",
+    },
+    {
+      title: t("home.treatments.insoles.title"),
+      description: t("home.treatments.insoles.desc"),
+      link: "/podologia/plantillas_3D",
+    },
+  ];
+  const featureItems = [
+    {
+      key: "specialists",
+      icon: <Footprints size={22} />,
+    },
+    {
+      key: "technology",
+      icon: <Cpu size={22} />,
+    },
+    {
+      key: "personalized",
+      icon: <MessageCircle size={22} />,
+    },
+    {
+      key: "no_waiting",
+      icon: <Zap size={22} />,
+    },
+  ];
   return (
     <>
       <PodoHome
@@ -121,7 +155,7 @@ const Home: React.FC = () => {
       />
       <TreatmentsSection id="what-we-treat">
         <Header>
-          <h2>Tratamientos de podología</h2>
+          <h2>{t("home.treatmentsTitle")}</h2>
         </Header>
 
         <TreatmentsGrid>
@@ -132,7 +166,7 @@ const Home: React.FC = () => {
               <TreatmentText>{item.description}</TreatmentText>
 
               <TreatmentButton href={item.link}>
-                Saber más <span>→</span>
+                {t("cta.verMas")} <span>→</span>
               </TreatmentButton>
             </TreatmentCard>
           ))}
@@ -141,39 +175,24 @@ const Home: React.FC = () => {
 
       {/*  NUEVA SECCIÓN PODOLÓGICA */}
       <FeatureListSection
-        title={podoFeatures.title}
-        subtitle="Tratamientos personalizados de podología avanzada para todas las edades"
-        items={podoFeatures.items}
+        title={t("featuresPodo.title")}
+        subtitle={t("featuresPodo.subtitle")}
+        items={podoFeatures.items.map((key) => t(`featuresPodo.items.${key}`))}
         backgroundImage={ImgClinica2}
       />
       <FeatureGrid
-        title="¿Por qué elegir nuestra clínica de podología?"
-        items={[
-          {
-            title: "Especialistas en podología",
-            description:
-              "Tratamientos avanzados para todo tipo de patologías del pie.",
-            icon: <Footprints size={22} />,
-          },
-          {
-            title: "Tecnología avanzada",
-            description: "Diagnóstico preciso con tecnología moderna.",
-            icon: <Cpu size={22} />,
-          },
-          {
-            title: "Atención personalizada",
-            description: "Cada paciente recibe un tratamiento adaptado.",
-            icon: <MessageCircle size={22} />,
-          },
-          {
-            title: "Sin esperas",
-            description: "Citas rápidas y sin largas listas de espera.",
-            icon: <Zap size={22} />,
-          },
-        ]}
+        title={t("featureGrid.title")}
+        items={featureItems.map((item) => ({
+          title: t(`featureGrid.items.${item.key}.title`),
+          description: t(`featureGrid.items.${item.key}.description`),
+          icon: item.icon,
+        }))}
       />
       <FAQ
-        items={faqItems}
+        items={faqItems.map((item) => ({
+          question: t(`faq.items.${item.key}.question`),
+          answer: t(`faq.items.${item.key}.answer`),
+        }))}
         image={ImgFAQPodoLogiaGeneral}
         imageAlt="Consulta de podología"
       />

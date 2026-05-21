@@ -16,110 +16,75 @@ import {
 } from "./Investigacion.styles";
 
 import ImgInvestigacion from "@assets/img/Investigacion.jpeg";
+import { useTranslation } from "react-i18next";
 
 const Investigacion: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Section>
       <Container>
-        {/* HEADER CIENTÍFICO */}
-        <Eyebrow>Investigación · Biomecánica · Psicosomática</Eyebrow>
+        <Eyebrow>{t("eyebrow")}</Eyebrow>
 
-        <Title>
-          Investigación aplicada al sistema musculoesquelético humano
-        </Title>
+        <Title>{t("title")}</Title>
 
-        <Description>
-          Mi línea de trabajo integra biomecánica clínica, análisis estructural
-          y modelos de interpretación psicosomática desde un enfoque
-          interdisciplinar. El objetivo es comprender la relación entre
-          estructura, función y adaptación del cuerpo humano en diferentes
-          contextos de carga, movimiento y estrés.
-        </Description>
+        <Description>{t("description")}</Description>
 
-        {/* MARCO METODOLÓGICO */}
+        {/* META */}
         <MetaBlock>
           <MetaItem>
-            <strong>Enfoque:</strong> Biomecánica + Psicosomática + Clínica
-            funcional
+            <strong>Approach:</strong> {t("meta.approach")}
           </MetaItem>
 
           <MetaItem>
-            <strong>Unidad de análisis:</strong> Sistema musculoesquelético en
-            carga y reposo
+            <strong>Unit:</strong> {t("meta.unit")}
           </MetaItem>
 
           <MetaItem>
-            <strong>Objetivo:</strong> Modelización de adaptación estructural y
-            prevención de disfunciones
+            <strong>Objective:</strong> {t("meta.objective")}
           </MetaItem>
         </MetaBlock>
 
         <Divider />
 
-        {/* LÍNEAS DE INVESTIGACIÓN */}
+        {/* CARDS */}
         <Grid>
           <Card>
-            <CardTitle>
-              01 · Salud psicosomática y estructura del sujeto
-            </CardTitle>
-            <CardText>
-              Estudio de la inscripción somática de procesos psíquicos desde una
-              perspectiva psicoanalítica estructural. El cuerpo es interpretado
-              como sistema de manifestación de conflictos, defensas y
-              adaptaciones inconscientes.
-            </CardText>
+            <CardTitle>{t("cards.1.title")}</CardTitle>
+            <CardText>{t("cards.1.text")}</CardText>
           </Card>
 
           <Card>
-            <CardTitle>02 · Alineación sagital y control postural</CardTitle>
-            <CardText>
-              Análisis de la variabilidad de la columna vertebral en plano
-              sagital y su relación con el equilibrio dinámico, la eficiencia
-              mecánica y la distribución de cargas en bipedestación.
-            </CardText>
+            <CardTitle>{t("cards.2.title")}</CardTitle>
+            <CardText>{t("cards.2.text")}</CardText>
           </Card>
 
           <Card>
-            <CardTitle>03 · Factores de inestabilidad biomecánica</CardTitle>
-            <CardText>
-              Evaluación de variables antropométricas, composición corporal y
-              patrones de movimiento que alteran el centro de gravedad y generan
-              compensaciones estructurales.
-            </CardText>
+            <CardTitle>{t("cards.3.title")}</CardTitle>
+            <CardText>{t("cards.3.text")}</CardText>
           </Card>
 
           <Card>
-            <CardTitle>
-              04 · Degeneración musculoesquelética y adaptación
-            </CardTitle>
-            <CardText>
-              Estudio longitudinal de la relación entre desalineaciones
-              estructurales, movilidad articular y procesos degenerativos del
-              sistema musculoesquelético.
-            </CardText>
+            <CardTitle>{t("cards.4.title")}</CardTitle>
+            <CardText>{t("cards.4.text")}</CardText>
           </Card>
         </Grid>
 
-        {/* IMAGEN CIENTÍFICA */}
+        {/* IMAGE */}
         <ImageWrapper>
           <img src={ImgInvestigacion} alt="Research biomechanics analysis" />
         </ImageWrapper>
 
-        {/* FOOTER CIENTÍFICO */}
         <Divider />
 
-        <Description>
-          Consulta mis publicaciones y proyectos de investigación completos en
-          mi perfil oficial:
-        </Description>
+        <Description>{t("footerInvetigacion")}</Description>
 
-        {/* CTA ACADÉMICO */}
         <CTA
           href="https://www.researchgate.net"
           target="_blank"
           rel="noreferrer"
         >
-          Acceder a publicaciones científicas
+          {t("ctaInvetigacion")}
         </CTA>
       </Container>
     </Section>

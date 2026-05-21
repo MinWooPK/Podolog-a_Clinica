@@ -24,56 +24,68 @@ import {
   SubMenuMobile,
   MobileButtonNav,
   HamburgerDivMobie,
+  RightSection,
+  LanguageButton,
+  LanguateSection,
 } from "./Header.styled";
+
+import { useTranslation } from "react-i18next";
 
 import { GoChevronLeft } from "react-icons/go";
 import LogoImgSrc from "@assets/icons/SoloLogo.png";
 import Doctoralia from "@assets/icons/doctoralia.png";
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import EnglandFlag from "@assets/icons/englandFlag.svg";
+import GermanyFlag from "@assets/icons/germanyFlag.svg";
+import SpainFlag from "@assets/icons/spainFlag.svg";
 
 /* ---------------- MENU CONFIG ---------------- */
 
 const MENU = [
   {
     key: "podologia",
-    label: "Clínica de podología",
+    label: "menu.podologia",
     items: [
-      { label: "Podología General", href: "/podologia" },
-      { label: "Podología Deportiva", href: "/podologia/deportiva" },
-      { label: "Podología Infantil", href: "/podologia/infantil" },
-      { label: "Quiropodología", href: "/podologia/quiropodologia" },
-      { label: "Cirugía Ungueal", href: "/podologia/nails" },
-      { label: "Ortonixia", href: "/podologia/ortonixia" },
-      { label: "Estudio Biomecánico", href: "/podologia/estudio_biomecanico" },
+      { label: "menu.general", href: "/podologia" },
+      { label: "menu.deportiva", href: "/podologia/deportiva" },
+      { label: "menu.infantil", href: "/podologia/infantil" },
+      { label: "menu.quiropodologia", href: "/podologia/quiropodologia" },
+      { label: "menu.cirugiaUngueal", href: "/podologia/nails" },
+      { label: "menu.ortonixia", href: "/podologia/ortonixia" },
       {
-        label: "Plantillas Personalizadas",
+        label: "menu.estudioBiomecanico",
+        href: "/podologia/estudio_biomecanico",
+      },
+      {
+        label: "menu.plantillas",
         href: "/podologia/plantillas_3D",
       },
     ],
   },
+
   {
     key: "antropologia",
-    label: "Antropología",
+    label: "menu.antropologia",
     items: [
       {
-        label: "Estudios de antropometría",
+        label: "menu.antropometria",
         href: "/antropologia/estudios_antropometria",
       },
       {
-        label: "Fotogrametría postura",
+        label: "menu.fotogrametria",
         href: "/antropologia/fotogrametria_postura",
       },
       {
-        label: "Dismorfías y asimetrías",
+        label: "menu.dismorfias",
         href: "/antropologia/dismorfia_asimetría",
       },
       {
-        label: "Genética aplicada a la salud",
+        label: "menu.genetica",
         href: "/antropologia/genetica",
       },
       {
-        label: "Investigación",
+        label: "menu.investigacion",
         href: "/antropologia/investigación",
       },
     ],
@@ -94,8 +106,9 @@ const Header = () => {
   const location = useLocation();
 
   const pathname = location.pathname;
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
 
-  /* ---------------- EFFECTS ---------------- */
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -104,14 +117,6 @@ const Header = () => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 1150);
     };
-
-    // const handleClickOutside = (event: MouseEvent) => {
-    //   if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-    //     setOpenMenu(null);
-    //   }
-    // };
-
-    //  IMPORTANTE: inicialización inmediata
     handleResize();
 
     window.addEventListener("scroll", handleScroll);
@@ -168,7 +173,7 @@ const Header = () => {
           href={item.href}
           $active={isActiveChild(item.href)}
         >
-          {item.label}
+          {t(item.label)}
         </StieMenuHref>
       ))}
       {/* </SubMenuItem> */}
@@ -189,7 +194,7 @@ const Header = () => {
             //   setOpenMenu(null);
             // }}
           >
-            {item.label}
+            {t(item.label)}{" "}
           </SubMenuItem>
         ))}
       </SubMenuMobile>
@@ -197,6 +202,11 @@ const Header = () => {
   };
 
   if (isDesktop === null) return null;
+
+  const changeLang = (lang: "es" | "en" | "de") => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang); //  persistencia
+  };
 
   return (
     <Navbar>
@@ -223,7 +233,7 @@ const Header = () => {
                 $active={isActiveParent(menu)}
                 onClick={() => toggleSubMenu(menu.key)}
               >
-                {menu.label}
+                {t(menu.label)}
                 {/* <Arrow open={openMenu === menu.key}>
                   <GoChevronLeft />
                 </Arrow> */}
@@ -238,7 +248,7 @@ const Header = () => {
               $active={isActive("/DraRebeca")}
               href="/DraRebeca"
             >
-              Sobre mí
+              {t("menu.sobreMi")}
             </StieMenuHref>
           </StieMenuLi>
 
@@ -248,20 +258,33 @@ const Header = () => {
               $active={isActive("/Contact")}
               href="/Contact"
             >
-              Contacto
+              {t("menu.contacto")}{" "}
             </StieMenuHref>
           </StieMenuLi>
         </SiteMenu>
 
         {/* CTA / HAMBURGER */}
         {isDesktop ? (
-          <CitaContainer
-            href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DoctoraliaImage src={Doctoralia} /> Pedir cita
-          </CitaContainer>
+          <RightSection>
+            <LanguateSection>
+              <LanguageButton onClick={() => changeLang("es")}>
+                <img src={SpainFlag} width={36} />
+              </LanguageButton>
+              <LanguageButton onClick={() => changeLang("en")}>
+                <img src={EnglandFlag} width={36} />
+              </LanguageButton>
+              <LanguageButton onClick={() => changeLang("de")}>
+                <img src={GermanyFlag} width={36} />
+              </LanguageButton>
+            </LanguateSection>
+            <CitaContainer
+              href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DoctoraliaImage src={Doctoralia} /> {t("cta.pedirCita")}
+            </CitaContainer>
+          </RightSection>
         ) : (
           <HamburgerMenu
             className={isMenuOpen ? "open" : ""}
@@ -297,17 +320,28 @@ const Header = () => {
                   Rebeca Saludes Llamas
                 </LogoContainerSecondP>
               </LogoContainerText>
+              <LanguateSection>
+                <LanguageButton onClick={() => changeLang("es")}>
+                  <img src={SpainFlag} width={36} />
+                </LanguageButton>
+                <LanguageButton onClick={() => changeLang("en")}>
+                  <img src={EnglandFlag} width={36} />
+                </LanguageButton>
+                <LanguageButton onClick={() => changeLang("de")}>
+                  <img src={GermanyFlag} width={36} />
+                </LanguageButton>
+              </LanguateSection>
               <CitaContainer
                 href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <DoctoraliaImage src={Doctoralia} /> Pedir cita
+                <DoctoraliaImage src={Doctoralia} /> {t("cta.pedirCita")}
               </CitaContainer>
               <MobileUlDiv>
                 <StieMenuLi>
                   <StieMenuHref $mobile href="/" $active={isActive("/")}>
-                    Inicio
+                    {t("menu.inicio")}
                   </StieMenuHref>
                 </StieMenuLi>
 
@@ -317,7 +351,7 @@ const Header = () => {
                       $active={isActiveParent(menu)}
                       onClick={() => toggleSubMenu(menu.key)}
                     >
-                      {menu.label}
+                      {t(menu.label)}{" "}
                       <Arrow open={openMenu === menu.key}>
                         <GoChevronLeft />
                       </Arrow>
@@ -332,7 +366,7 @@ const Header = () => {
                     href="/DraRebeca"
                     $active={isActive("/DraRebeca")}
                   >
-                    Sobre mí
+                    {t("menu.sobreMi")}
                   </StieMenuHref>
                 </StieMenuLi>
 
@@ -342,7 +376,7 @@ const Header = () => {
                     href="/Contact"
                     $active={isActive("/Contact")}
                   >
-                    Contacto
+                    {t("menu.contacto")}{" "}
                   </StieMenuHref>
                 </StieMenuLi>
               </MobileUlDiv>
@@ -358,9 +392,3 @@ const Header = () => {
 };
 
 export default Header;
-function isActiveParent(menu: any): boolean | undefined {
-  throw new Error("Function not implemented.");
-}
-function isActiveChild(href: any): boolean | undefined {
-  throw new Error("Function not implemented.");
-}

@@ -283,6 +283,9 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   color: #18595b;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   a {
     color: #ffc61a;

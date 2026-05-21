@@ -489,7 +489,7 @@ export const LogoContainerSecondP = styled.div`
   font-size: 16px;
   margin-top: -18px;
   margin-left: 7px;
-  color: ${({ theme }) => theme.colors.principal.fourthy};
+  color: rgba(255, 198, 26, 1);
   font-weight: 500;
 
   @media (max-width: 420px) {
@@ -568,4 +568,45 @@ export const MobileButtonNav = styled.button<{
 
   border: 1px solid
     ${({ $active }) => ($active ? "rgba(255, 198, 26, 0.25)" : "none")};
+`;
+
+export const RightSection = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
+
+export const LanguateSection = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+export const LanguageButton = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  /* focus accesible (teclado) */
+  &:focus-visible {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+    border: 2px solid #ffc61a;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

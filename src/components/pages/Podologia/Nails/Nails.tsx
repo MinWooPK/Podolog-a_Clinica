@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Title, Description, Eyebrow, ContaienrFirst } from "./Nails.styles";
 import PodologiaNailsMain from "@assets/img/PodologiaNailsMain.jpeg";
@@ -13,73 +14,6 @@ import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { ScanSearch, ShieldCheck, Dna } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
-
-const specializedServices = [
-  {
-    id: "onicocriptosis-cirugia",
-    title: "Cirugía de la Onicocriptosis (Uña encarnada)",
-    category: "Cirugía Ungueal",
-    description:
-      "Aplicación de técnicas definitivas como la matricectomía química. Este procedimiento permite eliminar selectivamente la matriz (la 'raíz') del lateral de la uña para evitar que vuelva a clavarse, solucionando de forma permanente el dolor y las infecciones recurrentes.",
-    icon: <ShieldCheck />,
-  },
-  {
-    id: "onicodistrofia",
-    title: "Abordaje de la Onicodistrofia",
-    category: "Cirugía Ungueal",
-    description:
-      "Tratamiento quirúrgico mediante la avulsión (retirada) total o parcial de la uña en casos de inflamación crónica o deformidades que generan dolor invalidante y no responden a tratamientos conservadores.",
-    icon: <ScanSearch />,
-  },
-  {
-    id: "protocolo-quirurgico",
-    title: "Protocolo Quirúrgico de Alta Seguridad",
-    category: "Seguridad Clínica",
-    description:
-      "Intervenciones realizadas bajo estrictas condiciones de asepsia y esterilidad. Incluimos un seguimiento postquirúrgico personalizado y curas pautadas hasta el alta definitiva para asegurar una cicatrización óptima.",
-    icon: <Dna />,
-  },
-];
-const treatmentsSub = [
-  {
-    id: "onicocriptosis-cirugia",
-    title: "Cirugía de la Onicocriptosis (Uña encarnada)",
-    description: [
-      "Técnicas definitivas para eliminar dolor e infecciones recurrentes.",
-      "Matricectomía química para resolución permanente.",
-      "Eliminación parcial de la matriz ungueal afectada.",
-      "Prevención de recurrencias.",
-      "Recuperación rápida con mínimas molestias.",
-    ],
-    image: ImgCirugia2,
-  },
-
-  {
-    id: "onicodistrofia",
-    title: "Abordaje de la Onicodistrofia",
-    description: [
-      "Tratamiento quirúrgico de uñas deformadas o crónicas.",
-      "Avulsión parcial o total de la uña.",
-      "Resolución de dolor invalidante.",
-      "Tratamiento de inflamación del lecho ungueal.",
-      "Recuperación funcional del pie.",
-    ],
-    image: ImgCirugia3,
-  },
-
-  {
-    id: "protocolo-quirurgico",
-    title: "Protocolo Quirúrgico de Alta Seguridad",
-    description: [
-      "Cirugías bajo estricta asepsia clínica.",
-      "Entornos de máxima esterilidad.",
-      "Seguimiento postquirúrgico personalizado.",
-      "Control de todas las fases de cicatrización.",
-      "Protocolos de seguridad para éxito del tratamiento.",
-    ],
-    image: ImgCirugia4,
-  },
-];
 
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
@@ -97,30 +31,78 @@ const Nails: React.FC = () => {
     null,
   );
 
-  const selectedTreatmentData = treatmentsSub.find(
-    (item) => item.id === selectedTreatment,
-  );
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "onicocriptosis-cirugia",
+      icon: <ShieldCheck />,
+    },
+    {
+      id: "onicodistrofia",
+      icon: <ScanSearch />,
+    },
+    {
+      id: "protocolo-quirurgico",
+      icon: <Dna />,
+    },
+  ];
+  const treatmentsSub = [
+    {
+      id: "onicocriptosis-cirugia",
+      image: ImgCirugia2,
+    },
+
+    {
+      id: "onicodistrofia",
+      image: ImgCirugia3,
+    },
+
+    {
+      id: "protocolo-quirurgico",
+      image: ImgCirugia4,
+    },
+  ];
+
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`treatmentsNails.${item.id}.title`),
+    category: t(`treatmentsNails.${item.id}.category`),
+    description: t(`treatmentsNails.${item.id}.description`),
+  }));
+  const selectedTreatmentTranslated = selectedTreatment
+    ? (() => {
+        const base = treatmentsSub.find(
+          (item) => item.id === selectedTreatment,
+        );
+
+        if (!base) return null;
+
+        return {
+          id: base.id,
+          image: base.image,
+          title: t(`nailsSub.${base.id}.title`),
+          description: t(`nailsSub.${base.id}.description`, {
+            returnObjects: true,
+          }) as string[],
+        };
+      })()
+    : null;
+
   return (
     <>
       <Hero
         backgroundImage={PodologiaNailsMain}
-        title="Cirugía Ungueal"
-        subtitle="Soluciones definitivas"
-        description={
-          <>
-            Cuando los tratamientos conservadores no son suficientes para
-            resolver patologías crónicas de la uña, recurrimos a técnicas
-            quirúrgicas mínimamente invasivas. Realizamos intervenciones
-            ambulatorias bajo anestesia local, diseñadas para una recuperación
-            rápida y un resultado funcional permanente.
-          </>
-        }
+        title={t("nailsTheme.title")}
+        subtitle={t("nailsTheme.subtitle")}
+        description={t("nailsTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
@@ -136,8 +118,8 @@ const Nails: React.FC = () => {
           >
             <WhatWeTreat
               id="what-we-treat"
-              title="Cirugía podológica y procedimientos ungueales avanzados"
-              items={specializedServices}
+              title={t("oterhSubTitle.nails")}
+              items={treatmentsData}
               onCardClick={(id) => setSelectedTreatment(id)}
             />
           </motion.div>
@@ -151,7 +133,9 @@ const Nails: React.FC = () => {
           >
             <TreatmentSections
               id="what-we-treat"
-              items={[selectedTreatmentData!]}
+              items={
+                selectedTreatmentTranslated ? [selectedTreatmentTranslated] : []
+              }
               showBackButton={true}
               onBack={() => setSelectedTreatment(null)}
             />{" "}
@@ -159,16 +143,11 @@ const Nails: React.FC = () => {
         )}
       </AnimatePresence>
       <ContaienrFirst $backgroundImage={PodologiaNails}>
-        <Eyebrow>Cirugía ungueal ambulatoria</Eyebrow>
+        <Eyebrow>{t("nailsSection.eyebrow")}</Eyebrow>
 
-        <Title>Eficacia y recuperación:</Title>
+        <Title>{t("nailsSection.title")}</Title>
 
-        <Description>
-          Nuestro objetivo es que el paciente recupere su ritmo de vida lo antes
-          posible. Utilizamos técnicas ambulatorias que permiten salir caminando
-          de la consulta, con molestias mínimas y resultados estéticos
-          garantizados.
-        </Description>
+        <Description>{t("nailsSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

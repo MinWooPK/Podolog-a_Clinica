@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import {
   Title,
   Description,
@@ -12,37 +14,6 @@ import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { Brain, Users, RefreshCcw, Heart } from "lucide-react";
 
-const psychoCorporalIntegration = [
-  {
-    title: "Análisis de la Expresión Corporal",
-    category: "Psicocorporal",
-    description:
-      "Identificamos cómo las asimetrías y tensiones crónicas se vinculan a patrones de miedo, evitación y mecanismos de defensa. Interpretamos el cuerpo como expresión funcional de la historia biomecánica y emocional.",
-    icon: <Brain />,
-  },
-  {
-    title: "Sinergia Clínica y Psicoterapéutica",
-    category: "Interdisciplinar",
-    description:
-      "Colaboramos con psicólogos y psicoanalistas. Integramos el abordaje psíquico con la lectura de manifestaciones físicas. Analizamos dismorfias y asimetrías corporales desde una visión global.",
-    icon: <Users />,
-  },
-  {
-    title: "Reeducación y Autoconciencia",
-    category: "Reeducación",
-    description:
-      "La corrección biomecánica genera nuevas oportunidades de conciencia corporal. Facilita procesos terapéuticos con menor resistencia física. Mejora la integración funcional del cuerpo.",
-    icon: <RefreshCcw />,
-  },
-  {
-    title: "El Cuerpo como Soporte del Cambio",
-    category: "Integración",
-    description:
-      "Aceptar la estructura corporal como base del cambio. Permite habitar el cuerpo de forma más equilibrada. Favorece la estabilidad física y emocional en el proceso evolutivo.",
-    icon: <Heart />,
-  },
-];
-
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -55,49 +26,70 @@ const scrollToSection = (id: string) => {
 };
 
 const DismorfiaAsimetria: React.FC = () => {
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "ExpresiónCorporal",
+      category: "Psicocorporal",
+      description:
+        "Identificamos cómo las asimetrías y tensiones crónicas se vinculan a patrones de miedo, evitación y mecanismos de defensa. Interpretamos el cuerpo como expresión funcional de la historia biomecánica y emocional.",
+      icon: <Brain />,
+    },
+    {
+      id: "Psicoterapéutica",
+      category: "Interdisciplinar",
+      description:
+        "Colaboramos con psicólogos y psicoanalistas. Integramos el abordaje psíquico con la lectura de manifestaciones físicas. Analizamos dismorfias y asimetrías corporales desde una visión global.",
+      icon: <Users />,
+    },
+    {
+      id: "ReeducaciónyAutoconciencia",
+      category: "Reeducación",
+      description:
+        "La corrección biomecánica genera nuevas oportunidades de conciencia corporal. Facilita procesos terapéuticos con menor resistencia física. Mejora la integración funcional del cuerpo.",
+      icon: <RefreshCcw />,
+    },
+    {
+      id: "CuerpoCambio",
+      icon: <Heart />,
+    },
+  ];
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`dismorfiaTreatments.${item.id}.title`),
+    category: t(`dismorfiaTreatments.${item.id}.category`),
+    description: t(`dismorfiaTreatments.${item.id}.description`),
+  }));
   return (
     <>
       <Hero
         backgroundImage={ImgDismorfiaAsimetria}
-        title="Dismorfias y Asimetrías
-"
-        subtitle="La Huella de tu Historia en el Cuerpo"
-        description={
-          <>
-            Entendemos la estructura física como el registro vivo de tu
-            biografía. Las variaciones en la forma{" "}
-            <strong> (dismorfias)</strong>y las diferencias de equilibrio{" "}
-            <strong>(asimetrías)</strong> son adaptaciones funcionales que el
-            organismo desarrolla para gestionar su relación con el entorno y sus
-            propias vivencias.
-          </>
-        }
+        title={t("dismorfiaTheme.title")}
+        subtitle={t("dismorfiaTheme.subtitle")}
+        description={t("dismorfiaTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
         id="what-we-treat"
-        title="Un puente entre la estructura y la psique"
-        items={psychoCorporalIntegration}
+        title={t("oterhSubTitle.asimetria")}
+        items={treatmentsData}
       />
 
       <ContaienrFirst backgroundImage={ImgDismorfiaAsimetria2}>
-        <Eyebrow>Tu estructura cuenta una historia</Eyebrow>
-        <Title> analizamos cada asimetría como una adaptación vital</Title>
+        <Eyebrow>{t("dismorfiaThemeSection.eyebrow")}</Eyebrow>
+        <Title>{t("dismorfiaThemeSection.title")}a</Title>
 
-        <Description>
-          La capacidad de adaptación biológica ante asimetrías extremas
-          fundamenta nuestra metodología. Analizamos procesos de recuperación
-          reales para priorizar la totalidad de la persona, evitando el análisis
-          aislado del segmento dañado.
-        </Description>
+        <Description>{t("dismorfiaThemeSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

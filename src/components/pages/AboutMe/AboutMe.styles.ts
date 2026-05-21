@@ -50,6 +50,7 @@ export const Title = styled.h2`
 export const Name = styled.h1`
   font-size: 28px;
   margin: 0;
+  color: rgba(255, 198, 26, 1);
 `;
 
 export const Subtitle = styled.h3`

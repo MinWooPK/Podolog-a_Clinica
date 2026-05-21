@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   Title,
@@ -177,33 +178,115 @@ const Biometria: React.FC = () => {
     null,
   );
 
-  const selectedTreatmentData = treatmentsSub.find(
-    (item) => item.id === selectedTreatment,
-  );
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "exploracion-camilla",
+      icon: <Activity />,
+    },
+
+    {
+      id: "huella-plantar",
+      icon: <Footprints />,
+    },
+
+    {
+      id: "analisis-marcha-dinamico",
+      icon: <Activity />,
+    },
+
+    {
+      id: "calzado-ergonomia",
+      icon: <Shoe />,
+    },
+
+    {
+      id: "diagnostico-mecanico",
+      icon: <AlertTriangle />,
+    },
+
+    {
+      id: "analisis-3d",
+      icon: <ScanSearch />,
+    },
+  ];
+
+  const treatmentsSub = [
+    {
+      id: "exploracion-camilla",
+      image: "https://images.pexels.com/photos/593451/pexels-photo-593451.jpeg",
+    },
+
+    {
+      id: "huella-plantar",
+      image:
+        "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg",
+    },
+
+    {
+      id: "analisis-marcha-dinamico",
+      image:
+        "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg",
+    },
+
+    {
+      id: "calzado-ergonomia",
+      image: "https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg",
+    },
+
+    {
+      id: "diagnostico-mecanico",
+      image:
+        "https://images.pexels.com/photos/6823567/pexels-photo-6823567.jpeg",
+    },
+
+    {
+      id: "analisis-3d",
+      image:
+        "https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg",
+    },
+  ];
+
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`biomecanicoTreatments.${item.id}.title`),
+    category: t(`biomecanicoTreatments.${item.id}.category`),
+    description: t(`biomecanicoTreatments.${item.id}.description`),
+  }));
+  const selectedTreatmentTranslated = selectedTreatment
+    ? (() => {
+        const base = treatmentsSub.find(
+          (item) => item.id === selectedTreatment,
+        );
+
+        if (!base) return null;
+
+        return {
+          id: base.id,
+          image: base.image,
+          title: t(`biomecanicoSub.${base.id}.title`),
+          description: t(`biomecanicoSub.${base.id}.description`, {
+            returnObjects: true,
+          }) as string[],
+        };
+      })()
+    : null;
 
   return (
     <>
       <Hero
         backgroundImage={PodologiaBiometria}
-        title="Antropometría Integral
-"
-        subtitle="Evaluación integral de cargas y postura."
-        description={
-          <>
-            En nuestra consulta, el estudio de las proporciones abarca la
-            totalidad de tu estructura. Realizamos un
-            <strong> perfil antropométrico completo </strong>para entender la
-            arquitectura integral de tu cuerpo. Como estructura biológica, el
-            pie funciona como el receptor final de todas las cargas, palancas y
-            desequilibrios que ocurren en los segmentos superiores.
-          </>
-        }
+        title={t("biomecanicoTheme.title")}
+        subtitle={t("biomecanicoTheme.subtitle")}
+        description={t("biomecanicoTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
@@ -219,8 +302,8 @@ const Biometria: React.FC = () => {
           >
             <WhatWeTreat
               id="what-we-treat"
-              title="¿Qué incluye nuestro análisis?"
-              items={specializedServices}
+              title={t("oterhSubTitle.biometria")}
+              items={treatmentsData}
               onCardClick={(id) => setSelectedTreatment(id)}
             />
           </motion.div>
@@ -234,7 +317,9 @@ const Biometria: React.FC = () => {
           >
             <TreatmentSections
               id="what-we-treat"
-              items={[selectedTreatmentData!]}
+              items={
+                selectedTreatmentTranslated ? [selectedTreatmentTranslated] : []
+              }
               showBackButton={true}
               onBack={() => setSelectedTreatment(null)}
             />{" "}
@@ -242,15 +327,11 @@ const Biometria: React.FC = () => {
         )}
       </AnimatePresence>
       <ContaienrFirst $backgroundImage={PodologiaBiometria2}>
-        <Eyebrow>Análisis estructural integral</Eyebrow>
-        <Title>¿Por qué es necesario este nivel de detalle?</Title>
+        <Eyebrow>{t("biomecanicoThemeSection.eyebrow")}</Eyebrow>
 
-        <Description>
-          Muchas patologías del pie tienen su origen en la rodilla, la cadera o
-          incluso la columna. Al realizar un perfil antropométrico completo, no
-          solo tratamos el síntoma en el pie, sino que identificamos la causa en
-          la estructura global de tu organismo.
-        </Description>
+        <Title>{t("biomecanicoThemeSection.title")}</Title>
+
+        <Description>{t("biomecanicoThemeSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

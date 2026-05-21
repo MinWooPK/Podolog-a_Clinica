@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import {
   Title,
   Description,
@@ -11,9 +13,6 @@ import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { ScanLine, RotateCw, Activity, Eye } from "lucide-react";
-
-import FeatureListSection from "@organisms/FeatureListSection/FeatureListSection";
-import AntropHero from "@organisms/AntropHero/AntropHero";
 
 const photoMetryProcess = [
   {
@@ -57,49 +56,63 @@ const scrollToSection = (id: string) => {
 };
 
 const Fotogrametria: React.FC = () => {
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "desequilibrios",
+      icon: <ScanLine />,
+    },
+    {
+      id: "rotaciones",
+      icon: <RotateCw />,
+    },
+    {
+      id: "sagitales",
+      icon: <Activity />,
+    },
+    {
+      id: "seguimiento",
+      icon: <Eye />,
+    },
+  ];
+
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`fotometriaTreatments.${item.id}.title`),
+    category: t(`fotometriaTreatments.${item.id}.category`),
+    description: t(`fotometriaTreatments.${item.id}.description`),
+  }));
+
   return (
     <>
       <Hero
         backgroundImage={ImgFotogrametria}
-        title="Fotogrametría Postural
-"
-        subtitle="Análisis digital de la postura en los tres planos del espacio"
-        description={
-          <>
-            La fotogrametría nos permite realizar un análisis cuantitativo de tu
-            postura mediante la captura y procesamiento de imágenes de alta
-            resolución. A través de este sistema, objetivamos las asimetrías y
-            desalineaciones de tu estructura esquelética en los planos frontal,
-            sagital y posterior.
-          </>
-        }
+        title={t("fotometriaTheme.title")}
+        subtitle={t("fotometriaTheme.subtitle")}
+        description={t("fotometriaTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
         id="what-we-treat"
-        title="¿Qué nos aporta la fotogrametría en consulta?"
-        items={photoMetryProcess}
+        title={t("oterhSubTitle.fotogametria")}
+        items={treatmentsData}
         // onCardClick={(id) => scrollToSection(id)}
       />
 
       <ContaienrFirst backgroundImage={ImgAntropometria2}>
-        <Eyebrow>La tecnología al servicio del diagnóstico</Eyebrow>
+        <Eyebrow>{t("fotometriaThemeSection.eyebrow")}</Eyebrow>
 
-        <Description>
-          Esta información, cruzada con tu perfil antropométrico, nos da la
-          clave para entender por qué tu cuerpo se mueve como lo hace y cómo
-          podemos optimizar su eficiencia, hacemos visible tu postura para que,
-          junto a tu fisioterapeuta u osteópata, podamos reeducar tu movimiento
-          y alinear tu base con tu columna.
-        </Description>
+        <Description>{t("fotometriaThemeSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

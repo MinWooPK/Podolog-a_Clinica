@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import { Title, Description, Eyebrow, ContaienrFirst } from "./Genetica.styles";
 import ImgGenetica from "@assets/img/Genetica.jpeg";
 import ImgGenetica2 from "@assets/img/Genetica2.jpeg";
@@ -49,47 +51,62 @@ const scrollToSection = (id: string) => {
 };
 
 const Genetica: React.FC = () => {
+  const { t } = useTranslation();
+
+  const specializedServices = [
+    {
+      id: "patologia",
+      icon: <ShieldCheck />,
+    },
+    {
+      id: "farmacogenetica",
+      icon: <Dna />,
+    },
+    {
+      id: "datosClinicos",
+      icon: <Activity />,
+    },
+    {
+      id: "RendimientoyLongevidad",
+      icon: <TrendingUp />,
+    },
+  ];
+
+  const treatmentsData = specializedServices.map((item) => ({
+    id: item.id,
+    icon: item.icon,
+    title: t(`geneticaTreatments.${item.id}.title`),
+    category: t(`geneticaTreatments.${item.id}.category`),
+    description: t(`geneticaTreatments.${item.id}.description`),
+  }));
   return (
     <>
       <Hero
         backgroundImage={ImgGenetica}
-        title="Genética Aplicada a la Salud"
-        subtitle="Tu Código como Hoja de Ruta"
-        description={
-          <>
-            La genética es el plano fundamental sobre el que se construye tu
-            estructura. Integramos el análisis molecular para comprender las
-            predisposiciones de tu organismo y personalizar tu tratamiento desde
-            la base biológica más profunda.
-          </>
-        }
+        title={t("geneticaTheme.title")}
+        subtitle={t("geneticaTheme.subtitle")}
+        description={t("geneticaTheme.description")}
         primaryButton={{
-          label: "Reservar cita",
+          label: t("general.hero.primary"),
           href: "/contacto",
         }}
         secondaryButton={{
-          label: "Ver servicios",
+          label: t("general.hero.secondary"),
           onClick: () => scrollToSection("what-we-treat"),
         }}
       />
 
       <WhatWeTreat
         id="what-we-treat"
-        title="Ciencia de precisión para una salud integral"
-        items={geneticPodiatryProcess}
+        title={t("oterhSubTitle.genetica")}
+        items={treatmentsData}
       />
 
       <ContaienrFirst $backgroundImage={ImgGenetica2}>
-        <Eyebrow>Tu genética no es un destino fijo</Eyebrow>
+        <Eyebrow>{t("geneticaThemeSection.eyebrow")}</Eyebrow>
+        <Title>{t("geneticaThemeSection.title")}a</Title>
 
-        <Title>Interpretamos tu código biológico como punto de partida</Title>
-
-        <Description>
-          Tu genética no determina tu límite, sino tu potencial de adaptación.
-          Utilizamos análisis molecular avanzado para descifrar tu perfil
-          biológico y convertir esa información en una estrategia personalizada
-          de prevención, equilibrio y optimización estructural a largo plazo.
-        </Description>
+        <Description>{t("geneticaThemeSection.description")}</Description>
       </ContaienrFirst>
 
       <ReviewHome />

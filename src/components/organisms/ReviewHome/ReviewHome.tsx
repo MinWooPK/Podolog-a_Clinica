@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CardReview from "@molecules/CardReview";
 import reviews from "@services/review.json";
+import { useTranslation } from "react-i18next";
 
 import {
   ReviewHomeContainer,
@@ -12,6 +13,7 @@ import {
 function ReviewHome() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const checkScreen = () => {
@@ -32,8 +34,8 @@ function ReviewHome() {
 
   return (
     <ReviewHomeContainer>
-      <TitleReview>Lo que opinan nuestros pacientes</TitleReview>
-      <SubTitleReview>Comentarios reales de pacientes</SubTitleReview>
+      <TitleReview>{t("reviews.title")}</TitleReview>
+      <SubTitleReview>{t("reviews.subtitle")}</SubTitleReview>
 
       <ReviewsGrid>
         {visibleReviews.map((review, index) => (

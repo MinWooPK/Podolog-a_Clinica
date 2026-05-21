@@ -1,0 +1,1109 @@
+{
+  "menu": {
+    "inicio": "Inicio",
+    "sobreMi": "Sobre mí",
+    "contacto": "Contacto",
+
+    "podologia": "Clínica de podología",
+    "general": "Podología General",
+    "deportiva": "Podología Deportiva",
+    "infantil": "Podología Infantil",
+    "quiropodologia": "Quiropodología",
+    "cirugiaUngueal": "Cirugía Ungueal",
+    "ortonixia": "Ortonixia",
+    "estudioBiomecanico": "Estudio Biomecánico",
+    "plantillas": "Plantillas Personalizadas",
+
+    "antropologia": "Antropología",
+    "antropometria": "Estudios de antropometría",
+    "fotogrametria": "Fotogrametría postura",
+    "dismorfias": "Dismorfías y asimetrías",
+    "genetica": "Genética aplicada a la salud",
+    "investigacion": "Investigación"
+  },
+
+  "cta": {
+    "pedirCita": "Pedir cita",
+    "verMas": "Ver mas"
+  },
+
+  "footer": {
+    "copyright": "© 2025 Tramontana Salud - Todos los derechos reservados."
+  },
+  "podoHome": {
+    "title": "Bienestar en tus pies",
+    "subtitle": "Clínica de podología en Palma de Mallorca",
+    "description": "Unidad de Podología Clínica y Biomecánica Avanzada. Especialista en el diagnóstico y tratamiento integral de las patologías del pie. Ayudamos a nuestros pacientes a una recuperación funcional aplicando protocolos y tratamientos médicos especializados.",
+    "primaryButton": "Saber más",
+    "secondaryButton": "Pedir cita"
+  },
+  "featuresPodo": {
+    "title": "Cuidamos la salud de tus pies",
+    "subtitle": "Tratamientos personalizados de podología avanzada para todas las edades",
+    "items": {
+      "biomechanics": "Estudio biomecánico de la pisada",
+      "ingrown_nails": "Tratamiento de uñas encarnadas",
+      "calluses": "Eliminación de durezas y callosidades",
+      "sports": "Podología deportiva",
+      "warts": "Tratamiento de papilomas (verrugas)",
+      "insoles": "Plantillas personalizadas",
+      "diabetic": "Prevención del pie diabético",
+      "all_ages": "Atención para todas las edades"
+    }
+  },
+  "featureGrid": {
+    "title": "¿Por qué elegir nuestra clínica de podología?",
+    "items": {
+      "specialists": {
+        "title": "Especialistas en podología",
+        "description": "Tratamientos avanzados para todo tipo de patologías del pie."
+      },
+      "technology": {
+        "title": "Tecnología avanzada",
+        "description": "Diagnóstico preciso con tecnología moderna."
+      },
+      "personalized": {
+        "title": "Atención personalizada",
+        "description": "Cada paciente recibe un tratamiento adaptado."
+      },
+      "no_waiting": {
+        "title": "Sin esperas",
+        "description": "Citas rápidas y sin largas listas de espera."
+      }
+    }
+  },
+  "home": {
+    "treatmentsTitle": "Tratamientos de podología",
+    "treatments": {
+      "general": {
+        "title": "Podología general",
+        "desc": "Diagnóstico y tratamiento de patologías del pie como durezas, callosidades, hongos o alteraciones ungueales. Realizamos una valoración completa para detectar el origen del problema y aplicar el tratamiento más adecuado con tecnología avanzada y técnicas seguras."
+      },
+      "nails": {
+        "title": "Uñas encarnadas",
+        "desc": "Tratamiento seguro, rápido y prácticamente indoloro de uñas encarnadas. Eliminamos la causa del problema, reducimos la inflamación y realizamos seguimiento para evitar que vuelva a aparecer, mejorando la salud y el confort del paciente."
+      },
+      "sports": {
+        "title": "Podología deportiva",
+        "desc": "Prevención, diagnóstico y tratamiento de lesiones relacionadas con la actividad física. Analizamos la pisada y la biomecánica para evitar sobrecargas, mejorar el rendimiento y reducir el riesgo de lesiones en deportistas."
+      },
+      "insoles": {
+        "title": "Plantillas personalizadas",
+        "desc": "Realizamos un estudio biomecánico completo de la pisada para diseñar plantillas totalmente personalizadas. Estas ayudan a corregir alteraciones posturales, aliviar dolores y mejorar la distribución de cargas en el pie."
+      }
+    }
+  },
+  "faq": {
+    "items": {
+      "pain": {
+        "question": "¿Duele el tratamiento podológico?",
+        "answer": "No, los tratamientos se realizan de forma indolora o con molestias mínimas. Siempre adaptamos la técnica a la sensibilidad del paciente."
+      },
+      "appointment": {
+        "question": "¿Necesito cita previa?",
+        "answer": "Sí, es recomendable pedir cita previa para garantizar una atención personalizada y sin esperas."
+      },
+      "duration": {
+        "question": "¿Cuánto dura una sesión?",
+        "answer": "La duración habitual es de 30 a 45 minutos, dependiendo del tipo de tratamiento."
+      },
+      "frequency": {
+        "question": "¿Cada cuánto debo acudir al podólogo?",
+        "answer": "Depende del caso, pero en general se recomienda cada 4 a 8 semanas para tratamientos de mantenimiento."
+      },
+      "nails": {
+        "question": "¿Tratáis uñas encarnadas o infecciones?",
+        "answer": "Sí, tratamos patologías ungueales como uñas encarnadas, hongos y engrosamientos de forma profesional y segura."
+      },
+      "clinic": {
+        "question": "¿Es necesario llevar algo a la consulta?",
+        "answer": "No es necesario. Solo recomendamos traer calzado habitual si queremos valorar su adecuación."
+      }
+    }
+  },
+  "reviews": {
+    "title": "Lo que opinan nuestros pacientes",
+    "subtitle": "Comentarios reales de pacientes"
+  },
+  "locationContact": {
+    "title": "¿Quieres saber más?",
+    "subtitle1": "Ubicados en el corazón de Palma de Mallorca",
+    "address": "Plaza del Olivar 3 - Edificio Europa 07001 - Palma de Mallorca - Illes Balears",
+    "subtitle2": "Llámanos o agenda una cita online",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "whatsappText": "WhatsApp disponible para consultas rápidas.",
+    "cta": "Pedir cita"
+  },
+  "general": {
+    "hero": {
+      "title": "Podología General",
+      "subtitle": "Cuidado integral del pie",
+      "description": "En la consulta de podología general nos ocupamos de la salud de tus pies. A menudo, pequeñas molestias que ignoramos son señales de que algo necesita atención especializada para evitar complicaciones mayores.",
+      "primary": "Reservar cita",
+      "secondary": "Ver servicios"
+    }
+  },
+  "treatmentsPodologia": {
+    "exploracion": {
+      "title": "Exploración y diagnóstico",
+      "category": "Diagnóstico",
+      "description": "Evaluación integral del estado de la piel y las uñas para detectar patologías de forma precoz."
+    },
+    "infecciones": {
+      "title": "Infecciones cutáneas",
+      "category": "Tratamiento",
+      "description": "Tratamiento de verrugas plantares (papilomas) y otras afecciones dérmicas."
+    },
+    "quiropodologia": {
+      "title": "Quiropodología",
+      "category": "Cuidado básico",
+      "description": "Corte correcto de las uñas y tratamiento de durezas (hiperqueratosis), callosidades (helomas) y fresado de talones."
+    },
+    "ungueal": {
+      "title": "Patología ungueal",
+      "category": "Tratamiento",
+      "description": "Uñas encarnadas, engrosadas o con hongos (onicomicosis)."
+    },
+    "piel": {
+      "title": "Hidratación y salud de la piel",
+      "category": "Prevención",
+      "description": "Tratamiento de piel seca, grietas o sudoración excesiva."
+    },
+    "educacion": {
+      "title": "Educación sanitaria",
+      "category": "Prevención",
+      "description": "Recomendaciones sobre cuidado del pie y calzado adecuado."
+    }
+  },
+  "treatmentsPodologiaSpec": {
+    "exploracion": {
+      "title": "Exploración y Diagnóstico",
+      "description": [
+        "Evaluación clínica detallada para prevenir y detectar patologías de forma temprana.",
+        "Anamnesis y antecedentes médicos.",
+        "Evaluación de la morfología y movilidad articular.",
+        "Detección precoz de signos de alerta.",
+        "Diseño de un plan de salud personalizado."
+      ]
+    },
+    "infecciones": {
+      "title": "Infecciones Cutáneas",
+      "description": [
+        "Tratamiento especializado de afecciones dérmicas e infecciones en el pie.",
+        "Eliminación de papilomas (verrugas plantares).",
+        "Tratamiento de micosis cutánea (hongos).",
+        "Control de dermatitis y eccemas.",
+        "Prevención de contagios y recidivas."
+      ]
+    },
+    "quiropodologia": {
+      "title": "Quiropodología",
+      "description": [
+        "Cuidado clínico esencial para eliminar el dolor y mejorar el confort al caminar.",
+        "Eliminación de helomas y durezas.",
+        "Fresado terapéutico de talones.",
+        "Corte y fresado técnico de las uñas.",
+        "Tratamiento de hiperqueratosis por presión."
+      ]
+    },
+    "ungueal": {
+      "title": "Patología Ungueal",
+      "description": [
+        "Soluciones integrales para las afecciones que afectan a la salud de las uñas.",
+        "Tratamiento de uña encarnada (onicocriptosis).",
+        "Abordaje de onicomicosis (hongos en uñas).",
+        "Reeducación de uñas engrosadas o deformadas.",
+        "Restauración de la estética y funcionalidad ungueal."
+      ]
+    },
+    "piel": {
+      "title": "Hidratación y Salud de la Piel",
+      "description": [
+        "Protocolos de regeneración para mantener la integridad de la barrera cutánea.",
+        "Tratamiento profundo de la sequedad extrema.",
+        "Control de la hiperhidrosis (exceso de sudor).",
+        "Cuidado preventivo del Pie Diabético.",
+        "Prevención de grietas y lesiones dérmicas."
+      ]
+    },
+    "educacion": {
+      "title": "Educación Sanitaria",
+      "description": [
+        "Asesoramiento profesional para el cuidado preventivo en el día a día.",
+        "Recomendaciones de calzado adecuado.",
+        "Pautas de higiene y secado correcto.",
+        "Instrucciones de autoexploración en casa.",
+        "Consejos para la prevención de patologías recurrentes."
+      ]
+    }
+  },
+  "podologiaDeportiva": {
+    "title": "Podología Deportiva",
+    "subtitle": "Optimiza tu rendimiento desde la base",
+    "description": "En el deporte, el pie es el principal receptor de impactos y el motor de la propulsión. Un gesto técnico repetido miles de veces con una alineación incorrecta es el origen de la mayoría de las lesiones por sobrecarga."
+  },
+  "podologiaDeportivaSection": {
+    "eyebrow": "Biomecánica y rendimiento",
+    "title": "Nuestro enfoque en el deportista",
+    "description": "Analizamos el pie tanto en estático como en movimiento, estudiando la dinámica de la pisada y la interacción del cuerpo con el terreno para mejorar tu eficiencia y proteger tus articulaciones."
+  },
+  "specializedServices": {
+    "estudio-biomecanico": {
+      "title": "Estudio Biomecánico de la Marcha y la Carrera",
+      "category": "Biomecánica",
+      "description": "Análisis computerizado mediante sistemas de presión y vídeo para identificar anomalías en el ciclo de la pisada."
+    },
+    "prevencion-lesiones": {
+      "title": "Prevención de Lesiones",
+      "category": "Prevención",
+      "description": "Diagnóstico precoz de fascitis plantar, tendinopatías, periostitis y sobrecargas musculares."
+    },
+    "plantillas-3d": {
+      "title": "Plantillas Personalizadas 3D",
+      "category": "Tratamiento",
+      "description": "Diseño y fabricación de soportes plantares con materiales técnicos adaptados a cada disciplina deportiva."
+    },
+    "calzado-deportivo": {
+      "title": "Asesoramiento en Calzado Deportivo",
+      "category": "Rendimiento",
+      "description": "Recomendación técnica según el tipo de pisada, peso, terreno y técnica de carrera."
+    },
+    "perfil-genetico": {
+      "title": "Perfil Genético Músculo-Esquelético",
+      "category": "Tecnología",
+      "description": "Identificación de marcadores genéticos relacionados con la resistencia tendinosa y predisposición a lesiones."
+    }
+  },
+  "tremensSupport": {
+    "estudio-biomecanico": {
+      "title": "Estudio Biomecánico de la Marcha y la Carrera",
+      "description": [
+        "Análisis avanzado del movimiento para optimizar el rendimiento y detectar anomalías en la pisada.",
+        "Análisis informatizado mediante sistemas de presión.",
+        "Grabación en vídeo para el estudio del ciclo de marcha.",
+        "Identificación de dismetrías y desequilibrios posturales.",
+        "Valoración del gesto deportivo según la disciplina."
+      ]
+    },
+    "prevencion-lesiones": {
+      "title": "Prevención de Lesiones",
+      "description": [
+        "Identificación precoz de factores de riesgo para práctica deportiva segura.",
+        "Diagnóstico temprano de fascitis plantar y tendinopatías.",
+        "Evaluación de sobrecargas musculares y periostitis.",
+        "Control de puntos de presión durante el ejercicio.",
+        "Seguimiento preventivo para deportistas."
+      ]
+    },
+    "plantillas-3d": {
+      "title": "Plantillas Personalizadas 3D",
+      "description": [
+        "Diseño y fabricación de soportes plantares de alta precisión.",
+        "Escaneado digital del pie en 3D.",
+        "Uso de materiales técnicos de última generación.",
+        "Adaptación al calzado deportivo y terreno.",
+        "Mejora de amortiguación y estabilidad."
+      ]
+    },
+    "calzado-deportivo": {
+      "title": "Asesoramiento en Calzado Deportivo",
+      "description": [
+        "Elección de zapatilla según morfología y actividad.",
+        "Evaluación de la interacción entre calzado y biomecánica.",
+        "Análisis del drop y estructura de la zapatilla.",
+        "Recomendación según estabilidad y control de fuerzas.",
+        "Prevención de patologías por mal calzado."
+      ]
+    },
+    "perfil-genetico": {
+      "title": "Perfil Genético Músculo-Esquelético",
+      "description": [
+        "Identificación de predisposición genética deportiva.",
+        "Marcadores de resistencia tendinosa.",
+        "Predisposición a lesiones específicas.",
+        "Optimización de cargas de entrenamiento.",
+        "Medicina personalizada deportiva."
+      ]
+    }
+  },
+  "podologiaInfantil": {
+    "title": "Podología Infantil",
+    "subtitle": "Cuidando el crecimiento desde la base",
+    "description": "El pie del niño no es una versión pequeña del pie del adulto; es un órgano en pleno desarrollo. Como especialista con formación avanzada en biología, entiendo que cada etapa del ciclo vital tiene sus propios tiempos y necesidades. Respetamos la ontogenia del pie, sabiendo que la transición de los moldes cartilaginosos hacia una estructura ósea consolidada depende de una cronología madurativa específica que debemos monitorizar."
+  },
+  "podologiaInfantilSection": {
+    "eyebrow": "Biomecánica y rendimiento",
+    "title": "Nuestro enfoque en el deportista",
+    "description": "Analizamos el pie tanto en estático como en movimiento, estudiando la dinámica de la pisada y la interacción del cuerpo con el terreno para mejorar tu eficiencia y proteger tus articulaciones."
+  },
+  "treatmentsPodologiaFood": {
+    "maduracion-osea": {
+      "title": "Evaluación de la Maduración Ósea",
+      "category": "Desarrollo",
+      "description": "Seguimiento de la aparición y consolidación de los centros de osificación y las placas de crecimiento."
+    },
+    "analisis-marcha": {
+      "title": "Análisis de la Marcha y el Gesto",
+      "category": "Biomecánica",
+      "description": "Diagnóstico de variantes como pies planos, marcha de puntillas y alteraciones rotacionales y torsionales de los miembros inferiores (caminar con los pies hacia dentro)."
+    },
+    "genetica": {
+      "title": "Perfil Genético de Maduración Ósea (Synlab)",
+      "category": "Genética",
+      "description": "Estudio de marcadores de ADN (VDR, colágeno) para optimizar la salud articular y ósea desde el interior."
+    },
+    "patologias-infantiles": {
+      "title": "Tratamiento de Patologías del Desarrollo",
+      "category": "Clínico",
+      "description": "Abordaje especializado de la enfermedad de Sever, uñas encarnadas infantiles y papilomas."
+    },
+    "tratamiento-no-invasivo": {
+      "title": "Tratamiento No Invasivo",
+      "category": "Terapia",
+      "description": "Priorizamos ejercicios de estimulación y, solo si es estrictamente necesario por la maduración ósea, diseñamos soportes plantares que guíen, pero no limiten, el movimiento natural."
+    },
+    "calzado-ergonomia": {
+      "title": "Asesoramiento en Calzado y Ergonomía",
+      "category": "Prevención",
+      "description": "Recomendaciones basadas en la fase evolutiva y la ontogenia del pie para permitir un desarrollo funcional y saludable."
+    }
+  },
+  "treatmentsSubPodologiaFood": {
+    "maduracion-osea": {
+      "title": "Evaluación de la Maduración Ósea",
+      "description": [
+        "Seguimiento exhaustivo del crecimiento para asegurar una correcta evolución del sistema musculoesquelético.",
+        "Control de la aparición y consolidación de los centros de osificación.",
+        "Seguimiento de las placas de crecimiento durante la infancia y adolescencia.",
+        "Valoración de la alineación de los miembros inferiores en cada etapa evolutiva.",
+        "Detección temprana de anomalías en el desarrollo óseo."
+      ]
+    },
+    "analisis-marcha": {
+      "title": "Análisis de la Marcha y el Gesto",
+      "description": [
+        "Estudio funcional del movimiento para identificar y corregir variantes en la forma de caminar.",
+        "Diagnóstico de pies planos o pies cavos infantiles.",
+        "Valoración de la marcha de puntillas y alteraciones rotacionales.",
+        "Estudio de torsiones tibiales y femorales.",
+        "Análisis de la estabilidad y equilibrio durante la actividad física."
+      ]
+    },
+    "genetica": {
+      "title": "Perfil Genético de Maduración Ósea",
+      "description": [
+        "Estudio de marcadores genéticos relacionados con el desarrollo articular.",
+        "Identificación de predisposiciones en la salud musculoesquelética.",
+        "Optimización de pautas preventivas basadas en el perfil del niño.",
+        "Medicina de precisión aplicada al crecimiento."
+      ]
+    },
+    "patologias-infantiles": {
+      "title": "Trastornos del Desarrollo y Patologías",
+      "description": [
+        "Tratamiento de enfermedad de Sever (dolor en el talón).",
+        "Alteraciones del crecimiento óseo infantil.",
+        "Patologías dérmicas adaptadas a la piel infantil.",
+        "Manejo de uñas encarnadas y papilomas."
+      ]
+    },
+    "tratamiento-no-invasivo": {
+      "title": "Tratamiento No Invasivo",
+      "description": [
+        "Ejercicios de estimulación y fortalecimiento muscular.",
+        "Soportes plantares solo si es necesario.",
+        "Fomento de la propiocepción y desarrollo motor."
+      ]
+    },
+    "calzado-ergonomia": {
+      "title": "Asesoramiento en Calzado y Ergonomía",
+      "description": [
+        "Elección del calzado según la etapa evolutiva del niño.",
+        "Calzado respetuoso y funcional.",
+        "Análisis de ergonomía en actividades diarias y escolares.",
+        "Educación a padres sobre desarrollo del pie."
+      ]
+    }
+  },
+  "quiropodiaTheme": {
+    "title": "Quiropodología",
+    "subtitle": "Salud y mantenimiento del pie",
+    "description": "La quiropodología es la base del cuidado podológico. No se trata de un tratamiento estético, sino de una intervención clínica orientada a eliminar las dolencias cutáneas, prevenir infecciones y detectar de forma precoz patologías sistémicas que se manifiestan en la piel y las uñas."
+  },
+  "quiropodiaSection": {
+    "eyebrow": "Quiropodología clínica avanzada",
+    "title": "Tratamientos especializados para la salud del pie",
+    "description": "Aplicamos técnicas clínicas de precisión en quiropodología y dermatología podológica para garantizar la salud y confort absoluto de tus pies."
+  },
+  "treatmentsQuiropodia": {
+    "hiperqueratosis": {
+      "title": "Tratamiento de Hiperqueratosis (Durezas)",
+      "category": "Quiropodología",
+      "description": "Eliminación indolora de durezas y callosidades (helomas) mediante técnicas de desbridamiento profesional, devolviendo la elasticidad natural a la piel."
+    },
+    "onicoterapia": {
+      "title": "Onicoterapia (Cuidado de las uñas)",
+      "category": "Quiropodología",
+      "description": "Corte y fresado terapéutico de las uñas para evitar procesos inflamatorios y asegurar un crecimiento guiado y saludable."
+    },
+    "onicogrifosis": {
+      "title": "Tratamiento de la Onicogrifosis",
+      "category": "Patología Ungueal",
+      "description": "Abordaje especializado de uñas engrosadas o distróficas para recuperar su funcionalidad y confort."
+    },
+
+    "onicocriptosis": {
+      "title": "Onicocriptosis (Uña encarnada)",
+      "category": "Urgencias",
+      "description": "Tratamiento conservador para eliminar el dolor y prevenir la infección. Disponemos de anestesia local técnica en caso de ser necesario para garantizar un procedimiento totalmente indoloro y confortable."
+    },
+    "talones": {
+      "title": "Fresado de Talones y Rehidratación",
+      "category": "Dermatología",
+      "description": "Tratamiento específico para talones agrietados, restaurando la barrera lipídica de la piel para evitar puertas de entrada a infecciones."
+    },
+    "microbiologia": {
+      "title": "Diagnóstico Microbiológico (Hongos y Bacterias)",
+      "category": "Diagnóstico",
+      "description": "Toma de muestras y cultivos en colaboración con laboratorios especializados para asegurar un tratamiento de precisión basado en la evidencia."
+    }
+  },
+  "treatmentsSubQuiropodia": {
+    "hiperqueratosis": {
+      "title": "Tratamiento de Hiperqueratosis (Durezas)",
+      "description": [
+        "Eliminación de acumulaciones de queratina para restaurar la salud de la piel.",
+        "Desbridamiento profesional de durezas y callosidades (helomas).",
+        "Técnicas indoloras para eliminar puntos de presión.",
+        "Análisis de hidratación y lípidos de la piel."
+      ]
+    },
+    "onicoterapia": {
+      "title": "Onicoterapia (Cuidado de las uñas)",
+      "description": [
+        "Tratamiento terapéutico de la placa ungueal.",
+        "Corte clínico y fresado técnico de las uñas.",
+        "Limpieza de canales ungueales.",
+        "Prevención de onicocriptosis.",
+        "Guía del crecimiento ungueal."
+      ]
+    },
+    "onicogrifosis": {
+      "title": "Tratamiento de la Onicogrifosis",
+      "description": [
+        "Abordaje de uñas engrosadas o deformadas.",
+        "Rebaje terapéutico de la placa ungueal.",
+        "Recuperación de la comodidad al calzado.",
+        "Control de distrofias por traumatismos o edad.",
+        "Mejora estética y funcional."
+      ]
+    },
+    "onicocriptosis": {
+      "title": "Onicocriptosis (Uña encarnada)",
+      "description": [
+        "Tratamiento del dolor en canales ungueales.",
+        "Extracción conservadora de espículas.",
+        "Control de inflamación e infección.",
+        "Procedimientos indoloros cuando es necesario.",
+        "Prevención de recidivas."
+      ]
+    },
+    "talones": {
+      "title": "Fresado de Talones y Rehidratación",
+      "description": [
+        "Restauración de la barrera lipídica de la piel.",
+        "Pulido de talones agrietados.",
+        "Hidratación profunda profesional.",
+        "Sellado de grietas.",
+        "Prevención de infecciones."
+      ]
+    },
+    "microbiologia": {
+      "title": "Diagnóstico Microbiológico (Hongos y Bacterias)",
+      "description": [
+        "Toma de muestras para diagnóstico clínico.",
+        "Cultivos para identificar hongos o bacterias.",
+        "Colaboración con laboratorios especializados.",
+        "Diagnóstico diferencial de patologías ungueales.",
+        "Tratamiento basado en evidencia científica."
+      ]
+    }
+  },
+  "nailsTheme": {
+    "title": "Cirugía Ungueal",
+    "subtitle": "Cirugía Ungueal",
+    "description": "Cuando los tratamientos conservadores no son suficientes para resolver patologías crónicas de la uña, recurrimos a técnicas quirúrgicas mínimamente invasivas. Realizamos intervenciones ambulatorias bajo anestesia local, diseñadas para una recuperación rápida y un resultado funcional permanente"
+  },
+  "nailsSection": {
+    "eyebrow": "Cirugía ungueal ambulatoria",
+    "title": "Eficacia y recuperación:",
+    "description": "Nuestro objetivo es que el paciente recupere su ritmo de vida lo antes posible. Utilizamos técnicas ambulatorias que permiten salir caminando de la consulta, con molestias mínimas y resultados estéticos garantizados."
+  },
+  "treatmentsNails": {
+    "onicocriptosis-cirugia": {
+      "title": "Cirugía de la Onicocriptosis (Uña encarnada)",
+      "category": "Cirugía Ungueal",
+      "description": "Aplicación de técnicas definitivas como la matricectomía química. Este procedimiento permite eliminar selectivamente la matriz (la 'raíz') del lateral de la uña para evitar que vuelva a clavarse, solucionando de forma permanente el dolor y las infecciones recurrentes."
+    },
+    "onicodistrofia": {
+      "title": "Abordaje de la Onicodistrofia",
+      "category": "Cirugía Ungueal",
+      "description": "Tratamiento quirúrgico mediante la avulsión (retirada) total o parcial de la uña en casos de inflamación crónica o deformidades que generan dolor invalidante y no responden a tratamientos conservadores."
+    },
+    "protocolo-quirurgico": {
+      "title": "Protocolo Quirúrgico de Alta Seguridad",
+      "category": "Seguridad Clínica",
+      "description": "Intervenciones realizadas bajo estrictas condiciones de asepsia y esterilidad. Incluimos un seguimiento postquirúrgico personalizado y curas pautadas hasta el alta definitiva para asegurar una cicatrización óptima."
+    }
+  },
+  "nailsSub": {
+    "onicocriptosis-cirugia": {
+      "title": "Cirugía de la Onicocriptosis (Uña encarnada)",
+      "description": [
+        "Técnicas definitivas para eliminar dolor e infecciones recurrentes.",
+        "Matricectomía química para resolución permanente.",
+        "Eliminación parcial de la matriz ungueal afectada.",
+        "Prevención de recurrencias.",
+        "Recuperación rápida con mínimas molestias."
+      ]
+    },
+    "onicodistrofia": {
+      "title": "Abordaje de la Onicodistrofia",
+      "description": [
+        "Tratamiento quirúrgico de uñas deformadas o crónicas.",
+        "Avulsión parcial o total de la uña.",
+        "Resolución de dolor invalidante.",
+        "Tratamiento de inflamación del lecho ungueal.",
+        "Recuperación funcional del pie."
+      ]
+    },
+    "protocolo-quirurgico": {
+      "title": "Protocolo Quirúrgico de Alta Seguridad",
+      "description": [
+        "Cirugías bajo estricta asepsia clínica.",
+        "Entornos de máxima esterilidad.",
+        "Seguimiento postquirúrgico personalizado.",
+        "Control de todas las fases de cicatrización.",
+        "Protocolos de seguridad para éxito del tratamiento."
+      ]
+    }
+  },
+  "ortonixiaTheme": {
+    "title": "Ortonixia",
+    "subtitle": "Ortonixia",
+    "description": "La ortonixia es un tratamiento no invasivo que funciona como una ortodoncia para las uñas. Es la alternativa ideal para corregir uñas con curvatura excesiva, evitar que se claven y recuperar la anatomía tras una rotura o traumatismo."
+  },
+  "ortonixiaSection": {
+    "eyebrow": "Ortónica y corrección ungueal",
+    "title": "Ortónica y corrección ungueal",
+    "description": "No siempre es necesario eliminar el tejido; a veces, solo necesitamos guiar su crecimiento. La ortonixia respeta la integridad de la uña, aplicando fuerzas físicas controladas para restaurar su anatomía funcional y evitar que vuelva a clavarse."
+  },
+  "ortonixiaNails": {
+    "brackets-ortonixia": {
+      "title": "Brackets de Composite y Titanio",
+      "category": "Terapia Ungueal",
+      "description": "Utilizamos composite marmolado (material de alta resistencia usado en odontología) para crear guías y aplicar tensores de titanio. Estos dispositivos ejercen una tracción controlada que ensancha la uña desde su base, obligándola a mantener un crecimiento plano y funcional."
+    },
+    "reconstruccion-ungueal": {
+      "title": "Reconstrucción de la Lámina Ungueal",
+      "category": "Reparación",
+      "description": "En casos de uña rota o ausente, reconstruimos la estructura para proteger el lecho y evitar que el tejido blando ocupe el espacio, asegurando que la uña nueva tenga el camino libre para crecer."
+    },
+    "tamponado": {
+      "title": "Tamponade y Guías Laterales",
+      "category": "Corrección",
+      "description": "Aplicamos guías de gasa algodonada en los canales de la uña para evitar mecánicamente que el borde se clave en la piel mientras dura el tratamiento."
+    },
+    "prevencion-recidivas": {
+      "title": "Prevención de Recidivas (Kinesiotape)",
+      "category": "Prevención",
+      "description": "Te enseñamos a realizar vendajes neuromusculares específicos para que, según tu caso, puedas desplazar el tejido del pulpejo (la 'carne' del dedo) y evitar que se interponga en el camino de la uña al crecer."
+    }
+  },
+  "ortonixiaSub": {
+    "brackets-ortonixia": {
+      "title": "Brackets de Composite y Titanio",
+      "description": [
+        "Sistemas de ortonixia para corregir la curvatura ungueal.",
+        "Tracción mecánica controlada para guiar el crecimiento.",
+        "Ensanchamiento progresivo de la lámina ungueal.",
+        "Corrección de la morfología de la uña.",
+        "Prevención de uñas encarnadas."
+      ]
+    },
+    "reconstruccion-ungueal": {
+      "title": "Reconstrucción de la Lámina Ungueal",
+      "description": [
+        "Restauración estética y funcional de uñas dañadas.",
+        "Reconstrucción con materiales técnicos.",
+        "Protección del lecho ungueal.",
+        "Guía para el crecimiento correcto de la uña.",
+        "Recuperación de la barrera protectora natural."
+      ]
+    },
+    "tamponado": {
+      "title": "Tamponado y Guías Laterales",
+      "description": [
+        "Separación mecánica entre uña y tejido blando.",
+        "Colocación de gasas en canales ungueales.",
+        "Reducción de presión e irritación inmediata.",
+        "Protección durante el proceso de curación.",
+        "Reeducación del crecimiento ungueal."
+      ]
+    },
+    "prevencion-recidivas": {
+      "title": "Prevención de Recidivas (Reeducación)",
+      "description": [
+        "Formación en autocuidado del pie.",
+        "Vendajes funcionales para evitar reincidencia.",
+        "Reeducación del crecimiento ungueal.",
+        "Protocolos personalizados preventivos.",
+        "Educación sanitaria podológica."
+      ]
+    }
+  },
+  "biomecanicoTheme": {
+    "title": "Antropometría Integral",
+    "subtitle": "Evaluación integral de cargas y postura.",
+    "description": "En nuestra consulta, el estudio de las proporciones abarca la totalidad de tu estructura. Realizamos un perfil antropométrico completo para entender la arquitectura integral de tu cuerpo. Como estructura biológica, el pie funciona como el receptor final de todas las cargas, palancas y desequilibrios que ocurren en los segmentos superiores"
+  },
+  "biomecanicoThemeSection": {
+    "eyebrow": "Análisis estructural integral",
+    "title": "¿Por qué es necesario este nivel de detalle?",
+    "description": "Muchas patologías del pie tienen su origen en la rodilla, la cadera o incluso la columna. Al realizar un perfil antropométrico completo, no solo tratamos el síntoma en el pie, sino que identificamos la causa en la estructura global de tu organismo."
+  },
+  "biomecanicoTreatments": {
+    "exploracion-camilla": {
+      "title": "Exploración en Camilla",
+      "category": "Clínico",
+      "description": "Evaluación del rango articular y balance muscular para detectar bloqueos o compensaciones en el pie y miembros inferiores."
+    },
+    "huella-plantar": {
+      "title": "Estudio de Huella Plantar y Presiones",
+      "category": "Biomecánica",
+      "description": "Análisis estático mediante plataforma de presiones para estudiar la morfología del pie y la distribución de cargas."
+    },
+    "analisis-marcha-dinamico": {
+      "title": "Análisis de la Marcha",
+      "category": "Biomecánica",
+      "description": "Observación del ciclo de marcha para identificar alteraciones en las fases de contacto, apoyo y propulsión."
+    },
+    "calzado-ergonomia": {
+      "title": "Valoración del Calzado y Ergonomía",
+      "category": "Prevención",
+      "description": "Análisis del desgaste del calzado para comprender su relación con la biomecánica del paciente."
+    },
+    "diagnostico-mecanico": {
+      "title": "Diagnóstico de Patologías Mecánicas",
+      "category": "Clínico",
+      "description": "Identificación del origen de fascitis, tendinopatías, metatarsalgias y sobrecargas musculares recurrentes."
+    },
+    "analisis-3d": {
+      "title": "Análisis del Gesto en 3D (Kinect)",
+      "category": "Tecnología",
+      "description": "Digitalización del gesto motor mediante captura 3D para analizar la cadena cinética con precisión biomecánica."
+    }
+  },
+  "biomecanicoSub": {
+    "exploracion-camilla": {
+      "title": "Exploración en Camilla",
+      "description": [
+        "Evaluación del rango articular y balance muscular.",
+        "Detección de bloqueos y compensaciones en pie y miembros inferiores.",
+        "Análisis funcional en posición de reposo.",
+        "Valoración de movilidad global del sistema musculoesquelético."
+      ]
+    },
+    "huella-plantar": {
+      "title": "Estudio de Huella Plantar y Presiones",
+      "description": [
+        "Análisis estático mediante plataforma de presiones.",
+        "Estudio de la morfología del pie.",
+        "Distribución de cargas en la base de sustentación.",
+        "Detección de desequilibrios posturales."
+      ]
+    },
+    "analisis-marcha-dinamico": {
+      "title": "Análisis Dinámico de la Marcha",
+      "description": [
+        "Captura de movimiento durante la marcha.",
+        "Estudio de fases: contacto, apoyo y propulsión.",
+        "Identificación de alteraciones biomecánicas.",
+        "Evaluación del gesto funcional del pie."
+      ]
+    },
+    "calzado-ergonomia": {
+      "title": "Valoración de Calzado y Ergonomía",
+      "description": [
+        "Análisis del desgaste del calzado habitual.",
+        "Relación entre anatomía y superficie de apoyo.",
+        "Evaluación del impacto del calzado en la pisada.",
+        "Detección de patrones de sobrecarga."
+      ]
+    },
+    "diagnostico-mecanico": {
+      "title": "Diagnóstico de Patologías Mecánicas",
+      "description": [
+        "Identificación del origen de fascitis y tendinopatías.",
+        "Detección de metatarsalgias y sobrecargas musculares.",
+        "Análisis de disfunciones biomecánicas.",
+        "Estudio del origen real del dolor."
+      ]
+    },
+    "analisis-3d": {
+      "title": "Análisis del Gesto con Tecnología 3D (Kinect)",
+      "description": [
+        "Captura de movimiento en 3D del gesto motor.",
+        "Digitalización de la cadena cinética completa.",
+        "Análisis articular de alta precisión.",
+        "Estudio biomecánico junto a tecnología avanzada."
+      ]
+    }
+  },
+  "plantillaTheme": {
+    "title": "Soportes Plantares Personalizados y Ortesis Digitales",
+    "subtitle": "Tratamiento funcional de la pisada",
+    "description": "Tras un análisis biomecánico exhaustivo, diseñamos soluciones totalmente personalizadas. Nuestro objetivo es trasladar los resultados del estudio a soportes plantares y dispositivos correctivos que equilibren las presiones y optimicen la función del pie, adaptándonos tanto a la actividad diaria como al gesto deportivo de alto rendimiento."
+  },
+  "plantillaThemeSection": {
+    "eyebrow": "Biomecánica aplicada",
+    "description": "La combinación del diseño digital y el uso de polímeros avanzados como el TPU nos permite ofrecer un soporte plantar dinámico que respeta la biología del movimiento, proporcionando estabilidad donde se necesita y flexibilidad donde el pie la demanda."
+  },
+  "plantillaTreatments": {
+    "impresion-3d": {
+      "title": "Fabricación mediante Impresión 3D",
+      "category": "Tecnología",
+      "description": "Utilizamos procesos de fabricación aditiva de alta precisión. Esta tecnología nos permite graduar la rigidez y la flexibilidad de forma selectiva en diferentes zonas de la plantilla, logrando un control biomecánico avanzado."
+    },
+    "tpu-alto-rendimiento": {
+      "title": "TPU de Alto Rendimiento",
+      "category": "Materiales",
+      "description": "El TPU (Poliuretano Termoplástico) combina amortiguación, memoria elástica y durabilidad. Es la base ideal para tratamientos que requieren precisión y confort prolongado."
+    },
+    "diseno-digital": {
+      "title": "Diseño Digital de Estructuras",
+      "category": "Ingeniería",
+      "description": "Aplicamos diseño digital avanzado para optimizar estructuras internas, reduciendo peso sin comprometer resistencia y mejorando la adaptación al calzado."
+    },
+    "densidades": {
+      "title": "Versatilidad de Densidades",
+      "category": "Personalización",
+      "description": "Disponemos de diferentes materiales (EVAs y resinas) para adaptar la descarga de presión según la patología y el nivel de soporte requerido."
+    },
+    "acabados-biocompatibles": {
+      "title": "Acabados Técnicos Biocompatibles",
+      "category": "Confort",
+      "description": "Utilizamos forros transpirables con tratamientos bactericidas que mejoran la higiene, el confort térmico y la salud dérmica del pie."
+    },
+    "ortesis-digitales": {
+      "title": "Órtesis Digitales y Vendajes Correctivos",
+      "category": "Corrección",
+      "description": "Fabricamos órtesis de silicona a medida y aplicamos vendajes correctivos para alinear los dedos, reducir presión y mejorar la función biomecánica."
+    }
+  },
+  "plantillaSub": {
+    "impresion-3d": {
+      "title": "Fabricación mediante Impresión 3D",
+      "description": [
+        "Control biomecánico total mediante fabricación aditiva.",
+        "Graduación de rigidez según zonas del pie.",
+        "Diseño basado en escaneo digital previo.",
+        "Optimización de la respuesta elástica.",
+        "Réplica exacta del modelo digital."
+      ]
+    },
+    "tpu-alto-rendimiento": {
+      "title": "TPU de Alto Rendimiento",
+      "description": [
+        "Material con amortiguación avanzada.",
+        "Alta resistencia al desgaste.",
+        "Memoria elástica para recuperación de forma.",
+        "Confort prolongado en uso diario.",
+        "Base ideal para tratamientos de precisión."
+      ]
+    },
+    "diseno-digital": {
+      "title": "Diseño Digital de Estructuras",
+      "description": [
+        "Ingeniería aplicada al soporte plantar.",
+        "Reducción de peso mediante estructuras internas.",
+        "Adaptación a cualquier tipo de calzado.",
+        "Refuerzo de puntos críticos.",
+        "Optimización del confort dentro de la zapatilla."
+      ]
+    },
+    "densidades": {
+      "title": "Versatilidad de Densidades",
+      "description": [
+        "Uso de EVA y resinas técnicas.",
+        "Adaptación de dureza según patología.",
+        "Combinación de densidades por zonas.",
+        "Tratamiento de puntos de alta presión.",
+        "Personalización según peso y actividad."
+      ]
+    },
+    "acabados-biocompatibles": {
+      "title": "Acabados Técnicos Biocompatibles",
+      "description": [
+        "Forros transpirables de alta gama.",
+        "Materiales bactericidas e higiénicos.",
+        "Regulación térmica del pie.",
+        "Evita irritaciones y rozaduras.",
+        "Mayor durabilidad del tratamiento."
+      ]
+    },
+    "ortesis-digitales": {
+      "title": "Ortesis Digitales y Vendajes Correctivos",
+      "description": [
+        "Ortesis de silicona personalizadas.",
+        "Corrección de alineación de dedos.",
+        "Reducción de presión mecánica.",
+        "Vendajes funcionales terapéuticos.",
+        "Integración en la actividad diaria."
+      ]
+    }
+  },
+  "antrometriaTheme": {
+    "title": "Antropometría Integral",
+    "subtitle": "Evaluación completa de la composición y equilibrio corporal",
+    "description": "En nuestra consulta, el estudio de las proporciones abarca la totalidad de tu estructura. Realizamos un perfil antropométrico completo para entender la arquitectura integral de tu cuerpo. Como estructura biológica, el pie funciona como el receptor final de todas las cargas, palancas y desequilibrios que ocurren en los segmentos superiores."
+  },
+  "antrometriaThemeSection": {
+    "eyebrow": "¿Por qué es necesario este nivel de detalle?",
+    "description": "Muchas patologías del pie tienen su origen en la rodilla, la cadera o incluso la columna. Al realizar un perfil antropométrico completo, no solo tratamos el síntoma en el pie, sino que identificamos la causa en la estructura global de tu organismo."
+  },
+  "antrometriaTreatments": {
+    "oseo": {
+      "title": "Diámetros Óseos",
+      "category": "Estructura",
+      "description": "Medimos la anchura de estructuras óseas como muñeca, fémur o tobillo. Determinamos la robustez esquelética. Evaluamos la capacidad de carga del sistema corporal."
+    },
+    "pliegues": {
+      "title": "Pliegues Cutáneos",
+      "category": "Composición",
+      "description": "Evaluamos el tejido adiposo en puntos estratégicos. Comprendemos la distribución de la masa grasa. Analizamos su impacto metabólico y mecánico."
+    },
+    "perimetro": {
+      "title": "Perímetros Corporales",
+      "category": "Volumen",
+      "description": "Analizamos los contornos musculares en extremidades y tronco. Detectamos desequilibrios funcionales en la marcha."
+    },
+    "somatotipo": {
+      "title": "Perímetros Corporales",
+      "category": "Volumen",
+      "description": "Analizamos los contornos musculares en extremidades y tronco. Detectamos desequilibrios funcionales en la marcha."
+    }
+  },
+  "fotometriaTheme": {
+    "title": "Fotogrametría Postural",
+    "subtitle": "Análisis digital de la postura en los tres planos del espacio",
+    "description": "La fotogrametría nos permite realizar un análisis cuantitativo de tu postura mediante la captura y procesamiento de imágenes de alta resolución. A través de este sistema, objetivamos las asimetrías y desalineaciones de tu estructura esquelética en los planos frontal, sagital y posterior."
+  },
+  "fotometriaThemeSection": {
+    "eyebrow": "La tecnología al servicio del diagnóstico",
+    "description": "Muchas patologías del pie tienen su origen en la rodilla, la cadera o incluso la columna. Al realizar un perfil antropométrico completo, no solo tratamos el síntoma en el pie, sino que identificamos la causa en la estructura global de tu organismo."
+  },
+  "fotometriaTreatments": {
+    "desequilibrios": {
+      "title": "Identificación de desequilibrios",
+      "category": "Postura",
+      "description": "Esta información, cruzada con tu perfil antropométrico, nos da la clave para entender por qué tu cuerpo se mueve como lo hace y cómo podemos optimizar su eficiencia, hacemos visible tu postura para que, junto a tu fisioterapeuta u osteópata, podamos reeducar tu movimiento y alinear tu base con tu columna."
+    },
+    "rotaciones": {
+      "title": "Análisis de angulaciones y rotaciones",
+      "category": "Biomecánica",
+      "description": "Medimos con precisión los grados de inclinación en hombros, pelvis y rodillas. Pequeñas variaciones angulares pueden generar sobrecargas en la cadena muscular y articular."
+    },
+    "sagitales": {
+      "title": "Evaluación de curvas sagitales",
+      "category": "Columna",
+      "description": "Evaluamos las curvas de la columna (lordosis y cifosis). Analizamos su relación con el centro de gravedad. Detectamos desplazamientos que afectan al equilibrio global."
+    },
+    "seguimiento": {
+      "title": "Evidencia clínica y seguimiento",
+      "category": "Control",
+      "description": "Generamos una representación visual del estado inicial del paciente. Permitimos comparar la evolución tras tratamientos o terapia física."
+    }
+  },
+  "dismorfiaTheme": {
+    "title": "Dismorfias y Asimetrías",
+    "subtitle": "La Huella de tu Historia en el Cuerpo",
+    "description": "Entendemos la estructura física como el registro vivo de tu biografía. Las variaciones en la forma (dismorfias)y las diferencias de equilibrio (asimetrías) son adaptaciones funcionales que el organismo desarrolla para gestionar su relación con el entorno y sus propias vivencias."
+  },
+  "dismorfiaThemeSection": {
+    "eyebrow": "Tu estructura cuenta una historia",
+    "title": "analizamos cada asimetría como una adaptación vital",
+    "description": "La capacidad de adaptación biológica ante asimetrías extremas fundamenta nuestra metodología. Analizamos procesos de recuperación reales para priorizar la totalidad de la persona, evitando el análisis aislado del segmento dañado."
+  },
+  "dismorfiaTreatments": {
+    "ExpresiónCorporal": {
+      "title": "Análisis de la Expresión Corporal",
+      "category": "Psicocorporal",
+      "description": "Identificamos cómo las asimetrías y tensiones crónicas se vinculan a patrones de miedo, evitación y mecanismos de defensa. Interpretamos el cuerpo como expresión funcional de la historia biomecánica y emocional."
+    },
+    "Psicoterapéutica": {
+      "title": "Sinergia Clínica y Psicoterapéutica",
+      "category": "Interdisciplinar",
+      "description": "Colaboramos con psicólogos y psicoanalistas. Integramos el abordaje psíquico con la lectura de manifestaciones físicas. Analizamos dismorfias y asimetrías corporales desde una visión global."
+    },
+    "ReeducaciónyAutoconciencia": {
+      "title": "Reeducación y Autoconciencia",
+      "category": "Reeducación",
+      "description": "La corrección biomecánica genera nuevas oportunidades de conciencia corporal. Facilita procesos terapéuticos con menor resistencia física. Mejora la integración funcional del cuerpo."
+    },
+    "CuerpoCambio": {
+      "title": "El Cuerpo como Soporte del Cambio",
+      "category": "Integración",
+      "description": "Aceptar la estructura corporal como base del cambio. Permite habitar el cuerpo de forma más equilibrada. Favorece la estabilidad física y emocional en el proceso evolutivo."
+    }
+  },
+  "geneticaTheme": {
+    "title": "Genética Aplicada a la Salud",
+    "subtitle": "Tu Código como Hoja de Ruta",
+    "description": "La genética es el plano fundamental sobre el que se construye tu estructura. Integramos el análisis molecular para comprender las predisposiciones de tu organismo y personalizar tu tratamiento desde la base biológica más profunda."
+  },
+  "geneticaThemeSection": {
+    "eyebrow": "Tu genética no es un destino fijo",
+    "title": "Interpretamos tu código biológico como punto de partida",
+    "description": "Tu genética no determina tu límite, sino tu potencial de adaptación. Utilizamos análisis molecular avanzado para descifrar tu perfil biológico y convertir esa información en una estrategia personalizada de prevención, equilibrio y optimización estructural a largo plazo."
+  },
+  "geneticaTreatments": {
+    "patologia": {
+      "title": "Prevención de Patologías Estructurales",
+      "category": "Prevención Genética",
+      "description": "Identificamos marcadores genéticos asociados al tejido conectivo, densidad ósea y respuesta inflamatoria. Anticipamos lesiones crónicas. Optimizamos la resistencia estructural del pie y la cadena biomecánica."
+    },
+    "farmacogenetica": {
+      "title": "Farmacogenética y Nutrición Evolutiva",
+      "category": "Metabolismo",
+      "description": "Analizamos la interacción entre genética, nutrición y metabolismo. Optimizamos la regeneración tisular. Mejoramos la respuesta inflamatoria y el rendimiento biomecánico global."
+    },
+    "datosClinicos": {
+      "title": "Sinergia de Datos Clínicos",
+      "category": "Diagnóstico Avanzado",
+      "description": "Integramos información genética con fotogrametría y análisis biomecánico. Generamos un diagnóstico global de alta precisión. Relacionamos herencia biológica con estado funcional actual."
+    },
+    "RendimientoyLongevidad": {
+      "title": "Rendimiento y Longevidad Funcional",
+      "category": "Optimización",
+      "description": "Adaptamos cargas de trabajo y recuperación según el perfil genético. Mejoramos la movilidad y prevenimos sobrecargas. Prolongamos la salud funcional del sistema musculoesquelético."
+    }
+  },
+  "eyebrow": "Investigación · Biomecánica · Psicosomática",
+  "title": "Investigación aplicada al sistema musculoesquelético humano",
+  "description": "Mi línea de trabajo integra biomecánica clínica, análisis estructural y modelos de interpretación psicosomática desde un enfoque interdisciplinar. El objetivo es comprender la relación entre estructura, función y adaptación del cuerpo humano en diferentes contextos de carga, movimiento y estrés.",
+
+  "meta": {
+    "approach": "Biomecánica + Psicosomática + Clínica funcional",
+    "unit": "Sistema musculoesquelético en carga y reposo",
+    "objective": "Modelización de la adaptación estructural y prevención de disfunciones"
+  },
+
+  "cards": {
+    "1": {
+      "title": "01 · Salud psicosomática y estructura del sujeto",
+      "text": "Estudio de la inscripción somática de los procesos psíquicos desde una perspectiva psicoanalítica estructural. El cuerpo es interpretado como un sistema de manifestación de conflictos, defensas y adaptaciones inconscientes."
+    },
+    "2": {
+      "title": "02 · Alineación sagital y control postural",
+      "text": "Análisis de la variabilidad de la columna vertebral en el plano sagital y su relación con el equilibrio dinámico, la eficiencia mecánica y la distribución de cargas en bipedestación."
+    },
+    "3": {
+      "title": "03 · Factores de inestabilidad biomecánica",
+      "text": "Evaluación de variables antropométricas, composición corporal y patrones de movimiento que alteran el centro de gravedad y generan compensaciones estructurales."
+    },
+    "4": {
+      "title": "04 · Degeneración musculoesquelética y adaptación",
+      "text": "Estudio longitudinal de desalineaciones estructurales, movilidad articular y procesos degenerativos del sistema musculoesquelético."
+    }
+  },
+
+  "footerInvetigacion": "Consulta mis publicaciones y proyectos de investigación completos en mi perfil oficial:",
+  "ctaInvetigacion": "Acceder a publicaciones científicas",
+  "aboutMe": {
+    "title": "Perfil clínico y académico",
+    "name": "Dra. Rebeca Saludes Llamas",
+    "subtitle": "Podóloga Clínica e Investigadora · Antropología de la Salud",
+
+    "section1": {
+      "col": "Nº Col. ",
+      "colStrong": "838070120",
+      "center": "Centro Sanitario Autorizado Nº ",
+      "centerStrong": "6102"
+    },
+
+    "education1": "Tras graduarme en",
+    "education1a": " Podología (2008)",
+    "education1b": ", consolidé mi trayectoria profesional en ",
+    "education1c": "ortopodología avanzada.",
+    "education2": "En ",
+    "education2a": "2015",
+    "education2b": ", amplié mi formación en ",
+    "education2c": "Biología y Antropología",
+    "education2d": " iniciando mi carrera investigadora en ",
+    "education2e": "Antropología de la Salud",
+    "education2f": "en la Universidad Autónoma de Madrid, en convergencia con la orientación del ",
+    "education2g": "Psicoanálisis Lacaniano.",
+    "focusTitle": "Mi enfoque profesional",
+    "focusText1": "Integro de las dimensiones",
+    "focusText1a": ",",
+    "focusText2": "biológicas",
+    "focusText2a": "y",
+    "focusText3": "clínicas",
+    "focusText3a": "y",
+    "focusText4": "culturales",
+    "focusText5": "de las dimensiones  de la salud humana, con especial atención a factores evolutivos, socioculturales y biomecánicos.",
+    "recognitionsTitle": "Reconocimientos y afiliaciones",
+    "recognitions1": "Sociedad Española de Medicina del Deporte (SEMED)",
+    "recognitions2": "Premio a la Mejor Exposición Científica (2024/25)",
+    "recognitions3": "Perfil investigador y publicaciones académicas en",
+    "quote": "Mi trabajo integra las dimensiones biológicas, clínicas y culturales de la salud humana…"
+  },
+  "contactMe": {
+    "title": "Contacta con nuestra clínica",
+    "intro": "¿Quieres pedir una cita o resolver dudas? Estamos aquí para ayudarte por WhatsApp o formulario.",
+
+    "subtitleLocation": "¿Dónde estamos?",
+    "address": "Plaza del Olivar 3 - Edificio Europa\n07001 - Palma de Mallorca - Illes Balears",
+
+    "subtitleSchedule": "Horario de atención",
+    "schedule1": "Lunes a jueves: 9:00 - 20:00",
+    "schedule2": "Viernes: 9:00 - 15:00",
+
+    "subtitleBooking": "También puedes agendar tu cita",
+    "bookingText": "Reserva online sin esperas.",
+    "ctaBooking": "Pedir cita online →",
+
+    "formTitle": "Formulario de contacto",
+    "formText": "También puedes contactar con la clínica a través del siguiente formulario.",
+
+    "name": "Nombre completo",
+    "nameHelp": "Introduce al menos 3 caracteres",
+    "email": "Correo electrónico",
+    "emailHelp": "Te responderemos a este correo",
+    "phone": "Teléfono",
+    "phoneHelp": "Solo números y símbolo +",
+    "message": "Mensaje",
+    "messageHelp": "Describe brevemente tu consulta",
+    "submit": "Enviar mensaje",
+    "titleSuccess": "Mensaje enviado",
+    "titleError": "Error al enviar",
+    "success": "✅ Mensaje enviado correctamente. Te responderemos pronto.",
+    "error": "❌ No se pudo enviar el mensaje. Inténtalo más tarde."
+  },
+  "oterhSubTitle": {
+    "general": "¿Qué tratamos en consulta?",
+    "deporte": "¿Qué incluye nuestro servicio especializado?",
+    "infantil": "Desarrollo y salud del pie infantil",
+    "quriopodia": "¿Qué incluye nuestro servicio de quiropodología?",
+    "nails": "Cirugía podológica y procedimientos ungueales avanzados",
+    "ortonixia": "¿En qué consiste nuestra técnica?",
+    "biometria": "¿Qué incluye nuestro análisis?",
+    "plantilla": "¿Que serivios disponemos?",
+    "antropometria": "¿Qué tratamos en consulta?",
+    "fotogametria": "¿Qué nos aporta la fotogrametría en consulta?",
+    "asimetria": "Un puente entre la estructura y la psique",
+    "genetica": "Ciencia de precisión para una salud integral"
+  }
+}

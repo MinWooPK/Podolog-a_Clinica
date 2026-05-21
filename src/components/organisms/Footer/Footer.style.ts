@@ -42,7 +42,7 @@ export const FooterTitle = styled.div`
 export const FooterSubTitle = styled.div`
   font-size: 14x;
   margin-left: 7px;
-  color: ${({ theme }) => theme.colors.principal.fourthy};
+  color: rgba(255, 198, 26, 1);
   font-weight: 500;
 
   @media (max-width: 420px) {
