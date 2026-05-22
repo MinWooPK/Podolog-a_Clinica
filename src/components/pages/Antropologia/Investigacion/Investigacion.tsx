@@ -80,7 +80,7 @@ const Investigacion: React.FC = () => {
         <Description>{t("footerInvetigacion")}</Description>
 
         <CTA
-          href="https://www.researchgate.net"
+          href="https://www.researchgate.net/profile/Rebeca-Saludes"
           target="_blank"
           rel="noreferrer"
         >
