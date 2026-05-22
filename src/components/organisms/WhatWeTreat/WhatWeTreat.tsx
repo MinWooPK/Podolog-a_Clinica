@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import {
   Container,
   Title,
@@ -40,6 +42,8 @@ const WhatWeTreat: React.FC<Props> = ({
   id,
   onCardClick,
 }) => {
+  const { t } = useTranslation();
+
   const [expandedId, setExpandedId] = React.useState<string | null>(null);
 
   const toggleCard = (id: string) => {
@@ -93,7 +97,7 @@ const WhatWeTreat: React.FC<Props> = ({
                       toggleCard(item.id!);
                     }}
                   >
-                    {isOpen ? "Ver menos" : "Ver más"}
+                    {isOpen ? t("cta.verMenos") : t("cta.verMas")}{" "}
                   </ReadMore>
                 )}
               </CardContent>

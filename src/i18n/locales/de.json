@@ -24,7 +24,8 @@
 
   "cta": {
     "pedirCita": "Termin buchen",
-    "verMas": "Mehr sehen"
+    "verMas": "Mehr anzeigen",
+    "verMenos": "Weniger anzeigen"
   },
 
   "footer": {
@@ -1092,5 +1093,8 @@
     "fotogametria": "Was bringt uns die Fotogrammetrie in der Sprechstunde?",
     "asimetria": "Eine Brücke zwischen Struktur und Psyche",
     "genetica": "Präzisionswissenschaft für ganzheitliche Gesundheit"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden"
   }
 }

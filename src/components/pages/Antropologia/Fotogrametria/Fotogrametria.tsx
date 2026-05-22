@@ -94,7 +94,8 @@ const Fotogrametria: React.FC = () => {
         description={t("fotometriaTheme.description")}
         primaryButton={{
           label: t("general.hero.primary"),
-          href: "/contacto",
+          href: "https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca",
+          target: "_blank",
         }}
         secondaryButton={{
           label: t("general.hero.secondary"),

@@ -19,6 +19,7 @@ type HeroProps = {
   primaryButton: {
     label: string;
     href: string;
+    target?: string;
   };
 
   secondaryButton: {
@@ -43,7 +44,15 @@ const Hero: React.FC<HeroProps> = ({
         <Subtitle>{subtitle}</Subtitle>
         <Description>{description}</Description>
         <ButtonGroup>
-          <PrimaryButton href={primaryButton.href}>
+          <PrimaryButton
+            href={primaryButton.href}
+            target={primaryButton.target}
+            rel={
+              primaryButton.target === "_blank"
+                ? "noopener noreferrer"
+                : undefined
+            }
+          >
             {primaryButton.label}
           </PrimaryButton>
 

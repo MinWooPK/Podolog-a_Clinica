@@ -24,7 +24,8 @@
 
   "cta": {
     "pedirCita": "Book appointment",
-    "verMas": "See more"
+    "verMas": "See more",
+    "verMenos": "See less"
   },
 
   "footer": {
@@ -1092,5 +1093,8 @@
     "fotogametria": "What does photogrammetry provide in consultation?",
     "asimetria": "A bridge between structure and psyche",
     "genetica": "Precision science for comprehensive health"
+  },
+  "notFound": {
+    "title": "Page not found"
   }
 }

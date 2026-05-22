@@ -24,7 +24,8 @@
 
   "cta": {
     "pedirCita": "Pedir cita",
-    "verMas": "Ver mas"
+    "verMas": "Ver mas",
+    "verMenos": "Ver menos"
   },
 
   "footer": {
@@ -1092,5 +1093,8 @@
     "fotogametria": "¿Qué nos aporta la fotogrametría en consulta?",
     "asimetria": "Un puente entre la estructura y la psique",
     "genetica": "Ciencia de precisión para una salud integral"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden"
   }
 }
