@@ -7,7 +7,7 @@ import PdologiaOrtonixia2 from "@assets/img/PdologiaOrtonixia2.jpeg";
 import ortonixia1 from "@assets/img/ortonixia1.jpeg";
 import ortonixia2 from "@assets/img/ortonixia2.jpeg";
 import ortonixia4 from "@assets/img/ortonixia4.jpeg";
-import ortonixia6 from "@assets/img/ortonixia6.jpeg";
+import ortonixia7 from "@assets/img/ortonixia7.jpeg";
 
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
@@ -16,41 +16,6 @@ import { Activity, Footprints, ScanSearch, ShieldCheck } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import TreatmentSections from "@organisms/TreatmentSections/TreatmentSections";
 import { useTranslation } from "react-i18next";
-
-const specializedServices = [
-  {
-    id: "brackets-ortonixia",
-    title: "Brackets de Composite y Titanio",
-    category: "Terapia Ungueal",
-    description:
-      "Utilizamos composite marmolado (material de alta resistencia usado en odontología) para crear guías y aplicar tensores de titanio. Estos dispositivos ejercen una tracción controlada que ensancha la uña desde su base, obligándola a mantener un crecimiento plano y funcional.",
-    icon: <Activity />,
-  },
-  {
-    id: "reconstruccion-ungueal",
-    title: "Reconstrucción de la Lámina Ungueal",
-    category: "Reparación",
-    description:
-      "En casos de uña rota o ausente, reconstruimos la estructura para proteger el lecho y evitar que el tejido blando ocupe el espacio, asegurando que la uña nueva tenga el camino libre para crecer.",
-    icon: <ShieldCheck />,
-  },
-  {
-    id: "tamponado",
-    title: "Tamponade y Guías Laterales",
-    category: "Corrección",
-    description:
-      "Aplicamos guías de gasa algodonada en los canales de la uña para evitar mecánicamente que el borde se clave en la piel mientras dura el tratamiento.",
-    icon: <Footprints />,
-  },
-  {
-    id: "prevencion-recidivas",
-    title: "Prevención de Recidivas (Kinesiotape)",
-    category: "Prevención",
-    description:
-      "Te enseñamos a realizar vendajes neuromusculares específicos para que, según tu caso, puedas desplazar el tejido del pulpejo (la 'carne' del dedo) y evitar que se interponga en el camino de la uña al crecer.",
-    icon: <ScanSearch />,
-  },
-];
 
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
@@ -107,7 +72,7 @@ const Nails: React.FC = () => {
 
     {
       id: "prevencion-recidivas",
-      image: ortonixia6,
+      image: ortonixia7,
     },
   ];
 

@@ -15,7 +15,6 @@ interface SectionProps {
 export const Section = styled.div<SectionProps>`
   display: flex;
   align-items: stretch;
-
   flex-direction: ${({ $reverse }) => ($reverse ? "row-reverse" : "row")};
 
   /* max-width: 1200px; */
