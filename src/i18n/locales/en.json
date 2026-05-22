@@ -886,11 +886,6 @@
       "title": "Body Circumferences",
       "category": "Volume",
       "description": "We analyze muscular contours in the limbs and trunk. We detect functional imbalances during gait."
-    },
-    "somatotipo": {
-      "title": "Body Circumferences",
-      "category": "Volume",
-      "description": "We analyze muscular contours in the limbs and trunk. We detect functional imbalances during gait."
     }
   },
   "fotometriaTheme": {
