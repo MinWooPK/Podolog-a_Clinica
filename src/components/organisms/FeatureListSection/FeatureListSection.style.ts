@@ -72,7 +72,6 @@ export const ImageWrapper = styled.div<{ $imagePosition: string }>`
     $imagePosition === "bottom" &&
     `
     order: 2;
-    margin-top: 40px;
   `}
 `;
 
