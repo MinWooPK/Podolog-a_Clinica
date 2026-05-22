@@ -698,7 +698,7 @@
       "description": "Erkennung der Ursachen von Plantarfasziitis, Tendinopathien, Metatarsalgien und wiederkehrenden Muskelüberlastungen."
     },
     "analisis-3d": {
-      "title": "3D-Ganganalyse (Kinect)",
+      "title": "3D-Ganganalyse",
       "category": "Technologie",
       "description": "Digitalisierung der Bewegungsmuster mittels 3D-Erfassung zur biomechanischen Analyse der kinetischen Kette."
     }
@@ -750,7 +750,7 @@
       ]
     },
     "analisis-3d": {
-      "title": "3D-Bewegungsanalyse mit Technologie (Kinect)",
+      "title": "3D-Bewegungsanalyse mit Technologie",
       "description": [
         "3D-Bewegungserfassung von Motorikmustern.",
         "Digitalisierung der gesamten kinetischen Kette.",

@@ -698,7 +698,7 @@
       "description": "Identificación del origen de fascitis, tendinopatías, metatarsalgias y sobrecargas musculares recurrentes."
     },
     "analisis-3d": {
-      "title": "Análisis del Gesto en 3D (Kinect)",
+      "title": "Análisis del Gesto en 3D ",
       "category": "Tecnología",
       "description": "Digitalización del gesto motor mediante captura 3D para analizar la cadena cinética con precisión biomecánica."
     }
@@ -750,7 +750,7 @@
       ]
     },
     "analisis-3d": {
-      "title": "Análisis del Gesto con Tecnología 3D (Kinect)",
+      "title": "Análisis del Gesto con Tecnología 3D",
       "description": [
         "Captura de movimiento en 3D del gesto motor.",
         "Digitalización de la cadena cinética completa.",

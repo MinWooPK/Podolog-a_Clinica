@@ -698,7 +698,7 @@
       "description": "Identification of the origin of plantar fasciitis, tendinopathies, metatarsalgia, and recurrent muscular overloads."
     },
     "analisis-3d": {
-      "title": "3D Gait Analysis (Kinect)",
+      "title": "3D Gait Analysis",
       "category": "Technology",
       "description": "Digitization of motor patterns through 3D capture to analyze the kinetic chain with biomechanical precision."
     }
@@ -750,7 +750,7 @@
       ]
     },
     "analisis-3d": {
-      "title": "3D Motion Analysis with Technology (Kinect)",
+      "title": "3D Motion Analysis with Technology",
       "description": [
         "3D motion capture of motor patterns.",
         "Digitalization of the full kinetic chain.",
