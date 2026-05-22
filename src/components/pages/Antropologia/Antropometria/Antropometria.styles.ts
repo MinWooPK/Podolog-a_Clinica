@@ -150,7 +150,7 @@ export const Content = styled.div`
     font-size: 20px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 8px;
+    @bottom: 8px;
   }
 
   p {

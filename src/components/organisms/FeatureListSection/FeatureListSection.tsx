@@ -7,6 +7,7 @@ import {
   Image,
   Layout,
   Subtitle,
+  SubInfo,
 } from "./FeatureListSection.style";
 
 type FeatureListSectionProps = {
@@ -16,6 +17,11 @@ type FeatureListSectionProps = {
   subtitle?: string;
   id?: string;
   imagePosition?: "right" | "bottom";
+  subInfo?: {
+    text: string;
+    highlight: string;
+    url: string;
+  };
 };
 
 export default function FeatureListSection({
@@ -25,6 +31,7 @@ export default function FeatureListSection({
   backgroundImage,
   subtitle,
   imagePosition = "right",
+  subInfo,
 }: FeatureListSectionProps) {
   return (
     <Section id={id}>
@@ -39,7 +46,19 @@ export default function FeatureListSection({
             ))}
           </List>
         </Content>
-
+        {subInfo && (
+          <SubInfo>
+            {subInfo.text}{" "}
+            <a
+              href={subInfo.url}
+              target="_blank"
+              rel="noreferrer"
+              className="subInfoLink"
+            >
+              {subInfo.highlight}
+            </a>
+          </SubInfo>
+        )}{" "}
         <ImageWrapper $imagePosition={imagePosition}>
           <Image src={backgroundImage} alt={title} />
         </ImageWrapper>

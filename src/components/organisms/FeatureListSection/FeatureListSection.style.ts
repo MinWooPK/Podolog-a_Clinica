@@ -87,3 +87,23 @@ export const Image = styled.img`
 export const Spacer = styled.div`
   height: 40px;
 `;
+
+export const SubInfo = styled.p`
+  margin-top: 24px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #18595b;
+
+  .subInfoLink {
+    color: rgba(255, 198, 26, 1);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .subInfoLink:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+  }
+`;

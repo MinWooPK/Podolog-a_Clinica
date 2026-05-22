@@ -45,10 +45,6 @@ const Antropometria: React.FC = () => {
       id: "perimetro",
       icon: <Ruler />,
     },
-    {
-      id: "somatotipo",
-      icon: <User />,
-    },
   ];
 
   const treatmentsData = specializedServices.map((item) => {
@@ -84,6 +80,11 @@ ${description}`;
         items={treatmentsData}
         backgroundImage={ImgClaraGonzalez}
         imagePosition="bottom"
+        subInfo={{
+          text: "Colaboramos con la nutricionista ,visita su perfil de instagram",
+          highlight: "Clara González",
+          url: "https://instagram.com/nutricion.longevidad",
+        }}
       />
 
       {/* <WhatWeTreat
