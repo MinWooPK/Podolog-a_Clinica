@@ -11,6 +11,7 @@ import ImgQuiropodia6 from "@assets/img/ImgQuiropodia10.jpeg";
 import ImgQuiropodia7 from "@assets/img/ImgQuiropodia7.jpeg";
 import ImgQuiropodia8 from "@assets/img/ImgQuiropodia8.jpeg";
 import ImgQuiropodia9 from "@assets/img/ImgQuiropodia9.jpeg";
+import ImgQuiropodia11 from "@assets/img/ImgQuiropodia11.jpeg";
 
 import {
   Activity,
@@ -97,8 +98,7 @@ const Quipodologia: React.FC = () => {
     {
       id: "talones",
 
-      image:
-        "https://images.pexels.com/photos/6621464/pexels-photo-6621464.jpeg",
+      image: ImgQuiropodia11,
     },
 
     {
