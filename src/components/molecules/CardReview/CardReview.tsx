@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaStar } from "react-icons/fa";
 import DoctorialiaIcon from "@assets/icons/doctoralia.png";
 
@@ -34,6 +34,8 @@ function getInitials(name: string) {
 }
 
 function CardReview({ name, description, isOpen, onToggle }: CardReviewProps) {
+  const { t } = useTranslation();
+
   const isLong = description.length > 120;
 
   const textToShow =
