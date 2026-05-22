@@ -124,6 +124,8 @@ export const PrimaryButton = styled.a`
 
   &:hover {
     background: #0f3f40;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 63, 64, 0.35);
   }
 `;
 
@@ -138,7 +140,9 @@ export const SecondaryButton = styled.a`
   color: #0f3f40;
   cursor: pointer;
   &:hover {
-    background: white;
-    color: #18595b;
+    background: #0f3f40;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 63, 64, 0.25);
   }
 `;

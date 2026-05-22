@@ -61,6 +61,15 @@ export const SecondaryButton = styled.a`
   color: #000;
   text-decoration: none;
   border-radius: 6px;
+  &:hover {
+    background: #0f3f40;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 63, 64, 0.25);
+  }
+  /* &:hover {
+    color: red;
+  } */
 `;
 
 export const ImageWrapper = styled.div`
