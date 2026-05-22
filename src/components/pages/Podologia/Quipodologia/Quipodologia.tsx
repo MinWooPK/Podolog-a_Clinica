@@ -7,7 +7,7 @@ import ImgQuipodiaDestail from "@assets/img/ImgQuipodiaDestail.jpg";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { useTranslation } from "react-i18next";
 import ImgQuiropodia5 from "@assets/img/ImgQuriopodia5.jpeg";
-import ImgQuiropodia6 from "@assets/img/ImgQuiropodia6.jpeg";
+import ImgQuiropodia6 from "@assets/img/ImgQuiropodia10.jpeg";
 import ImgQuiropodia7 from "@assets/img/ImgQuiropodia7.jpeg";
 import ImgQuiropodia8 from "@assets/img/ImgQuiropodia8.jpeg";
 import ImgQuiropodia9 from "@assets/img/ImgQuiropodia9.jpeg";
