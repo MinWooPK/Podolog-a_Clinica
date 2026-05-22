@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Infantil2 from "@assets/img/Infantil2.jpeg";
 import Infantil3 from "@assets/img/Infantil3.jpeg";
-import Infantil4 from "@assets/img/Infantil4.jpeg";
+import Infantil4 from "@assets/img/Infantil4.png";
 import Infantil5 from "@assets/img/Infantil5.jpeg";
 import Infantil6 from "@assets/img/infantil7.jpg";
 import Infantil7 from "@assets/img/infantil6.jpg";

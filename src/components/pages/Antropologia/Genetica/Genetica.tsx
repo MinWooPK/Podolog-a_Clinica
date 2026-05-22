@@ -8,36 +8,6 @@ import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { ShieldCheck, Dna, Activity, TrendingUp } from "lucide-react";
-const geneticPodiatryProcess = [
-  {
-    title: "Prevención de Patologías Estructurales",
-    category: "Prevención Genética",
-    description:
-      "Identificamos marcadores genéticos asociados al tejido conectivo, densidad ósea y respuesta inflamatoria. Anticipamos lesiones crónicas. Optimizamos la resistencia estructural del pie y la cadena biomecánica.",
-    icon: <ShieldCheck />,
-  },
-  {
-    title: "Farmacogenética y Nutrición Evolutiva",
-    category: "Metabolismo",
-    description:
-      "Analizamos la interacción entre genética, nutrición y metabolismo. Optimizamos la regeneración tisular. Mejoramos la respuesta inflamatoria y el rendimiento biomecánico global.",
-    icon: <Dna />,
-  },
-  {
-    title: "Sinergia de Datos Clínicos",
-    category: "Diagnóstico Avanzado",
-    description:
-      "Integramos información genética con fotogrametría y análisis biomecánico. Generamos un diagnóstico global de alta precisión. Relacionamos herencia biológica con estado funcional actual.",
-    icon: <Activity />,
-  },
-  {
-    title: "Rendimiento y Longevidad Funcional",
-    category: "Optimización",
-    description:
-      "Adaptamos cargas de trabajo y recuperación según el perfil genético. Mejoramos la movilidad y prevenimos sobrecargas. Prolongamos la salud funcional del sistema musculoesquelético.",
-    icon: <TrendingUp />,
-  },
-];
 
 //  SCROLL SUAVE
 const scrollToSection = (id: string) => {
