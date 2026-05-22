@@ -47,7 +47,7 @@ const AboutMe: React.FC = () => {
               {t("aboutMe.education1")}{" "}
               <strong>{t("aboutMe.education1a")}</strong>
               {t("aboutMe.education1b")}
-              <u>{t("aboutMe.education1c")}</u>.
+              <u>{t("aboutMe.education1c")}</u>
             </Paragraph>
 
             <Paragraph>
