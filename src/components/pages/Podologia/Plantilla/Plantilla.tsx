@@ -5,6 +5,12 @@ import { useTranslation } from "react-i18next";
 import { Description, Eyebrow, ContaienrFirst } from "./Plantilla.styles";
 import PodologiaPlantilla from "@assets/img/PodologiaPlantilla.jpeg";
 import PodologiaPlantilla2 from "@assets/img/PodologiaPlantilla2.jpeg";
+import ImgPlantilla1 from "@assets/img/ImgPlantilla1.jpeg";
+import ImgPlantilla2 from "@assets/img/ImgPlantilla2.jpeg";
+import ImgPlantilla3 from "@assets/img/ImgPlantilla3.jpeg";
+import ImgPlantilla4 from "@assets/img/ImgPlantilla4.jpeg";
+import ImgPlantilla5 from "@assets/img/ImgPlantilla5.jpeg";
+import ImgPlantilla6 from "@assets/img/ImgPlantilla6.jpeg";
 
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
@@ -66,38 +72,32 @@ const Plantilla: React.FC = () => {
   const treatmentsSub = [
     {
       id: "impresion-3d",
-      image:
-        "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg",
+      image: ImgPlantilla1,
     },
 
     {
       id: "tpu-alto-rendimiento",
-      image:
-        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+      image: ImgPlantilla2,
     },
 
     {
       id: "diseno-digital",
-      image:
-        "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg",
+      image: ImgPlantilla3,
     },
 
     {
       id: "densidades",
-      image:
-        "https://images.pexels.com/photos/3735657/pexels-photo-3735657.jpeg",
+      image: ImgPlantilla4,
     },
 
     {
       id: "acabados-biocompatibles",
-      image:
-        "https://images.pexels.com/photos/6695843/pexels-photo-6695843.jpeg",
+      image: ImgPlantilla5,
     },
 
     {
       id: "ortesis-digitales",
-      image:
-        "https://images.pexels.com/photos/4506109/pexels-photo-4506109.jpeg",
+      image: ImgPlantilla6,
     },
   ];
 
