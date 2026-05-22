@@ -11,6 +11,8 @@ import {
   Badge,
   Subtitle,
   ReadMore,
+  HeaderCardContent,
+  SubCardContent,
 } from "./WhatWeTreat.styles";
 
 type Treatment = {
@@ -66,21 +68,24 @@ const WhatWeTreat: React.FC<Props> = ({
               $expanded={isOpen}
               onClick={() => item.id && onCardClick?.(item.id)}
             >
-              <IconWrapper
-                style={{ background: item.bgColor, color: item.color }}
-              >
-                {item.icon}
-              </IconWrapper>
-
               <CardContent>
-                <Badge style={{ background: item.bgColor, color: item.color }}>
-                  {item.category}
-                </Badge>
-
-                <CardTitle>{item.title}</CardTitle>
+                <HeaderCardContent>
+                  <IconWrapper
+                    style={{ background: item.bgColor, color: item.color }}
+                  >
+                    {item.icon}
+                  </IconWrapper>
+                  <SubCardContent>
+                    <Badge
+                      style={{ background: item.bgColor, color: item.color }}
+                    >
+                      {item.category}
+                    </Badge>
+                    <CardTitle>{item.title}</CardTitle>
+                  </SubCardContent>
+                </HeaderCardContent>
 
                 <CardText>{truncate(item.description, isOpen)}</CardText>
-
                 {item.description.length > MAX_CHARS && (
                   <ReadMore
                     onClick={(e) => {

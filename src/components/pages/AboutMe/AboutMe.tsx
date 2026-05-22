@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import SMEC from "@assets/img/SEMEDImg.jpg";
 
 import RebeAboutMe from "@assets/img/RebeAboutMe.jpg";
 import {
@@ -15,6 +16,10 @@ import {
   HighlightBox,
   QuoteBox,
   Divider,
+  ALink,
+  CertificateImage,
+  CertificateCard,
+  CertificatesGrid,
 } from "./AboutMe.styles";
 
 const AboutMe: React.FC = () => {
@@ -27,11 +32,8 @@ const AboutMe: React.FC = () => {
 
         <Content>
           <Title>{t("aboutMe.title")}</Title>
-
           <Name>Dra. Rebeca Saludes Llamas</Name>
-
           <Subtitle>{t("aboutMe.subtitle")} </Subtitle>
-
           <Section>
             <Paragraph>
               {t("aboutMe.section1.col")} <strong>838070120</strong> |{" "}
@@ -39,9 +41,7 @@ const AboutMe: React.FC = () => {
               <strong>6102</strong>
             </Paragraph>
           </Section>
-
           <Divider />
-
           <Section>
             <Paragraph>
               {t("aboutMe.education1")}{" "}
@@ -58,9 +58,7 @@ const AboutMe: React.FC = () => {
               {t("aboutMe.education2f")} <u>{t("aboutMe.education2g")}</u>
             </Paragraph>
           </Section>
-
           <Divider />
-
           <HighlightBox>
             <h3>{t("aboutMe.focusTitle")}</h3>
             <p>
@@ -72,20 +70,31 @@ const AboutMe: React.FC = () => {
               {t("aboutMe.focusText5")}
             </p>
           </HighlightBox>
-
           <Divider />
-
           <Section>
             <h3>{t("aboutMe.recognitionsTitle")}</h3>
 
             <Paragraph>
               • <strong>{t("aboutMe.recognitions1")}</strong>
               <br />• <strong>{t("aboutMe.recognitions2")}</strong>
-              <br />• {t("aboutMe.recognitions3")} <strong>ResearchGate</strong>
+              <br />• {t("aboutMe.recognitions3")}{" "}
+              <strong>
+                <ALink
+                  href="https://www.researchgate.net/profile/Rebeca-Saludes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ResearchGate
+                </ALink>
+              </strong>
             </Paragraph>
           </Section>
-
           <QuoteBox>“{t("aboutMe.quote")}”</QuoteBox>
+          <CertificatesGrid>
+            <CertificateCard>
+              <CertificateImage src={SMEC} alt="Certificado SEMED" />
+            </CertificateCard>
+          </CertificatesGrid>{" "}
         </Content>
       </Card>
     </Container>

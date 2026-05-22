@@ -4,6 +4,9 @@ export const Container = styled.section`
   /* max-width: 1100px; */
   margin: 0 auto;
   padding: 2rem 4rem;
+  @media (max-width: 900px) {
+    padding: 1rem 2rem;
+  }
 `;
 
 export const Title = styled.h2`

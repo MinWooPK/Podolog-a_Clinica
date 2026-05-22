@@ -178,63 +178,63 @@
   },
   "treatmentsPodologiaSpec": {
     "exploracion": {
-      "title": "Examen et Diagnostic",
+      "title": "Untersuchung und Diagnostik",
       "description": [
-        "Évaluation clinique détaillée pour prévenir et détecter les pathologies précocement.",
-        "Anamnèse et antécédents médicaux.",
-        "Évaluation de la morphologie du pied et de la mobilité articulaire.",
-        "Détection précoce des signes d’alerte.",
-        "Élaboration d’un plan de santé personnalisé."
+        "Detaillierte klinische Untersuchung zur Prävention und Früherkennung von Erkrankungen.",
+        "Anamnese und medizinische Vorgeschichte.",
+        "Bewertung der Fußmorphologie und Gelenkbeweglichkeit.",
+        "Früherkennung von Warnzeichen.",
+        "Erstellung eines personalisierten Gesundheitsplans."
       ]
     },
     "infecciones": {
-      "title": "Infections Cutanées",
+      "title": "Hautinfektionen",
       "description": [
-        "Traitement spécialisé des affections cutanées et infections du pied.",
-        "Élimination des papillomes (verrues plantaires).",
-        "Traitement des mycoses cutanées (champignons).",
-        "Contrôle des dermatites et eczémas.",
-        "Prévention de la contagion et des récidives."
+        "Spezialisierte Behandlung von Hauterkrankungen und Fußinfektionen.",
+        "Entfernung von Papillomen (Plantarwarzen).",
+        "Behandlung von Hautmykosen (Pilzinfektionen).",
+        "Kontrolle von Dermatitis und Ekzemen.",
+        "Vorbeugung von Ansteckung und Rückfällen."
       ]
     },
     "quiropodologia": {
-      "title": "Chiropodologie",
+      "title": "Podologische Behandlung",
       "description": [
-        "Soins cliniques essentiels pour soulager la douleur et améliorer le confort de marche.",
-        "Élimination des cors et callosités.",
-        "Soins thérapeutiques des talons.",
-        "Coupe et fraisage professionnel des ongles.",
-        "Traitement de l’hyperkératose de pression."
+        "Wesentliche klinische Pflege zur Schmerzlinderung und Verbesserung des Gehkomforts.",
+        "Entfernung von Hühneraugen und Schwielen.",
+        "Therapeutische Behandlung der Fersen.",
+        "Professionelles Schneiden und Fräsen der Nägel.",
+        "Behandlung druckbedingter Hyperkeratose."
       ]
     },
     "ungueal": {
-      "title": "Pathologie Unguéale",
+      "title": "Nagelpathologien",
       "description": [
-        "Solutions complètes pour les affections des ongles.",
-        "Traitement de l’ongle incarné (onychocryptose).",
-        "Prise en charge de l’onychomycose (champignons des ongles).",
-        "Rééducation des ongles épaissis ou déformés.",
-        "Restauration de l’esthétique et de la fonction de l’ongle."
+        "Umfassende Lösungen für Nagelerkrankungen.",
+        "Behandlung eingewachsener Nägel (Onychokryptose).",
+        "Behandlung von Onychomykose (Nagelpilz).",
+        "Rehabilitation verdickter oder deformierter Nägel.",
+        "Wiederherstellung von Ästhetik und Funktion des Nagels."
       ]
     },
     "piel": {
-      "title": "Hydratation et Santé de la Peau",
+      "title": "Hydratation und Hautgesundheit",
       "description": [
-        "Protocoles de régénération pour maintenir l’intégrité de la barrière cutanée.",
-        "Traitement profond de la sécheresse sévère.",
-        "Prise en charge de l’hyperhidrose (transpiration excessive).",
-        "Soins préventifs du pied diabétique.",
-        "Prévention des fissures et lésions cutanées."
+        "Regenerationsprotokolle zur Erhaltung der Hautbarriere.",
+        "Tiefenbehandlung bei starker Trockenheit.",
+        "Behandlung von Hyperhidrose (übermäßiges Schwitzen).",
+        "Vorbeugende Pflege des diabetischen Fußes.",
+        "Vorbeugung von Hautrissen und Läsionen."
       ]
     },
     "educacion": {
-      "title": "Éducation Sanitaire",
+      "title": "Gesundheitsaufklärung",
       "description": [
-        "Conseils professionnels pour les soins préventifs quotidiens.",
-        "Recommandations de chaussures adaptées.",
-        "Hygiène et séchage corrects.",
-        "Auto-examen à domicile.",
-        "Prévention des pathologies récurrentes."
+        "Professionelle Beratung für die tägliche Präventionspflege.",
+        "Empfehlungen für geeignetes Schuhwerk.",
+        "Korrekte Hygiene und Trocknung.",
+        "Selbstuntersuchung zu Hause.",
+        "Vorbeugung wiederkehrender Erkrankungen."
       ]
     }
   },
@@ -472,7 +472,6 @@
     "hiperqueratosis": {
       "title": "Behandlung von Hyperkeratose (Schwielen)",
       "description": [
-        "Entfernung von Keratinansammlungen zur Wiederherstellung der Hautgesundheit.",
         "Professionelles Abtragen von Schwielen und Hornhaut (Helome).",
         "Schmerzfreie Techniken zur Beseitigung von Druckpunkten.",
         "Analyse des Feuchtigkeits- und Lipidgehalts der Haut."
@@ -539,7 +538,6 @@
     "title": "Effizienz und Erholung:",
     "description": "Unser Ziel ist es, dass der Patient so schnell wie möglich in seinen Alltag zurückkehrt. Wir verwenden ambulante Techniken, die es ermöglichen, die Praxis gehend zu verlassen – mit minimalen Beschwerden und garantierten ästhetischen Ergebnissen."
   },
-
   "treatmentsNails": {
     "onicocriptosis-cirugia": {
       "title": "Operation der Onychokryptose (Eingewachsener Nagel)",
@@ -588,6 +586,16 @@
         "Sicherheitsprotokolle für Behandlungserfolg."
       ]
     }
+  },
+  "ortonixiaTheme": {
+    "title": "Orthonyxie",
+    "subtitle": "Nagel-Reeducation und Rekonstruktion",
+    "description": "Die Orthonyxie ist eine nicht-invasive Behandlung, die wie eine Zahnspange für die Nägel funktioniert. Sie ist die ideale Alternative zur Korrektur stark gekrümmter Nägel, zur Vorbeugung eingewachsener Nägel und zur Wiederherstellung der Nagelanatomie nach einer Fraktur oder einem Trauma."
+  },
+  "ortonixiaSection": {
+    "eyebrow": "Orthonyxie und Nagelkorrektur",
+    "title": "Nagelkorrektur mittels Orthonyxie",
+    "description": "Es ist nicht immer notwendig, Gewebe zu entfernen; manchmal reicht es aus, das Wachstum zu lenken. Die Orthonyxie respektiert die Integrität des Nagels und verwendet kontrollierte physikalische Kräfte, um seine funktionelle Anatomie wiederherzustellen und ein erneutes Einwachsen zu verhindern."
   },
   "ortonixiaNails": {
     "brackets-ortonixia": {
@@ -648,8 +656,7 @@
         "Schulung zur Fußselbstpflege.",
         "Funktionelles Taping zur Rückfallvermeidung.",
         "Umerziehung des Nagelwachstums.",
-        "Individuelle Präventionsprotokolle.",
-        "Podologische Gesundheitsaufklärung."
+        "Individuelle Präventionsprotokolle."
       ]
     }
   },
@@ -659,9 +666,9 @@
     "description": "In unserer Praxis umfasst die Untersuchung der Proportionen die gesamte Struktur Ihres Körpers. Wir erstellen ein vollständiges anthropometrisches Profil, um die Gesamtarchitektur Ihres Körpers zu verstehen. Als biologische Struktur fungiert der Fuß als Endempfänger aller Lasten, Hebelkräfte und Ungleichgewichte, die in den oberen Körpersegmenten entstehen."
   },
   "biomecanicoThemeSection": {
-    "eyebrow": "Ganzheitliche Strukturanalyse",
-    "title": "Warum ist dieses Maß an Detail notwendig?",
-    "description": "Viele Fußpathologien haben ihren Ursprung im Knie, in der Hüfte oder sogar in der Wirbelsäule. Durch ein vollständiges anthropometrisches Profil behandeln wir nicht nur das Symptom im Fuß, sondern identifizieren auch die Ursache in der Gesamtstruktur des Körpers."
+    "eyebrow": "Technologie und Bewegung",
+    "title": "Ganzheitliche biomechanische Diagnostik",
+    "description": "Unser Ziel ist es, die Bewegungseffizienz zu optimieren und den Gang zu verbessern, indem wir Technologie nutzen, um Ihre Biologie zu interpretieren und die langfristige Gesundheit der Gelenke sicherzustellen."
   },
   "biomecanicoTreatments": {
     "exploracion-camilla": {
@@ -983,13 +990,11 @@
   "eyebrow": "Forschung · Biomechanik · Psychosomatik",
   "title": "Forschung angewandt auf das menschliche muskuloskelettale System",
   "description": "Meine Arbeit integriert klinische Biomechanik, strukturelle Analyse und psychosomatische Interpretationsmodelle aus einer interdisziplinären Perspektive. Ziel ist es, die Beziehung zwischen Struktur, Funktion und Anpassung des menschlichen Körpers unter verschiedenen Bedingungen von Belastung, Bewegung und Stress zu verstehen.",
-
   "meta": {
     "approach": "Biomechanik + Psychosomatik + funktionelle Klinik",
     "unit": "Bewegungsapparat unter Belastung und Ruhe",
     "objective": "Modellierung struktureller Anpassung und Prävention von Dysfunktionen"
   },
-
   "cards": {
     "1": {
       "title": "01 · Psychosomatische Gesundheit und Körperstruktur",
@@ -1008,20 +1013,18 @@
       "text": "Längsschnittstudie über Fehlstellungen, Gelenkbeweglichkeit und degenerative Prozesse des Bewegungsapparates."
     }
   },
-
   "footerInvetigacion": "Sie können meine Veröffentlichungen und Forschungsprojekte im offiziellen Profil einsehen:",
   "ctaInvetigacion": "Zu wissenschaftlichen Publikationen",
   "aboutMe": {
     "title": "Klinisches und akademisches Profil",
+    "name": "Dra. Rebeca Saludes Llamas",
     "subtitle": "Klinische Podologin & Forscherin · Anthropologie der Gesundheit",
-
     "section1": {
       "col": "Approbationsnummer ",
       "colStrong": "838070120",
       "center": "Zugelassenes Gesundheitszentrum Nr. ",
       "centerStrong": "6102"
     },
-
     "education1": "Nach meinem Abschluss in",
     "education1a": " Podologie (2008)",
     "education1b": " habe ich meine berufliche Laufbahn in der ",
@@ -1034,7 +1037,6 @@
     "education2e": "Anthropologie der Gesundheit",
     "education2f": " an der Autonomen Universität Madrid begonnen, in Verbindung mit der ",
     "education2g": "Lacan’schen Psychoanalyse.",
-
     "focusTitle": "Mein beruflicher Schwerpunkt",
     "focusText1": "Ich integriere",
     "focusText1a": ",",
@@ -1044,32 +1046,25 @@
     "focusText3a": "und",
     "focusText4": "kulturelle",
     "focusText5": "Dimensionen der menschlichen Gesundheit, mit besonderem Fokus auf evolutionäre, soziokulturelle und biomechanische Faktoren.",
-
     "recognitionsTitle": "Anerkennungen und Mitgliedschaften",
     "recognitions1": "Spanische Gesellschaft für Sportmedizin (SEMED)",
     "recognitions2": "Preis für die beste wissenschaftliche Präsentation (2024/25)",
     "recognitions3": "Forschungsprofil und akademische Publikationen auf",
-
     "quote": "Meine Arbeit integriert die biologischen, klinischen und kulturellen Dimensionen der menschlichen Gesundheit..."
   },
   "contactMe": {
     "title": "Kontaktieren Sie unsere Klinik",
     "intro": "Möchten Sie einen Termin vereinbaren oder Fragen stellen? Wir helfen Ihnen über WhatsApp oder das Kontaktformular.",
-
     "subtitleLocation": "Wo wir sind",
     "address": "Plaza del Olivar 3 - Europa Gebäude\n07001 - Palma de Mallorca - Balearen",
-
     "subtitleSchedule": "Öffnungszeiten",
     "schedule1": "Montag bis Donnerstag: 9:00 - 20:00",
     "schedule2": "Freitag: 9:00 - 15:00",
-
     "subtitleBooking": "Sie können auch einen Termin buchen",
     "bookingText": "Online buchen ohne Wartezeit.",
     "ctaBooking": "Termin buchen →",
-
     "formTitle": "Kontaktformular",
     "formText": "Sie können die Klinik auch über das folgende Formular kontaktieren.",
-
     "name": "Vollständiger Name",
     "nameHelp": "Mindestens 3 Zeichen eingeben",
     "email": "E-Mail",

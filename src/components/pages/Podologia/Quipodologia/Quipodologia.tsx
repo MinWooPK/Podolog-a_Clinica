@@ -6,6 +6,11 @@ import Hero from "@organisms/Hero";
 import ImgQuipodiaDestail from "@assets/img/ImgQuipodiaDestail.jpg";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
 import { useTranslation } from "react-i18next";
+import ImgQuiropodia5 from "@assets/img/ImgQuriopodia5.jpeg";
+import ImgQuiropodia6 from "@assets/img/ImgQuiropodia6.jpeg";
+import ImgQuiropodia7 from "@assets/img/ImgQuiropodia7.jpeg";
+import ImgQuiropodia8 from "@assets/img/ImgQuiropodia8.jpeg";
+import ImgQuiropodia9 from "@assets/img/ImgQuiropodia9.jpeg";
 
 import {
   Activity,
@@ -71,26 +76,22 @@ const Quipodologia: React.FC = () => {
   const treatmentsSub = [
     {
       id: "hiperqueratosis",
-      image:
-        "https://images.pexels.com/photos/3985325/pexels-photo-3985325.jpeg",
+      image: ImgQuiropodia5,
     },
 
     {
       id: "onicoterapia",
-      image:
-        "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg",
+      image: ImgQuiropodia6,
     },
 
     {
       id: "onicogrifosis",
-      image:
-        "https://images.pexels.com/photos/3738341/pexels-photo-3738341.jpeg",
+      image: ImgQuiropodia7,
     },
 
     {
       id: "onicocriptosis",
-      image:
-        "https://images.pexels.com/photos/4506109/pexels-photo-4506109.jpeg",
+      image: ImgQuiropodia8,
     },
 
     {
@@ -102,8 +103,7 @@ const Quipodologia: React.FC = () => {
 
     {
       id: "microbiologia",
-      image:
-        "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg",
+      image: ImgQuiropodia9,
     },
   ];
 

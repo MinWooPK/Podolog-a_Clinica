@@ -221,7 +221,7 @@
       "title": "Skin Hydration and Health",
       "description": [
         "Regeneration protocols to maintain skin barrier integrity.",
-        "Deep treatment of severe dryness.",
+        "Treatment of skin dehydration.",
         "Management of hyperhidrosis (excess sweating).",
         "Preventive care for diabetic foot.",
         "Prevention of cracks and skin lesions."
@@ -472,7 +472,6 @@
     "hiperqueratosis": {
       "title": "Hyperkeratosis Treatment (Calluses)",
       "description": [
-        "Removal of keratin buildup to restore skin health.",
         "Professional debridement of calluses and corns (helomas).",
         "Painless techniques to eliminate pressure points.",
         "Assessment of skin hydration and lipid levels."
@@ -539,7 +538,6 @@
     "title": "Effectiveness and recovery:",
     "description": "Our goal is for the patient to return to their normal routine as quickly as possible. We use outpatient techniques that allow patients to leave the clinic walking, with minimal discomfort and guaranteed aesthetic results."
   },
-
   "treatmentsNails": {
     "onicocriptosis-cirugia": {
       "title": "Onychocryptosis Surgery (Ingrown Nail)",
@@ -588,6 +586,16 @@
         "Safety protocols for treatment success."
       ]
     }
+  },
+  "ortonixiaTheme": {
+    "title": "Orthonyxia",
+    "subtitle": "Nail Re-education and Reconstruction",
+    "description": "Orthonyxia is a non-invasive treatment that works like orthodontics for nails. It is the ideal alternative to correct excessively curved nails, prevent ingrown nails, and restore nail anatomy after a fracture or trauma."
+  },
+  "ortonixiaSection": {
+    "eyebrow": "Orthonyxia and nail correction",
+    "title": "Nail correction using orthonyxia",
+    "description": "It is not always necessary to remove tissue; sometimes we only need to guide its growth. Orthonyxia respects the integrity of the nail, applying controlled physical forces to restore its functional anatomy and prevent it from becoming ingrown again."
   },
   "ortonixiaNails": {
     "brackets-ortonixia": {
@@ -648,8 +656,7 @@
         "Foot self-care training.",
         "Functional taping to prevent recurrence.",
         "Re-education of nail growth.",
-        "Personalized preventive protocols.",
-        "Podiatric health education."
+        "Personalized preventive protocols."
       ]
     }
   },
@@ -659,9 +666,9 @@
     "description": "In our clinic, the study of proportions covers the entirety of your structure. We perform a complete anthropometric profile to understand the overall architecture of your body. As a biological structure, the foot functions as the final receiver of all loads, levers, and imbalances occurring in the upper segments."
   },
   "biomecanicoThemeSection": {
-    "eyebrow": "Comprehensive structural analysis",
-    "title": "Why is this level of detail necessary?",
-    "description": "Many foot pathologies originate in the knee, hip, or even the spine. By performing a complete anthropometric profile, we do not only treat the symptom in the foot, but also identify the cause within the global structure of your body."
+    "eyebrow": "Technology and movement",
+    "title": "Comprehensive biomechanical assessment",
+    "description": "Our goal is to optimize movement efficiency and improve gait mechanics, using technology to interpret your biology and ensure long-term joint health."
   },
   "biomecanicoTreatments": {
     "exploracion-camilla": {
@@ -983,13 +990,11 @@
   "eyebrow": "Research · Biomechanics · Psychosomatics",
   "title": "Research applied to the human musculoskeletal system",
   "description": "My line of work integrates clinical biomechanics, structural analysis, and psychosomatic interpretation models from an interdisciplinary approach. The goal is to understand the relationship between structure, function, and adaptation of the human body under different conditions of load, movement, and stress.",
-
   "meta": {
     "approach": "Biomechanics + Psychosomatics + Functional clinical practice",
     "unit": "Musculoskeletal system in load and rest",
     "objective": "Modeling structural adaptation and prevention of dysfunctions"
   },
-
   "cards": {
     "1": {
       "title": "01 · Psychosomatic health and subject structure",
@@ -1008,21 +1013,18 @@
       "text": "Longitudinal study of structural misalignments, joint mobility, and degenerative processes of the musculoskeletal system."
     }
   },
-
   "footerInvetigacion": "Explore my publications and full research projects on my official profile:",
   "ctaInvetigacion": "Access scientific publications",
-
+  "name": "Dra. Rebeca Saludes Llamas",
   "aboutMe": {
     "title": "Clinical and Academic Profile",
     "subtitle": "Clinical Podiatrist & Researcher · Anthropology of Health",
-
     "section1": {
       "col": "Professional License No. ",
       "colStrong": "838070120",
       "center": "Authorized Healthcare Center No. ",
       "centerStrong": "6102"
     },
-
     "education1": "After graduating in",
     "education1a": " Podiatry (2008)",
     "education1b": ", I consolidated my professional career in ",
@@ -1035,7 +1037,6 @@
     "education2e": "Anthropology of Health",
     "education2f": " at the Autonomous University of Madrid, in convergence with ",
     "education2g": "Lacanian Psychoanalysis.",
-
     "focusTitle": "My professional focus",
     "focusText1": "I integrate",
     "focusText1a": ",",
@@ -1045,32 +1046,25 @@
     "focusText3a": "and",
     "focusText4": "cultural",
     "focusText5": "dimensions of human health, with special attention to evolutionary, sociocultural and biomechanical factors.",
-
     "recognitionsTitle": "Recognitions and affiliations",
     "recognitions1": "Spanish Society of Sports Medicine (SEMED)",
     "recognitions2": "Best Scientific Presentation Award (2024/25)",
     "recognitions3": "Research profile and academic publications on",
-
     "quote": "My work integrates the biological, clinical and cultural dimensions of human health..."
   },
   "contactMe": {
     "title": "Contact our clinic",
     "intro": "Want to book an appointment or ask a question? We’re here to help via WhatsApp or the contact form.",
-
     "subtitleLocation": "Where we are",
     "address": "Plaza del Olivar 3 - Europa Building\n07001 - Palma de Mallorca - Balearic Islands",
-
     "subtitleSchedule": "Opening hours",
     "schedule1": "Monday to Thursday: 9:00 - 20:00",
     "schedule2": "Friday: 9:00 - 15:00",
-
     "subtitleBooking": "You can also book your appointment",
     "bookingText": "Book online with no waiting time.",
     "ctaBooking": "Book appointment →",
-
     "formTitle": "Contact form",
     "formText": "You can also contact the clinic using the form below.",
-
     "name": "Full name",
     "nameHelp": "Enter at least 3 characters",
     "email": "Email",

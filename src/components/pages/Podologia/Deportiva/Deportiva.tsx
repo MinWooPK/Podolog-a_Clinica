@@ -10,6 +10,9 @@ import {
 } from "./Deportiva.styles";
 import ImgPodoLogiaDeportiva from "@assets/img/PodologiaDeportiva.jpg";
 import ImgPodoLogiaDeportiv2 from "@assets/img/PodologiaDeportiva2.jpg";
+import ImgDeportivo3 from "@assets/img/ImgDerportivo3.jpeg";
+import ImgDeportivo4 from "@assets/img/ImgDeportivo4.jpg";
+import ImgDeportivo9 from "@assets/img/ImgDeportiva9.png";
 
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
@@ -67,8 +70,7 @@ const Deportiva: React.FC = () => {
   const treatmentsSub = [
     {
       id: "estudio-biomecanico",
-      image:
-        "https://images.pexels.com/photos/4167544/pexels-photo-4167544.jpeg",
+      image: ImgDeportivo4,
     },
     {
       id: "prevencion-lesiones",
@@ -77,13 +79,11 @@ const Deportiva: React.FC = () => {
     },
     {
       id: "plantillas-3d",
-      image:
-        "https://images.pexels.com/photos/6695843/pexels-photo-6695843.jpeg",
+      image: ImgDeportivo9,
     },
     {
       id: "calzado-deportivo",
-      image:
-        "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
+      image: ImgDeportivo3,
     },
     {
       id: "perfil-genetico",

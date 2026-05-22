@@ -158,6 +158,7 @@ export const ContactMedia = styled.div`
   transform: translateY(-40px) translateX(60px);
   @media (max-width: 768px) {
     transform: none;
+    display: none;
   }
 `;
 
@@ -185,6 +186,9 @@ export const ContactContent = styled.div`
   z-index: 1;
 
   padding: 2.5rem 3rem 2.5rem;
+  @media (max-width: 768px) {
+    padding: 0rem 0rem 0rem;
+  }
 `;
 
 /* =========================

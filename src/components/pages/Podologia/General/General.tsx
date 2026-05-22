@@ -6,7 +6,7 @@ import ImgPodoLogiaGeneral2 from "@assets/img/PodoLogiaGeneral2.jpg";
 import ImgPodoLogiaGeneral3 from "@assets/img/PodoLogiaGeneral3.jpg";
 import ImgPodoLogiaGeneral4 from "@assets/img/PodoLogiaGeneral4.jpg";
 import ImgPodoLogiaGeneral5 from "@assets/img/PodoLogiaGeneral5.jpg";
-import ImgPodoLogiaGeneral6 from "@assets/img/PodoLogiaGeneral6.jpg";
+import ImgPodoLogiaGeneral6 from "@assets/img/PodologiaGeneral8.jpg";
 import ImgPodoLogiaGeneral7 from "@assets/img/PodologiaGeneral7.jpeg";
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
@@ -67,7 +67,7 @@ const General: React.FC = () => {
     },
     {
       id: "infecciones",
-      image: ImgPodoLogiaGeneral3,
+      image: ImgPodoLogiaGeneral7,
     },
     {
       id: "quiropodologia",
@@ -83,7 +83,7 @@ const General: React.FC = () => {
     },
     {
       id: "educacion",
-      image: ImgPodoLogiaGeneral7,
+      image: ImgPodoLogiaGeneral3,
     },
   ];
 

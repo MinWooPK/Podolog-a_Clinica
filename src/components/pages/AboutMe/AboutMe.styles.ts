@@ -98,3 +98,48 @@ export const QuoteBox = styled.div`
   border-left: 3px solid #c9a227;
   color: #444;
 `;
+
+export const ALink = styled.a`
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: #0c6f6f;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #c9a227;
+  }
+`;
+
+export const CertificatesGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 2rem;
+  justify-items: center;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+export const CertificateCard = styled.div`
+  width: 100%;
+  /* max-width: 320px; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const CertificateImage = styled.img`
+  width: 100%;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+  }
+`;

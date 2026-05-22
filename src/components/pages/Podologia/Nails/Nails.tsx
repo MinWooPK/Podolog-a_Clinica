@@ -8,6 +8,8 @@ import PodologiaNails from "@assets/img/PodologiaNails.jpg";
 import ImgCirugia2 from "@assets/img/imgCirugia2.jpeg";
 import ImgCirugia3 from "@assets/img/imgCirugia3.jpg";
 import ImgCirugia4 from "@assets/img/imgCirugia4.jpeg";
+import ImgCirugia5 from "@assets/img/ImgCirugia5.jpeg";
+
 import ReviewHome from "@organisms/ReviewHome";
 import Hero from "@organisms/Hero";
 import WhatWeTreat from "@organisms/WhatWeTreat/WhatWeTreat";
@@ -60,7 +62,7 @@ const Nails: React.FC = () => {
 
     {
       id: "protocolo-quirurgico",
-      image: ImgCirugia4,
+      image: ImgCirugia5,
     },
   ];
 

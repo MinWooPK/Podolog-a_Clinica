@@ -107,6 +107,15 @@ export const CardContent = styled.div`
   gap: 6px;
 `;
 
+export const HeaderCardContent = styled.div`
+  display: flex;
+  gap: 6px;
+`;
+export const SubCardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Badge = styled.span`
   font-size: 11px;
   font-weight: 600;

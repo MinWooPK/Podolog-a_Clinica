@@ -7,6 +7,10 @@ import Infantil4 from "@assets/img/Infantil4.jpeg";
 import Infantil5 from "@assets/img/Infantil5.jpeg";
 import Infantil6 from "@assets/img/infantil7.jpg";
 import Infantil7 from "@assets/img/infantil6.jpg";
+import Infantil8 from "@assets/img/ImgInfantil3.png";
+import Infantil9 from "@assets/img/ImgInfantil4.png";
+import Infantil10 from "@assets/img/ImgInfantil5.png";
+
 import ImgPodologiaInfantilDetail from "@assets/img/ImgPodologiaInfantilDetail.png";
 import PodologiaInfantil from "@assets/img/PodologiaInfantil.jpg";
 import ReviewHome from "@organisms/ReviewHome";
@@ -42,11 +46,11 @@ const Infantil: React.FC = () => {
   ];
   const treatmentsSub = [
     { id: "maduracion-osea", image: Infantil2 },
-    { id: "analisis-marcha", image: Infantil3 },
+    { id: "analisis-marcha", image: Infantil9 },
     { id: "genetica", image: Infantil4 },
-    { id: "patologias-infantiles", image: Infantil5 },
+    { id: "patologias-infantiles", image: Infantil8 },
     { id: "tratamiento-no-invasivo", image: Infantil6 },
-    { id: "calzado-ergonomia", image: Infantil7 },
+    { id: "calzado-ergonomia", image: Infantil10 },
   ];
   const treatmentsData = treatments.map((item) => ({
     id: item.id,

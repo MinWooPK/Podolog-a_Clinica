@@ -221,7 +221,7 @@
       "title": "Hidratación y Salud de la Piel",
       "description": [
         "Protocolos de regeneración para mantener la integridad de la barrera cutánea.",
-        "Tratamiento profundo de la sequedad extrema.",
+        "Tratamiento de la deshidratación cutánea.",
         "Control de la hiperhidrosis (exceso de sudor).",
         "Cuidado preventivo del Pie Diabético.",
         "Prevención de grietas y lesiones dérmicas."
@@ -452,7 +452,6 @@
       "category": "Patología Ungueal",
       "description": "Abordaje especializado de uñas engrosadas o distróficas para recuperar su funcionalidad y confort."
     },
-
     "onicocriptosis": {
       "title": "Onicocriptosis (Uña encarnada)",
       "category": "Urgencias",
@@ -473,7 +472,6 @@
     "hiperqueratosis": {
       "title": "Tratamiento de Hiperqueratosis (Durezas)",
       "description": [
-        "Eliminación de acumulaciones de queratina para restaurar la salud de la piel.",
         "Desbridamiento profesional de durezas y callosidades (helomas).",
         "Técnicas indoloras para eliminar puntos de presión.",
         "Análisis de hidratación y lípidos de la piel."
@@ -591,12 +589,12 @@
   },
   "ortonixiaTheme": {
     "title": "Ortonixia",
-    "subtitle": "Ortonixia",
+    "subtitle": "Reeducación y Reconstrucción Ungueal",
     "description": "La ortonixia es un tratamiento no invasivo que funciona como una ortodoncia para las uñas. Es la alternativa ideal para corregir uñas con curvatura excesiva, evitar que se claven y recuperar la anatomía tras una rotura o traumatismo."
   },
   "ortonixiaSection": {
     "eyebrow": "Ortónica y corrección ungueal",
-    "title": "Ortónica y corrección ungueal",
+    "title": "Corrección ungueal mediante ortonixia",
     "description": "No siempre es necesario eliminar el tejido; a veces, solo necesitamos guiar su crecimiento. La ortonixia respeta la integridad de la uña, aplicando fuerzas físicas controladas para restaurar su anatomía funcional y evitar que vuelva a clavarse."
   },
   "ortonixiaNails": {
@@ -658,8 +656,7 @@
         "Formación en autocuidado del pie.",
         "Vendajes funcionales para evitar reincidencia.",
         "Reeducación del crecimiento ungueal.",
-        "Protocolos personalizados preventivos.",
-        "Educación sanitaria podológica."
+        "Protocolos personalizados preventivos."
       ]
     }
   },
@@ -669,9 +666,9 @@
     "description": "En nuestra consulta, el estudio de las proporciones abarca la totalidad de tu estructura. Realizamos un perfil antropométrico completo para entender la arquitectura integral de tu cuerpo. Como estructura biológica, el pie funciona como el receptor final de todas las cargas, palancas y desequilibrios que ocurren en los segmentos superiores"
   },
   "biomecanicoThemeSection": {
-    "eyebrow": "Análisis estructural integral",
-    "title": "¿Por qué es necesario este nivel de detalle?",
-    "description": "Muchas patologías del pie tienen su origen en la rodilla, la cadera o incluso la columna. Al realizar un perfil antropométrico completo, no solo tratamos el síntoma en el pie, sino que identificamos la causa en la estructura global de tu organismo."
+    "eyebrow": "Tecnología y movimiento",
+    "title": "Diagnóstico biomecánico integral",
+    "description": "Nuestro objetivo es optimizar la eficiencia del movimiento y perfeccionar la pisada, utilizando la tecnología para interpretar tu biología y asegurar la salud articular a largo plazo."
   },
   "biomecanicoTreatments": {
     "exploracion-camilla": {
@@ -993,13 +990,11 @@
   "eyebrow": "Investigación · Biomecánica · Psicosomática",
   "title": "Investigación aplicada al sistema musculoesquelético humano",
   "description": "Mi línea de trabajo integra biomecánica clínica, análisis estructural y modelos de interpretación psicosomática desde un enfoque interdisciplinar. El objetivo es comprender la relación entre estructura, función y adaptación del cuerpo humano en diferentes contextos de carga, movimiento y estrés.",
-
   "meta": {
     "approach": "Biomecánica + Psicosomática + Clínica funcional",
     "unit": "Sistema musculoesquelético en carga y reposo",
     "objective": "Modelización de la adaptación estructural y prevención de disfunciones"
   },
-
   "cards": {
     "1": {
       "title": "01 · Salud psicosomática y estructura del sujeto",
@@ -1018,21 +1013,18 @@
       "text": "Estudio longitudinal de desalineaciones estructurales, movilidad articular y procesos degenerativos del sistema musculoesquelético."
     }
   },
-
   "footerInvetigacion": "Consulta mis publicaciones y proyectos de investigación completos en mi perfil oficial:",
   "ctaInvetigacion": "Acceder a publicaciones científicas",
   "aboutMe": {
     "title": "Perfil clínico y académico",
     "name": "Dra. Rebeca Saludes Llamas",
     "subtitle": "Podóloga Clínica e Investigadora · Antropología de la Salud",
-
     "section1": {
       "col": "Nº Col. ",
       "colStrong": "838070120",
       "center": "Centro Sanitario Autorizado Nº ",
       "centerStrong": "6102"
     },
-
     "education1": "Tras graduarme en",
     "education1a": " Podología (2008)",
     "education1b": ", consolidé mi trayectoria profesional en ",
@@ -1063,21 +1055,16 @@
   "contactMe": {
     "title": "Contacta con nuestra clínica",
     "intro": "¿Quieres pedir una cita o resolver dudas? Estamos aquí para ayudarte por WhatsApp o formulario.",
-
     "subtitleLocation": "¿Dónde estamos?",
     "address": "Plaza del Olivar 3 - Edificio Europa\n07001 - Palma de Mallorca - Illes Balears",
-
     "subtitleSchedule": "Horario de atención",
     "schedule1": "Lunes a jueves: 9:00 - 20:00",
     "schedule2": "Viernes: 9:00 - 15:00",
-
     "subtitleBooking": "También puedes agendar tu cita",
     "bookingText": "Reserva online sin esperas.",
     "ctaBooking": "Pedir cita online →",
-
     "formTitle": "Formulario de contacto",
     "formText": "También puedes contactar con la clínica a través del siguiente formulario.",
-
     "name": "Nombre completo",
     "nameHelp": "Introduce al menos 3 caracteres",
     "email": "Correo electrónico",
