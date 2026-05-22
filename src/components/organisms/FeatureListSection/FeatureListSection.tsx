@@ -14,17 +14,21 @@ type FeatureListSectionProps = {
   items: string[];
   backgroundImage: string;
   subtitle?: string;
+  id?: string;
+  imagePosition?: "right" | "bottom";
 };
 
 export default function FeatureListSection({
+  id,
   title,
   items,
   backgroundImage,
   subtitle,
+  imagePosition = "right",
 }: FeatureListSectionProps) {
   return (
-    <Section>
-      <Layout>
+    <Section id={id}>
+      <Layout $imagePosition={imagePosition}>
         <Content>
           <h2>{title}</h2>
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
@@ -36,7 +40,7 @@ export default function FeatureListSection({
           </List>
         </Content>
 
-        <ImageWrapper>
+        <ImageWrapper $imagePosition={imagePosition}>
           <Image src={backgroundImage} alt={title} />
         </ImageWrapper>
       </Layout>

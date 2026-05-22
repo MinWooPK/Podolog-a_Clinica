@@ -10,10 +10,12 @@ export const Section = styled.section`
   }
 `;
 
-export const Layout = styled.div`
+export const Layout = styled.div<{ $imagePosition: string }>`
   display: flex;
-  gap: 20px;
   align-items: center;
+
+  flex-direction: ${({ $imagePosition }) =>
+    $imagePosition === "bottom" ? "column" : "row"};
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -61,11 +63,17 @@ export const List = styled.ul`
   }
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{ $imagePosition: string }>`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  ${({ $imagePosition }) =>
+    $imagePosition === "bottom" &&
+    `
+    order: 2;
+    margin-top: 40px;
+  `}
 `;
 
 export const Image = styled.img`

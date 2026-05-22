@@ -103,3 +103,60 @@ export const Description = styled.p`
 
   max-width: 820px;
 `;
+
+export const SectionAntropometria = styled.section`
+  padding: 120px 24px;
+  background: linear-gradient(135deg, #e6f1f2 0%, #f6fbfb 50%, #e9f3f4 100%);
+`;
+
+export const Container = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+`;
+
+export const List = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const Icon = styled.div`
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #93c5fd;
+  opacity: 0.9;
+`;
+
+export const Content = styled.div`
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: #94a3b8;
+    max-width: 750px;
+  }
+`;
