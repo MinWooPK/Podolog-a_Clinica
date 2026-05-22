@@ -70,7 +70,7 @@ function CardReview({ name, description, isOpen, onToggle }: CardReviewProps) {
             onToggle();
           }}
         >
-          {isOpen ? "Ver menos" : "Leer más"}
+          {isOpen ? t("cta.verMenos") : t("cta.verMas")}{" "}
         </MoreBtn>
       )}
     </Card>
