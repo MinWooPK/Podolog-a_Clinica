@@ -51,7 +51,7 @@ const AboutMe: React.FC = () => {
             </Paragraph>
 
             <Paragraph>
-              E{t("aboutMe.education2")} <strong>2015</strong>
+              {t("aboutMe.education2")} <strong>2015</strong>
               {t("aboutMe.education2b")} <u>{t("aboutMe.education2c")}</u>,{" "}
               {t("aboutMe.education2d")}
               <strong>{t("aboutMe.education2e")}</strong>{" "}
