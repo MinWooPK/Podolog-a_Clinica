@@ -81,7 +81,7 @@ ${description}`;
         backgroundImage={ImgClaraGonzalez}
         imagePosition="bottom"
         subInfo={{
-          text: "Colaboramos con la nutricionista ,visita su perfil de instagram",
+          text: t("antropometria.subInfo"),
           highlight: "Clara González",
           url: "https://instagram.com/nutricion.longevidad",
         }}
