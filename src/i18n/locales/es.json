@@ -541,12 +541,12 @@
   },
   "treatmentsNails": {
     "onicocriptosis-cirugia": {
-      "title": "Cirugía de la Onicocriptosis (Uña encarnada)",
+      "title": "Cirugía de uña (Onicocriptosis)",
       "category": "Cirugía Ungueal",
       "description": "Aplicación de técnicas definitivas como la matricectomía química. Este procedimiento permite eliminar selectivamente la matriz (la 'raíz') del lateral de la uña para evitar que vuelva a clavarse, solucionando de forma permanente el dolor y las infecciones recurrentes."
     },
     "onicodistrofia": {
-      "title": "Abordaje de la Onicodistrofia",
+      "title": "Abordaje de Onicodistrofia",
       "category": "Cirugía Ungueal",
       "description": "Tratamiento quirúrgico mediante la avulsión (retirada) total o parcial de la uña en casos de inflamación crónica o deformidades que generan dolor invalidante y no responden a tratamientos conservadores."
     },
@@ -1039,8 +1039,6 @@
     "focusText2": "biológicas",
     "focusText2a": "y",
     "focusText3": "clínicas",
-    "focusText3a": "y",
-    "focusText4": "culturales",
     "focusText5": ", con especial atención a factores evolutivos, socioculturales y biomecánicos.",
     "recognitionsTitle": "Reconocimientos y afiliaciones",
     "recognitions1": "Sociedad Española de Medicina del Deporte (SEMED)",

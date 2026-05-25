@@ -89,6 +89,9 @@ export const HighlightBox = styled.div`
   background: linear-gradient(135deg, #0c6f6f, #c9a227);
   color: white;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 `;
 
 export const QuoteBox = styled.div`
