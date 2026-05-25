@@ -65,7 +65,7 @@ const AboutMe: React.FC = () => {
               {t("aboutMe.focusText1")}{" "}
               <strong>{t("aboutMe.focusText2")}</strong>{" "}
               {t("aboutMe.focusText2a")}{" "}
-              <strong>{t("aboutMe.focusText3")}</strong>{" "}
+              <strong>{t("aboutMe.focusText3")}</strong>
               {/* {t("aboutMe.focusText3a")}{" "}
               <strong>{t("aboutMe.focusText4")}</strong>{" "} */}
               {t("aboutMe.focusText5")}
