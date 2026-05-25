@@ -189,7 +189,7 @@ const Quipodologia: React.FC = () => {
       <ContaienrFirst $backgroundImage={ImgQuipodiaDestail}>
         <Eyebrow>{t("quiropodiaSection.eyebrow")}</Eyebrow>
 
-        <Title>{t("quiropodiaSection.title")}a</Title>
+        <Title>{t("quiropodiaSection.title")}</Title>
 
         <Description>{t("quiropodiaSection.description")}</Description>
       </ContaienrFirst>

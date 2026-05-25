@@ -173,7 +173,7 @@ const Deportiva: React.FC = () => {
       <ContaienrFirst $backgroundImage={ImgPodoLogiaDeportiv2}>
         <Eyebrow>{t("podologiaDeportivaSection.eyebrow")}</Eyebrow>
 
-        <Title>{t("podologiaDeportivaSection.title")}a</Title>
+        <Title>{t("podologiaDeportivaSection.title")}</Title>
 
         <Description>{t("podologiaDeportivaSection.description")}</Description>
       </ContaienrFirst>

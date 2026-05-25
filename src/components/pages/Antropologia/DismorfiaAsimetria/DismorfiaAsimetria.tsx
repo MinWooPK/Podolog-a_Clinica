@@ -88,7 +88,7 @@ const DismorfiaAsimetria: React.FC = () => {
 
       <ContaienrFirst backgroundImage={ImgDismorfiaAsimetria2}>
         <Eyebrow>{t("dismorfiaThemeSection.eyebrow")}</Eyebrow>
-        <Title>{t("dismorfiaThemeSection.title")}a</Title>
+        <Title>{t("dismorfiaThemeSection.title")}</Title>
 
         <Description>{t("dismorfiaThemeSection.description")}</Description>
       </ContaienrFirst>

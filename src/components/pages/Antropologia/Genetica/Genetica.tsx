@@ -75,7 +75,7 @@ const Genetica: React.FC = () => {
 
       <ContaienrFirst $backgroundImage={ImgGenetica2}>
         <Eyebrow>{t("geneticaThemeSection.eyebrow")}</Eyebrow>
-        <Title>{t("geneticaThemeSection.title")}a</Title>
+        <Title>{t("geneticaThemeSection.title")}</Title>
 
         <Description>{t("geneticaThemeSection.description")}</Description>
       </ContaienrFirst>
