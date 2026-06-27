@@ -5,7 +5,20 @@ import es from "./locales/es.json";
 import en from "./locales/en.json";
 import de from "./locales/de.json";
 
-const savedLang = localStorage.getItem("lang");
+const LANGS = ["es", "en", "de"];
+
+// 🔒 Función segura para obtener idioma inicial
+const getInitialLang = () => {
+  if (typeof window === "undefined") return "es";
+
+  const savedLang = localStorage.getItem("lang");
+
+  if (savedLang && LANGS.includes(savedLang)) {
+    return savedLang;
+  }
+
+  return "es";
+};
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -14,12 +27,19 @@ i18n.use(initReactI18next).init({
     de: { translation: de },
   },
 
-  lng: savedLang || "es",
+  lng: getInitialLang(),
   fallbackLng: "es",
 
   interpolation: {
     escapeValue: false,
   },
+});
+
+// 🔄 Mantener localStorage siempre sincronizado
+i18n.on("languageChanged", (lng) => {
+  if (LANGS.includes(lng)) {
+    localStorage.setItem("lang", lng);
+  }
 });
 
 export default i18n;
