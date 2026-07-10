@@ -7,7 +7,7 @@ export default defineCliConfig({
   },
 
   deployment: {
-    autoUpdates: true,
+    autoUpdates: false,
   },
 
   project: {
