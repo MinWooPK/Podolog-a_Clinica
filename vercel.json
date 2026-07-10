@@ -1,3 +1,16 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    {
+      "source": "/blogAdmin/(.*)",
+      "destination": "/blogAdmin/$1"
+    },
+    {
+      "source": "/blogAdmin",
+      "destination": "/blogAdmin/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }

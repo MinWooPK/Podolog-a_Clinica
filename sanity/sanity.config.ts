@@ -9,6 +9,7 @@ export default defineConfig({
 
   projectId: 'cl1i0qop',
   dataset: 'production',
+
   basePath: '/blogAdmin',
 
   plugins: [structureTool(), visionTool()],
