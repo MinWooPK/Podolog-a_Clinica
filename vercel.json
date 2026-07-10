@@ -1,13 +1,3 @@
 {
-  "cleanUrls": false,
-  "rewrites": [
-    {
-      "source": "/blogAdmin",
-      "destination": "/blogAdmin/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
