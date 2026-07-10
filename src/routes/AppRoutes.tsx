@@ -21,6 +21,8 @@ import Fotogrametria from "@pages/Antropologia/Fotogrametria";
 import DismorfiaAsimetria from "@pages/Antropologia/DismorfiaAsimetria";
 import Genetica from "@pages/Antropologia/Genetica";
 import Investigacion from "@pages/Antropologia/Investigacion";
+import Blog from "@pages/Blog/Blog";
+
 // Más páginas importadas aquí
 // import About from "@pages/About";
 // import Contact from "@pages/Contact";
@@ -59,6 +61,7 @@ const AppRoutes: React.FC = () => {
               path="/antropologia/fotogrametria_postura"
               element={<Fotogrametria />}
             />
+            <Route path="/blog" element={<Blog />} />
             <Route
               path="/antropologia/dismorfia_asimetría"
               element={<DismorfiaAsimetria />}
@@ -68,7 +71,7 @@ const AppRoutes: React.FC = () => {
               path="/antropologia/investigación"
               element={<Investigacion />}
             />
-            ∫{/*  NOT FOUND (fallback) */}
+            {/*  NOT FOUND (fallback) */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
