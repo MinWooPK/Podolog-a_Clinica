@@ -9,8 +9,4 @@ export default defineCliConfig({
   deployment: {
     autoUpdates: false,
   },
-
-  project: {
-    basePath: '/blogAdmin',
-  },
 })
