@@ -49,6 +49,7 @@ const AppRoutes: React.FC = () => {
             <Route path="/podologia/plantillas_3D" element={<Plantilla />} />
             <Route path="/user" element={<User />} />
             <Route path="/admin" element={<Admin />} />
+
             <Route path="/podologia/ortonixia" element={<Ortonxia />} />
             <Route path="/podologia/nails" element={<Nails />} />
             <Route
