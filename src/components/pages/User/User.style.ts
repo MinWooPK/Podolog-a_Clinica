@@ -13,7 +13,7 @@ export const Container = styled.div`
 `;
 
 export const UserCard = styled.div`
-  background: ${({ theme }) => theme.colors.white};
+  background: white;
   border-radius: 16px;
   padding: 30px;
   max-width: 600px;

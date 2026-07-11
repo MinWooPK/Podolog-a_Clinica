@@ -14,12 +14,6 @@ import {
   Button,
   ErrorMessage,
   SwitchText,
-  ClientRole,
-  ClientItem,
-  ClientCard,
-  ClientsGrid,
-  ClientInfo,
-  ClientAvatar,
 } from "./User.style";
 
 interface UserItem {
