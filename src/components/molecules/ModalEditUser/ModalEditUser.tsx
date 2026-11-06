@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
-import { updateUser } from "@services/user.service";
+import { updateUser, type UserData } from "@services/user.service";
 import { useModal } from "@context/ModalContext";
 import { uploadImage } from "@services/cloudinary.service";
-
-interface UserData {
-  id: string;
-  name: string;
-  email: string;
-  phone: string | null;
-  address: string | null;
-  role: string;
-  avatarUrl: string | null;
-}
 
 interface ModalEditUserProps {
   user: UserData;
@@ -25,7 +15,7 @@ const ModalEditUser = ({ user, onUpdated }: ModalEditUserProps) => {
   const [email, setEmail] = useState(user.email);
   const [phone, setPhone] = useState(user.phone || "");
   const [address, setAddress] = useState(user.address || "");
-  const [role, setRole] = useState(user.role);
+  const [role, setRole] = useState<string>(user.role);
 
   const [avatar, setAvatar] = useState<File | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(

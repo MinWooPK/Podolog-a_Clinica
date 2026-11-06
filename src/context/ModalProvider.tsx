@@ -1,69 +1,12 @@
 import {
-  createContext,
-  useContext,
+  createElement,
   useEffect,
   useState,
   type ComponentType,
   type ReactNode,
 } from "react";
 import { IoIosClose } from "react-icons/io";
-
-// --------------------------------------------------
-// Types
-// --------------------------------------------------
-
-type ModalSize =
-  | "xsmall"
-  | "small"
-  | "medium"
-  | "large"
-  | "xlarge"
-  | "xxlarge"
-  | "full"
-  | "fit";
-
-type ModalProps = Record<string, unknown>;
-
-interface ModalData {
-  Component: ComponentType<ModalProps>;
-  props: ModalProps;
-}
-
-interface ModalContextType {
-  showModal: (
-    Component: ComponentType<ModalProps>,
-    props?: ModalProps,
-    isVisibleClose?: boolean,
-    size?: ModalSize,
-    isBackIcon?: boolean,
-  ) => void;
-  hideModal: () => void;
-  modal: ModalData | null;
-}
-
-// --------------------------------------------------
-// Context
-// --------------------------------------------------
-
-const ModalContext = createContext<ModalContextType | undefined>(undefined);
-
-// --------------------------------------------------
-// Hook
-// --------------------------------------------------
-
-export const useModal = (): ModalContextType => {
-  const context = useContext(ModalContext);
-
-  if (!context) {
-    throw new Error("useModal must be used within a ModalProvider");
-  }
-
-  return context;
-};
-
-// --------------------------------------------------
-// Provider
-// --------------------------------------------------
+import { ModalContext, type ModalData, type ModalSize } from "./ModalContext";
 
 interface ModalProviderProps {
   children: ReactNode;
@@ -82,16 +25,15 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
   // Show modal
   // --------------------------------------------------
 
-  const showModal = (
-    Component: ComponentType<ModalProps>,
-    props: ModalProps = {},
+  const showModal = <Props extends object,>(
+    Component: ComponentType<Props>,
+    props: NoInfer<Props>,
     isVisibleClose: boolean = true,
     size: ModalSize = "large",
     isBackIcon: boolean = false,
   ): void => {
     setModal({
-      Component,
-      props,
+      content: createElement(Component, props),
     });
 
     setIsVisibleClose(isVisibleClose);
@@ -216,7 +158,7 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
             )}
 
             {/* Dynamic modal component */}
-            <modal.Component {...modal.props} />
+            {modal.content}
           </div>
         </div>
       )}

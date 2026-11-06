@@ -14,7 +14,7 @@ const PacientAdmin = () => {
   const [patients, setPatients] = useState<Patient[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  const { showModal, hideModal } = useModal();
+  const { showModal } = useModal();
 
   // ==============================
   // OBTENER PACIENTES
@@ -47,7 +47,6 @@ const PacientAdmin = () => {
       ModalPatient,
       {
         onCreated: fetchPatients,
-        onClose: hideModal,
       },
       false,
       "medium",
@@ -68,7 +67,6 @@ const PacientAdmin = () => {
       {
         patient,
         onUpdated: fetchPatients,
-        onClose: hideModal,
       },
       false,
       "medium",

@@ -165,13 +165,12 @@ const DateAdmin = () => {
   // CREAR CITA
   // =========================================================
 
-  const handleCreateAppointment = (date?: Date) => {
+  const handleCreateAppointment = () => {
     showModal(
       ModalCreateAppointment,
       {
         onCreated: fetchAppointments,
         onClose: hideModal,
-        selectedDate: date ? formatDateKey(date) : undefined,
       },
       false,
       "medium",
@@ -485,7 +484,7 @@ const DateAdmin = () => {
 
               <button
                 type="button"
-                onClick={() => handleCreateAppointment(selectedDate)}
+                onClick={() => handleCreateAppointment()}
                 className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
               >
                 +
@@ -498,7 +497,7 @@ const DateAdmin = () => {
 
                 <button
                   type="button"
-                  onClick={() => handleCreateAppointment(selectedDate)}
+                  onClick={() => handleCreateAppointment()}
                   className="mt-4 text-blue-600 hover:underline"
                 >
                   Crear una cita

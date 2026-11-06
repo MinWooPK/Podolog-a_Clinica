@@ -24,10 +24,10 @@ export interface CreatePatientData {
   name: string;
   surname: string;
   dni: string;
-  email?: string;
-  phone?: string;
-  birthDate?: string;
-  address?: string;
+  email?: string | null;
+  phone?: string | null;
+  birthDate?: string | null;
+  address?: string | null;
   active?: boolean;
 }
 
@@ -35,10 +35,10 @@ export interface UpdatePatientData {
   name: string;
   surname: string;
   dni: string;
-  email?: string;
-  phone?: string;
-  birthDate?: string;
-  address?: string;
+  email?: string | null;
+  phone?: string | null;
+  birthDate?: string | null;
+  address?: string | null;
   active?: boolean;
 }
 

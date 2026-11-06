@@ -1,12 +1,23 @@
 import api from "../api/axios";
 
-export const getUsers = async () => {
-  const response = await api.get("/users");
+export interface UserData {
+  id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  address: string | null;
+  role: "ADMIN" | "CLIENT";
+  avatarUrl: string | null;
+  createdAt: string;
+}
+
+export const getUsers = async (): Promise<UserData[]> => {
+  const response = await api.get<UserData[]>("/users");
   return response.data;
 };
 
-export const getUserById = async (id: string) => {
-  const response = await api.get(`/users/${id}`);
+export const getUserById = async (id: string): Promise<UserData> => {
+  const response = await api.get<UserData>(`/users/${id}`);
   return response.data;
 };
 
