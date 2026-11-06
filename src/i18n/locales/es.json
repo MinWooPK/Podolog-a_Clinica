@@ -29,7 +29,9 @@
   },
 
   "footer": {
-    "copyright": "© 2025 Tramontana Salud - Todos los derechos reservados."
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "copyright": "© {{year}} MinWoo Park Kim. Todos los derechos reservados."
   },
   "podoHome": {
     "title": "Bienestar en tus pies",

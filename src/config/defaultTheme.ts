@@ -2,8 +2,8 @@ import { DefaultTheme } from "styled-components";
 
 const defaultTheme: DefaultTheme = {
   fonts: {
-    stack: "OatmealPro-Regular",
-    medium: "OatmealPro-Medium",
+    stack: '"Manrope", ui-sans-serif, system-ui, sans-serif',
+    medium: '"Manrope", ui-sans-serif, system-ui, sans-serif',
   },
   colors: {
     principal: {

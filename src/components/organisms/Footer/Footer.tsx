@@ -1,56 +1,62 @@
-import { Link } from "react-router-dom";
-import Doctoralia from "@assets/icons/doctoralia.png";
-
-import {
-  FooterPodologia,
-  FooterTitleContaienr,
-  FooterTitle,
-  FooterSubTitle,
-  LogoImage,
-  FooterLast,
-  FooterCopyRight,
-  FooterSubInfo,
-  FooterMiddle,
-  CitaContainer,
-  DoctoraliaImage,
-} from "./Footer.style";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import LogoImgSrc from "@assets/icons/SoloLogo.png";
+import {
+  BrandLink,
+  BrandName,
+  BrandSubtitle,
+  ContactItem,
+  FooterAddress,
+  FooterBottom,
+  FooterColumn,
+  FooterGrid,
+  FooterInner,
+  FooterRoot,
+  LogoImage,
+} from "./Footer.style";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
-    <FooterPodologia>
-      {/* <FooterMiddle>
-        <div>Visitanos</div>
-        <div>Contacto</div>
-      </FooterMiddle> */}
-      <FooterLast>
-        <FooterCopyRight>
-          {/* <CitaContainer
-            href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/palma-de-mallorca"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DoctoraliaImage src={Doctoralia} /> Pedir cita
-          </CitaContainer> */}
-        </FooterCopyRight>
-        <FooterTitleContaienr>
-          <LogoImage src={LogoImgSrc} width="40px" height="40px" />
-          <FooterTitle>Tramontana Salud</FooterTitle>
-          <FooterSubTitle>Dra. Rebeca Saludes Llamas</FooterSubTitle>
-          <FooterSubInfo>
-            {/* <a>Aviso legal</a>
-          <a>Politica privacidad</a>
-          <a>Cookies</a> */}
-            © 2026 MinWoo Park Kim - All Rights Reserved.
-          </FooterSubInfo>
-        </FooterTitleContaienr>
-        <FooterSubInfo>
-          {/* <a>Aviso legal</a>
-          <a>Politica privacidad</a>
-          <a>Cookies</a> */}
-        </FooterSubInfo>
-      </FooterLast>
-    </FooterPodologia>
+    <FooterRoot>
+      <FooterInner>
+        <FooterGrid>
+          <FooterColumn>
+            <BrandLink to="/">
+              <LogoImage src={LogoImgSrc} alt="" width={56} height={56} />
+              <div>
+                <BrandName>Tramontana Salud</BrandName>
+                <BrandSubtitle>Dra. Rebeca Saludés Llamas</BrandSubtitle>
+              </div>
+            </BrandLink>
+          </FooterColumn>
+
+          <FooterColumn>
+            <FooterAddress>
+              <ContactItem>
+                <MapPin size={18} aria-hidden="true" />
+                <span>{t("contactMe.address")}</span>
+              </ContactItem>
+              <ContactItem>
+                <Mail size={18} aria-hidden="true" />
+                <a href="mailto:rebesaludes83@gmail.com">rebesaludes83@gmail.com</a>
+              </ContactItem>
+              <ContactItem>
+                <MessageCircle size={18} aria-hidden="true" />
+                <a href="https://wa.me/34627664249" target="_blank" rel="noopener noreferrer">
+                  WhatsApp · +34 627 66 42 49
+                </a>
+              </ContactItem>
+            </FooterAddress>
+          </FooterColumn>
+        </FooterGrid>
+
+        <FooterBottom>
+          <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
+        </FooterBottom>
+      </FooterInner>
+    </FooterRoot>
   );
 }
 

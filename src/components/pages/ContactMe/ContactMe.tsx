@@ -30,6 +30,7 @@ import {
   StatusMessage,
 } from "./ContactMe.styles";
 import ReviewHome from "@organisms/ReviewHome";
+import EuropeanFunding from "@organisms/EuropeanFunding";
 
 const ContactMe: React.FC = () => {
   const { t } = useTranslation();
@@ -80,146 +81,149 @@ const ContactMe: React.FC = () => {
   };
 
   return (
-    <Container>
-      <FormContainer>
-        <ContactSection>
-          <ContactInfo>
-            <Title>{t("contactMe.title")}</Title>
+    <>
+      <Container>
+        <FormContainer>
+          <ContactSection>
+            <ContactInfo>
+              <Title>{t("contactMe.title")}</Title>
 
-            <Text>{t("contactMe.intro")}</Text>
+              <Text>{t("contactMe.intro")}</Text>
 
-            <List>
-              <ListItem>
-                <Mail size={24} />
-                Email:{" "}
-                <a
-                  href="mailto:rebesaludes83@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  rebesaludes83@gmail.com
-                </a>
-              </ListItem>
+              <List>
+                <ListItem>
+                  <Mail size={24} />
+                  Email:{" "}
+                  <a
+                    href="mailto:rebesaludes83@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    rebesaludes83@gmail.com
+                  </a>
+                </ListItem>
 
-              <ListItem>
-                <FaWhatsapp size={24} color="#25D366" />
-                WhatsApp:{" "}
-                <a
-                  href="https://wa.me/34627664249"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  +34 627 66 42 49
-                </a>
-              </ListItem>
-            </List>
+                <ListItem>
+                  <FaWhatsapp size={24} color="#25D366" />
+                  WhatsApp:{" "}
+                  <a
+                    href="https://wa.me/34627664249"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +34 627 66 42 49
+                  </a>
+                </ListItem>
+              </List>
 
-            <Subtitle>{t("contactMe.subtitleLocation")}</Subtitle>
+              <Subtitle>{t("contactMe.subtitleLocation")}</Subtitle>
 
-            <Text>{t("contactMe.address")}</Text>
+              <Text>{t("contactMe.address")}</Text>
 
-            <Subtitle>{t("contactMe.subtitleSchedule")}</Subtitle>
+              <Subtitle>{t("contactMe.subtitleSchedule")}</Subtitle>
 
-            <ScheduleBox>
-              <Text>{t("contactMe.schedule1")}</Text>
-              <Text>{t("contactMe.schedule2")}</Text>
-            </ScheduleBox>
-          </ContactInfo>
+              <ScheduleBox>
+                <Text>{t("contactMe.schedule1")}</Text>
+                <Text>{t("contactMe.schedule2")}</Text>
+              </ScheduleBox>
+            </ContactInfo>
 
-          <SideBox>
-            <Subtitle>{t("contactMe.subtitleBooking")}</Subtitle>
+            <SideBox>
+              <Subtitle>{t("contactMe.subtitleBooking")}</Subtitle>
 
-            <Text>{t("contactMe.bookingText")}</Text>
+              <Text>{t("contactMe.bookingText")}</Text>
 
-            <CTAButton
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/portocristo"
-            >
-              {t("contactMe.ctaBooking")}
-            </CTAButton>
-          </SideBox>
-        </ContactSection>
+              <CTAButton
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.doctoralia.es/rebeca-saludes-llamas/podologo/portocristo"
+              >
+                {t("contactMe.ctaBooking")}
+              </CTAButton>
+            </SideBox>
+          </ContactSection>
 
-        <ContactForm onSubmit={handleSubmit}>
-          <Subtitle>{t("contactMe.formTitle")}</Subtitle>
+          <ContactForm onSubmit={handleSubmit}>
+            <Subtitle>{t("contactMe.formTitle")}</Subtitle>
 
-          <Text>{t("contactMe.formText")}</Text>
+            <Text>{t("contactMe.formText")}</Text>
 
-          <FieldGroup>
-            <Label htmlFor="name">{t("contactMe.name")}</Label>
-            <HelperText>{t("contactMe.nameHelp")}</HelperText>
+            <FieldGroup>
+              <Label htmlFor="name">{t("contactMe.name")}</Label>
+              <HelperText>{t("contactMe.nameHelp")}</HelperText>
 
-            <Input
-              id="name"
-              name="name"
-              type="text"
-              placeholder={t("contactMe.name")}
-              required
-              minLength={3}
-            />
-          </FieldGroup>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                placeholder={t("contactMe.name")}
+                required
+                minLength={3}
+              />
+            </FieldGroup>
 
-          <FieldGroup>
-            <Label htmlFor="email">{t("contactMe.email")}</Label>
-            <HelperText>{t("contactMe.emailHelp")}</HelperText>
+            <FieldGroup>
+              <Label htmlFor="email">{t("contactMe.email")}</Label>
+              <HelperText>{t("contactMe.emailHelp")}</HelperText>
 
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="ejemplo@email.com"
-              required
-            />
-          </FieldGroup>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="ejemplo@email.com"
+                required
+              />
+            </FieldGroup>
 
-          <FieldGroup>
-            <Label htmlFor="phone">{t("contactMe.phone")}</Label>
-            <HelperText>{t("contactMe.phoneHelp")}</HelperText>
+            <FieldGroup>
+              <Label htmlFor="phone">{t("contactMe.phone")}</Label>
+              <HelperText>{t("contactMe.phoneHelp")}</HelperText>
 
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              placeholder="+34 600 000 000"
-              required
-            />
-          </FieldGroup>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+34 600 000 000"
+                required
+              />
+            </FieldGroup>
 
-          <FieldGroup>
-            <Label htmlFor="message">{t("contactMe.message")}</Label>
-            <HelperText>{t("contactMe.messageHelp")}</HelperText>
+            <FieldGroup>
+              <Label htmlFor="message">{t("contactMe.message")}</Label>
+              <HelperText>{t("contactMe.messageHelp")}</HelperText>
 
-            <TextArea
-              id="message"
-              name="message"
-              rows={5}
-              placeholder={t("contactMe.messageHelp")}
-              required
-              minLength={10}
-            />
-          </FieldGroup>
-          {status && (
-            <StatusMessage $type={status.type}>
-              <strong>{status.title}</strong>
-              <p>{status.message}</p>
-            </StatusMessage>
-          )}
-          <SubmitButton type="submit">{t("contactMe.submit")}</SubmitButton>
-        </ContactForm>
-      </FormContainer>
+              <TextArea
+                id="message"
+                name="message"
+                rows={5}
+                placeholder={t("contactMe.messageHelp")}
+                required
+                minLength={10}
+              />
+            </FieldGroup>
+            {status && (
+              <StatusMessage $type={status.type}>
+                <strong>{status.title}</strong>
+                <p>{status.message}</p>
+              </StatusMessage>
+            )}
+            <SubmitButton type="submit">{t("contactMe.submit")}</SubmitButton>
+          </ContactForm>
+        </FormContainer>
 
-      <MapsContainer>
-        <MapsGoogle
-          title={t("contactMe.subtitleLocation")}
-          loading="lazy"
-          allowFullScreen
-          src="https://www.google.com/maps/embed/v1/place?q=Plaza+del+Olivar+3,+EDIFICIO+EUROPA,+Centre,+Palma+de+Mallorca&key=AIzaSyCwEJPDBC6g1EksVNwV2y9ovuAjluS0iYs"
-        />
-      </MapsContainer>
+        <MapsContainer>
+          <MapsGoogle
+            title={t("contactMe.subtitleLocation")}
+            loading="lazy"
+            allowFullScreen
+            src="https://www.google.com/maps/embed/v1/place?q=Plaza+del+Olivar+3,+EDIFICIO+EUROPA,+Centre,+Palma+de+Mallorca&key=AIzaSyCwEJPDBC6g1EksVNwV2y9ovuAjluS0iYs"
+          />
+        </MapsContainer>
 
-      <ReviewHome />
-    </Container>
+        <ReviewHome />
+      </Container>
+      <EuropeanFunding />
+    </>
   );
 };
 

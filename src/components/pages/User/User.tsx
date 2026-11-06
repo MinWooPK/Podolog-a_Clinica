@@ -1,6 +1,16 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "@context/AuthContext";
-import { getUsers } from "@services/user.service";
+import { getUsers, deleteUser, getUserById } from "@services/user.service";
+
+// hooks
+import { useModal } from "@context/ModalContext";
+
+// molecules
+import ModalSuccess from "@molecules/ModalSuccess";
+import ModalEditUser from "@molecules/ModalEditUser/ModalEditUser";
+
+// organism
+import AdminDashboard from "@organisms/DashboardAdmin/DashboardAdmin";
 
 import {
   Container,
@@ -23,6 +33,7 @@ interface UserItem {
   phone: string | null;
   address: string | null;
   role: string;
+  avatarUrl: string | null;
 }
 
 const thStyle: React.CSSProperties = {
@@ -47,21 +58,22 @@ const User = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const { showModal, hideModal } = useModal();
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      if (!user || user.role !== "ADMIN") return;
-
-      try {
-        const data = await getUsers();
-        setUsers(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
     fetchUsers();
   }, [user]);
+
+  const fetchUsers = async () => {
+    if (!user || user.role !== "ADMIN") return;
+
+    try {
+      const data = await getUsers();
+      setUsers(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,6 +104,50 @@ const User = () => {
     } catch {
       setError("No se pudo crear la cuenta");
     }
+  };
+
+  const handleEditUser = async (id: string) => {
+    try {
+      const userData = await getUserById(id);
+
+      showModal(
+        ModalEditUser,
+        {
+          user: userData,
+          onUpdated: fetchUsers,
+        },
+        true,
+        "medium",
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleDeleteUser = (id: string) => {
+    showModal(
+      ModalSuccess,
+      {
+        title: "Eliminar usuario",
+        text: "¿Seguro que deseas eliminar este usuario?",
+        type: "warning",
+
+        onConfirm: async () => {
+          try {
+            await deleteUser(id);
+            await fetchUsers();
+            hideModal();
+          } catch (error) {
+            console.error(error);
+            hideModal();
+          }
+        },
+
+        onClose: hideModal,
+      },
+      false,
+      "small",
+    );
   };
 
   return (
@@ -152,44 +208,53 @@ const User = () => {
           </SwitchText>
         </LoginCard>
       ) : (
-        <UserCard>
-          <UserHeader>
-            <Avatar>{user.name.charAt(0)}</Avatar>
+        // <UserCard>
+        //   <UserHeader>
+        //     {user.avatarUrl ? (
+        //       <img
+        //         src={user.avatarUrl}
+        //         alt={user.name}
+        //         className="w-[70px] h-[70px] rounded-full"
+        //       />
+        //     ) : (
+        //       <Avatar>{user.name.charAt(0).toUpperCase()}</Avatar>
+        //     )}
 
-            <div>
-              <h1>Bienvenido, {user.name}</h1>
-              <Role>{user.role}</Role>
-            </div>
-          </UserHeader>
+        //     <div>
+        //       <h1>Bienvenido, {user.name}</h1>
+        //       <Role>{user.role}</Role>
+        //     </div>
+        //   </UserHeader>
 
-          <UserInfo>
-            <div>
-              <span>Nombre</span>
-              <p>{user.name}</p>
-            </div>
+        //   <UserInfo>
+        //     <div>
+        //       <span>Nombre</span>
+        //       <p>{user.name}</p>
+        //     </div>
 
-            <div>
-              <span>Email</span>
-              <p>{user.email}</p>
-            </div>
+        //     <div>
+        //       <span>Email</span>
+        //       <p>{user.email}</p>
+        //     </div>
 
-            <div>
-              <span>Teléfono</span>
-              <p>{user.phone || "No disponible"}</p>
-            </div>
+        //     <div>
+        //       <span>Teléfono</span>
+        //       <p>{user.phone || "No disponible"}</p>
+        //     </div>
 
-            <div>
-              <span>Dirección</span>
-              <p>{user.address || "No disponible"}</p>
-            </div>
-          </UserInfo>
-          <Button type="button" onClick={logout}>
-            Cerrar sesión
-          </Button>
-        </UserCard>
+        //     <div>
+        //       <span>Dirección</span>
+        //       <p>{user.address || "No disponible"}</p>
+        //     </div>
+        //   </UserInfo>
+        //   <Button type="button" onClick={logout}>
+        //     Cerrar sesión
+        //   </Button>
+        // </UserCard>
+        <AdminDashboard />
       )}
-      {user?.role === "ADMIN" && (
-        <div style={{ marginTop: "30px" }}>
+      {/* {user?.role === "ADMIN" && (
+        <div className="w-full mt-10 px-10">
           <h2>Clientes</h2>
 
           <table
@@ -209,6 +274,7 @@ const User = () => {
                 <th style={thStyle}>Teléfono</th>
                 <th style={thStyle}>Dirección</th>
                 <th style={thStyle}>Rol</th>
+                <th style={thStyle}>Acciones</th>
               </tr>
             </thead>
 
@@ -220,12 +286,20 @@ const User = () => {
                   <td style={tdStyle}>{client.phone || "-"}</td>
                   <td style={tdStyle}>{client.address || "-"}</td>
                   <td style={tdStyle}>{client.role}</td>
+                  <td style={tdStyle}>
+                    <button onClick={() => handleEditUser(client.id)}>
+                      Editar
+                    </button>{" "}
+                    <button onClick={() => handleDeleteUser(client.id)}>
+                      Eliminar
+                    </button>{" "}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      )}
+      )} */}
     </Container>
   );
 };

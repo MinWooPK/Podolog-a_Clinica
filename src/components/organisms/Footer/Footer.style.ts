@@ -1,107 +1,150 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const FooterPodologia = styled.footer`
-  background: #18595b;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+export const FooterRoot = styled.footer`
+  background: #123f41;
+  color: #e3eeee;
 
-  /* align-items: center; */
-  font-size: 18px;
-  gap: 2rem;
-  padding: 2rem;
-  text-align: center;
+  a {
+    text-decoration: none;
+  }
 
-  @media (max-width: 420px) {
-    padding: 0.5rem;
-    font-size: 14px;
+  a:focus-visible {
+    outline: 2px solid #ffc61a;
+    outline-offset: 5px;
+    border-radius: 4px;
   }
 `;
 
-interface LogoImageProps {
-  width?: string;
-  height?: string;
-}
-
-export const FooterTitleContaienr = styled.div``;
-export const LogoImage = styled.img<LogoImageProps>`
-  width: ${({ width }) => width || "40px"};
-  height: ${({ height }) => height || "40px"};
-`;
-export const FooterTitle = styled.div`
-  font-size: 20px;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.principal.fifthy};
-
-  /* color: #ffc61a; */
-  @media (max-width: 1100px) {
-    font-size: 16px;
-  }
-`;
-
-export const FooterSubTitle = styled.div`
-  font-size: 14x;
-  margin-left: 7px;
-  color: rgba(255, 198, 26, 1);
-  font-weight: 500;
-
-  @media (max-width: 420px) {
-    margin-top: 0;
-    font-size: 12px;
-    /* margin-left: 4px; */
-  }
-`;
-export const FooterMiddle = styled.div`
-  display: flex;
-`;
-
-export const FooterLast = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-
+export const FooterInner = styled.div`
   width: 100%;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background-color: ${({ theme }) => theme.colors.principal.secondary};
-  @media (max-width: 1100px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0rem;
+  max-width: 1140px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px 20px 16px;
+
+  @media (max-width: 600px) {
+    padding-top: 20px;
   }
 `;
-export const FooterCopyRight = styled.div`
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.principal.pure};
-`;
-export const FooterSubInfo = styled.div`
-  font-size: 12px;
-  gap: 2rem;
-  display: flex;
-  color: ${({ theme }) => theme.colors.principal.pure};
+
+export const FooterGrid = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 16px;
+
+  @media (max-width: 700px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
 `;
 
-export const DoctoraliaImage = styled.img`
-  width: 25px;
-  height: 25px;
+export const FooterColumn = styled.div`
+  min-width: 0;
 `;
 
-export const CitaContainer = styled.a`
-  background-color: rgba(73, 221, 217, 0.2);
-  text-decoration: none;
+export const BrandLink = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+
+  > div {
+    min-width: 0;
+  }
+`;
+
+export const LogoImage = styled.img`
+  display: block;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+
+  @media (max-width: 420px) {
+    width: 46px;
+    height: 46px;
+  }
+`;
+
+export const BrandName = styled.span`
+  display: block;
+  color: #86dcd8;
+  font-size: clamp(20px, 2vw, 22px);
+  font-weight: 600;
+  line-height: 1.25;
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
+`;
+
+export const BrandSubtitle = styled.span`
+  display: block;
+  margin-top: 5px;
+  color: #ffda68;
+  font-size: 12px;
+  line-height: 1.5;
+`;
+
+export const FooterAddress = styled.address`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 20px;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.6;
+
+  > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 1000px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+`;
+
+export const ContactItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid ${({ theme }) => theme.colors.principal.terciary};
-  border-radius: 15px;
-  color: ${({ theme }) => theme.colors.principal.terciary};
-  cursor: pointer;
-  transition: all 0.3s ease; // transición suave
+  gap: 8px;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.principal.secondary};
-    color: ${({ theme }) => theme.colors.principal.first};
+  svg {
+    flex-shrink: 0;
+    color: #86dcd8;
+  }
+
+  span,
+  a {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: inherit;
+  }
+
+  a:hover {
+    color: #ffda68;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+`;
+
+export const FooterBottom = styled.div`
+  padding-top: 12px;
+  border-top: 1px solid rgba(227, 238, 238, 0.18);
+  color: #bed1d1;
+  font-size: 11px;
+  line-height: 1.7;
+
+  p {
+    margin: 0;
   }
 `;

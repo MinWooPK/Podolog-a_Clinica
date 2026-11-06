@@ -29,7 +29,9 @@
   },
 
   "footer": {
-    "copyright": "© 2025 Tramontana Salud - Alle Rechte vorbehalten."
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "copyright": "© {{year}} MinWoo Park Kim. Alle Rechte vorbehalten."
   },
   "podoHome": {
     "title": "Wohlbefinden für Ihre Füße",

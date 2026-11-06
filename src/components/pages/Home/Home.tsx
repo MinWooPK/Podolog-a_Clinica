@@ -15,6 +15,7 @@ import {
 import BackgroundVideo from "@assets/video/HomeMain.mp4";
 import { Container } from "@pages/AboutMe/AboutMe.styles";
 import ReviewHome from "@organisms/ReviewHome";
+import EuropeanFunding from "@organisms/EuropeanFunding";
 import LocationContact from "@organisms/LocationContact";
 import PodoHome from "@organisms/PodoHome";
 import ImgFAQPodoLogiaGeneral from "@assets/img/FAQGeneral.jpg";
@@ -162,6 +163,7 @@ const Home: React.FC = () => {
 
       <ReviewHome />
       <LocationContact />
+      <EuropeanFunding />
     </>
   );
 };

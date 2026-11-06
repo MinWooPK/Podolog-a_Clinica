@@ -29,7 +29,9 @@
   },
 
   "footer": {
-    "copyright": "© 2025 Tramontana Salud - All rights reserved."
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "copyright": "© {{year}} MinWoo Park Kim. All rights reserved."
   },
   "featuresPodo": {
     "title": "We take care of your foot health",

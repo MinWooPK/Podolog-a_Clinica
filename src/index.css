@@ -1,8 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap");
+@import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope-latin-wght.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
 
-  font-family: "Epilogue", sans-serif;
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+}
+
+/* La tipografía se hereda sin sobrescribir fuentes propias de iconos. */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }

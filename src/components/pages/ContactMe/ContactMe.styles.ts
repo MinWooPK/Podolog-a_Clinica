@@ -287,7 +287,13 @@ export const ListItem = styled.li`
   align-items: center;
   gap: 0.5rem;
 
+  svg {
+    flex-shrink: 0;
+  }
+
   a {
+    min-width: 0;
+    overflow-wrap: anywhere;
     color: #ffc61a;
     font-weight: 400;
     text-decoration: none;
